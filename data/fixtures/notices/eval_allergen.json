@@ -1,0 +1,42 @@
+{
+  "candidate_id": "recall:eval_allergen",
+  "kind": "recall",
+  "product_id": "P10012",
+  "hazard_type": "allergen",
+  "title_hint": "Marlowe & Pike Organic Ginger Nut Biscuits 250g batch B2026-632 Undeclared peanut recall",
+  "prior_incidents": [],
+  "notice": {
+    "guid": "FICTIONAL-TEST:eval:eval_allergen",
+    "feed": "test",
+    "title": "FICTIONAL TEST: Marlowe & Pike Organic Ginger Nut Biscuits 250g",
+    "url": "https://example.test/notices/eval-allergen",
+    "published_at": "2026-10-16T00:00:00+00:00",
+    "extract": {
+      "product_name": "Organic Ginger Nut Biscuits",
+      "brand": "Marlowe & Pike",
+      "sizes": [
+        "250g"
+      ],
+      "batch_codes": [
+        "B2026-632"
+      ],
+      "date_codes": [
+        {
+          "kind": "best_before",
+          "from": "2027-07-12",
+          "to": "2027-07-12"
+        }
+      ],
+      "hazard_type": "allergen",
+      "hazard_detail": "Undeclared peanut",
+      "consumer_action": "Do not eat. Return the product to the place of purchase for a full refund.",
+      "summary": "Possible peanut not declared on the label in one batch of Marlowe & Pike Organic Ginger Nut Biscuits 250g."
+    }
+  },
+  "match": {
+    "method": "embedding",
+    "distance": 0.1,
+    "confirmed": true
+  },
+  "fixture_receipt_id": "rcpt-fixture-eval-allergen"
+}

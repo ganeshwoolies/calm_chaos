@@ -1,0 +1,723 @@
+{
+  "candidate_id": "label:P10054:798a8d",
+  "kind": "label",
+  "product": {
+    "product_id": "P10054",
+    "name": "Organic Original Crumpets",
+    "brand": "Harbour Bakehouse",
+    "size": "12 pack",
+    "category": "food",
+    "supplier_id": "SUP-003",
+    "supplier_name": "Harbour Bakehouse"
+  },
+  "hazard_type": "allergen",
+  "title_hint": "Harbour Bakehouse Organic Original Crumpets 12 pack allergen undeclared on pack: wheat",
+  "checks": [
+    {
+      "check_id": "lc-eval-allergen-undeclared-on-pack",
+      "store_id": "S100",
+      "checked_at": "2026-10-16T18:00:00+00:00",
+      "photo_uri": "gs://psd-fixtures/labels/eval_allergen_undeclared_on_pack.jpg",
+      "lot": "B2026-222",
+      "findings": [
+        {
+          "rule": "allergen_undeclared_on_pack",
+          "field": "allergens",
+          "value": "wheat",
+          "severity": "critical",
+          "actions": [
+            "hold",
+            "supplier_notice",
+            "qa_alert",
+            "listing_check"
+          ],
+          "hazard_type": "allergen"
+        }
+      ]
+    }
+  ],
+  "lineage": {
+    "receipt_id": "rcpt-fixture-eval-allergen-undeclared-on-pack",
+    "as_of": "2026-10-17T00:00:00+00:00",
+    "rows": [
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S100",
+        "delivered": 20,
+        "on_hand": 20,
+        "aisle": "22",
+        "last_delivered": "2026-10-09T11:06:23+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S025",
+        "delivered": 21,
+        "on_hand": 17,
+        "aisle": "18",
+        "last_delivered": "2026-10-08T18:12:55+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S067",
+        "delivered": 17,
+        "on_hand": 16,
+        "aisle": "19",
+        "last_delivered": "2026-10-10T06:27:39+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S007",
+        "delivered": 22,
+        "on_hand": 13,
+        "aisle": "12",
+        "last_delivered": "2026-10-08T01:18:18+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S103",
+        "delivered": 18,
+        "on_hand": 11,
+        "aisle": "7",
+        "last_delivered": "2026-10-08T12:30:20+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S115",
+        "delivered": 12,
+        "on_hand": 6,
+        "aisle": "15",
+        "last_delivered": "2026-10-07T17:44:41+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S108",
+        "delivered": 13,
+        "on_hand": 4,
+        "aisle": "7",
+        "last_delivered": "2026-10-09T06:43:05+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S071",
+        "delivered": 18,
+        "on_hand": 3,
+        "aisle": "12",
+        "last_delivered": "2026-10-09T08:50:18+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S078",
+        "delivered": 21,
+        "on_hand": 2,
+        "aisle": "18",
+        "last_delivered": "2026-10-08T03:13:25+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S001",
+        "delivered": 17,
+        "on_hand": 0,
+        "last_delivered": "2026-10-07T15:42:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S002",
+        "delivered": 23,
+        "on_hand": 0,
+        "last_delivered": "2026-10-09T15:03:51+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S003",
+        "delivered": 24,
+        "on_hand": 0,
+        "last_delivered": "2026-10-07T19:40:04+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S004",
+        "delivered": 12,
+        "on_hand": 0,
+        "last_delivered": "2026-10-07T21:53:50+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S005",
+        "delivered": 14,
+        "on_hand": 0,
+        "last_delivered": "2026-10-08T08:39:41+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S006",
+        "delivered": 23,
+        "on_hand": 0,
+        "last_delivered": "2026-10-08T16:48:41+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S010",
+        "delivered": 22,
+        "on_hand": 0,
+        "last_delivered": "2026-10-08T18:58:03+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S011",
+        "delivered": 20,
+        "on_hand": 0,
+        "last_delivered": "2026-10-07T20:31:41+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S017",
+        "delivered": 15,
+        "on_hand": 0,
+        "last_delivered": "2026-10-08T04:28:50+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S019",
+        "delivered": 21,
+        "on_hand": 0,
+        "last_delivered": "2026-10-10T07:37:09+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S022",
+        "delivered": 18,
+        "on_hand": 0,
+        "last_delivered": "2026-10-08T01:08:25+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S023",
+        "delivered": 19,
+        "on_hand": 0,
+        "last_delivered": "2026-10-07T17:22:44+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S026",
+        "delivered": 19,
+        "on_hand": 0,
+        "last_delivered": "2026-10-10T09:02:21+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S027",
+        "delivered": 22,
+        "on_hand": 0,
+        "last_delivered": "2026-10-09T09:08:04+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S030",
+        "delivered": 12,
+        "on_hand": 0,
+        "last_delivered": "2026-10-09T01:32:08+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S034",
+        "delivered": 20,
+        "on_hand": 0,
+        "last_delivered": "2026-10-08T09:13:40+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S037",
+        "delivered": 18,
+        "on_hand": 0,
+        "last_delivered": "2026-10-09T14:23:30+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S039",
+        "delivered": 17,
+        "on_hand": 0,
+        "last_delivered": "2026-10-08T21:07:28+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S041",
+        "delivered": 12,
+        "on_hand": 0,
+        "last_delivered": "2026-10-10T05:55:36+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S044",
+        "delivered": 13,
+        "on_hand": 0,
+        "last_delivered": "2026-10-08T13:11:54+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S045",
+        "delivered": 24,
+        "on_hand": 0,
+        "last_delivered": "2026-10-08T09:40:25+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S046",
+        "delivered": 14,
+        "on_hand": 0,
+        "last_delivered": "2026-10-09T15:51:55+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S048",
+        "delivered": 19,
+        "on_hand": 0,
+        "last_delivered": "2026-10-09T06:36:58+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S049",
+        "delivered": 18,
+        "on_hand": 0,
+        "last_delivered": "2026-10-08T16:56:08+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S050",
+        "delivered": 21,
+        "on_hand": 0,
+        "last_delivered": "2026-10-07T21:29:52+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S051",
+        "delivered": 15,
+        "on_hand": 0,
+        "last_delivered": "2026-10-08T09:18:01+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S054",
+        "delivered": 13,
+        "on_hand": 0,
+        "last_delivered": "2026-10-08T07:19:37+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S055",
+        "delivered": 12,
+        "on_hand": 0,
+        "last_delivered": "2026-10-09T07:54:39+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S056",
+        "delivered": 16,
+        "on_hand": 0,
+        "last_delivered": "2026-10-07T22:51:05+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S058",
+        "delivered": 18,
+        "on_hand": 0,
+        "last_delivered": "2026-10-09T19:29:51+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S059",
+        "delivered": 15,
+        "on_hand": 0,
+        "last_delivered": "2026-10-10T07:59:08+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S060",
+        "delivered": 22,
+        "on_hand": 0,
+        "last_delivered": "2026-10-09T04:20:16+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S063",
+        "delivered": 17,
+        "on_hand": 0,
+        "last_delivered": "2026-10-07T15:09:06+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S064",
+        "delivered": 24,
+        "on_hand": 0,
+        "last_delivered": "2026-10-10T04:48:11+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S068",
+        "delivered": 16,
+        "on_hand": 0,
+        "last_delivered": "2026-10-09T03:23:35+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S069",
+        "delivered": 14,
+        "on_hand": 0,
+        "last_delivered": "2026-10-08T12:06:36+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S073",
+        "delivered": 20,
+        "on_hand": 0,
+        "last_delivered": "2026-10-09T20:28:06+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S075",
+        "delivered": 16,
+        "on_hand": 0,
+        "last_delivered": "2026-10-09T18:27:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S076",
+        "delivered": 23,
+        "on_hand": 0,
+        "last_delivered": "2026-10-10T06:20:25+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S080",
+        "delivered": 20,
+        "on_hand": 0,
+        "last_delivered": "2026-10-09T22:50:31+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S081",
+        "delivered": 17,
+        "on_hand": 0,
+        "last_delivered": "2026-10-08T06:43:17+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S084",
+        "delivered": 14,
+        "on_hand": 0,
+        "last_delivered": "2026-10-07T13:39:12+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S085",
+        "delivered": 18,
+        "on_hand": 0,
+        "last_delivered": "2026-10-08T13:34:47+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S088",
+        "delivered": 15,
+        "on_hand": 0,
+        "last_delivered": "2026-10-07T16:56:33+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S089",
+        "delivered": 21,
+        "on_hand": 0,
+        "last_delivered": "2026-10-09T12:25:21+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S091",
+        "delivered": 21,
+        "on_hand": 0,
+        "last_delivered": "2026-10-08T10:43:54+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S092",
+        "delivered": 16,
+        "on_hand": 0,
+        "last_delivered": "2026-10-08T02:28:49+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S094",
+        "delivered": 12,
+        "on_hand": 0,
+        "last_delivered": "2026-10-09T06:41:41+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S097",
+        "delivered": 13,
+        "on_hand": 0,
+        "last_delivered": "2026-10-09T16:34:13+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S104",
+        "delivered": 22,
+        "on_hand": 0,
+        "last_delivered": "2026-10-10T01:42:42+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S106",
+        "delivered": 15,
+        "on_hand": 0,
+        "last_delivered": "2026-10-08T07:01:21+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S109",
+        "delivered": 15,
+        "on_hand": 0,
+        "last_delivered": "2026-10-09T22:56:34+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S110",
+        "delivered": 12,
+        "on_hand": 0,
+        "last_delivered": "2026-10-10T08:27:35+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S111",
+        "delivered": 23,
+        "on_hand": 0,
+        "last_delivered": "2026-10-09T01:55:07+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S112",
+        "delivered": 22,
+        "on_hand": 0,
+        "last_delivered": "2026-10-10T03:22:22+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S114",
+        "delivered": 18,
+        "on_hand": 0,
+        "last_delivered": "2026-10-10T08:52:56+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S116",
+        "delivered": 19,
+        "on_hand": 0,
+        "last_delivered": "2026-10-10T07:23:36+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S118",
+        "delivered": 12,
+        "on_hand": 0,
+        "last_delivered": "2026-10-07T16:03:23+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S119",
+        "delivered": 16,
+        "on_hand": 0,
+        "last_delivered": "2026-10-10T06:07:16+00:00"
+      },
+      {
+        "row_kind": "order",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S006",
+        "order_id": "O-003078"
+      },
+      {
+        "row_kind": "order",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S019",
+        "order_id": "O-006754"
+      },
+      {
+        "row_kind": "order",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S026",
+        "order_id": "O-005750"
+      },
+      {
+        "row_kind": "order",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S039",
+        "order_id": "O-008082"
+      },
+      {
+        "row_kind": "order",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S046",
+        "order_id": "O-008498"
+      },
+      {
+        "row_kind": "order",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S050",
+        "order_id": "O-004866"
+      },
+      {
+        "row_kind": "order",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S106",
+        "order_id": "O-005258"
+      },
+      {
+        "row_kind": "order",
+        "batch_id": "BAT-P10054-222",
+        "code": "B2026-222",
+        "store_id": "S109",
+        "order_id": "O-004995"
+      }
+    ]
+  },
+  "prior_incidents": []
+}

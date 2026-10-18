@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- © Food Standards Australia New Zealand. Source: the FSANZ food recalls RSS feed,
+     https://www.foodstandards.gov.au/food-recalls-rss.xml. Terms: https://www.foodstandards.gov.au/legal-policies/copyright
+     Licensed under Creative Commons Attribution: https://creativecommons.org/licenses/by/3.0/au/
+     Changed: shortened to four items; staff identifiers, business contact details and the links to product
+     images and recall documents are replaced by example.invalid placeholders; business, brand, product and store
+     names, and the link paths that carry them, are replaced by fictional ones. Not endorsed by FSANZ. -->
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xml:base="https://www.foodstandards.gov.au/">
+  <channel>
+    <title>Food recalls rss feed</title>
+    <link>https://www.foodstandards.gov.au/</link>
+    <description />
+    <language>en</language>
+    
+    <item>
+  <title>Quollbrook Dairies Reduced Fat Milk - 1L and 2L</title>
+  <link>https://www.foodstandards.gov.au/food-recalls/recall-alert/quollbrook-dairies-reduced-fat-milk-1l-and-2l</link>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Quollbrook Dairies Reduced Fat Milk - 1L and 2L&lt;/span&gt;
+&lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;span lang about="https://www.foodstandards.gov.au/members/0" typeof="schema:Person" property="schema:name" datatype content="staff.member@example.invalid"&gt;staff.member@example.invalid&lt;/span&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2026-10-12T19:18:03+11:00" title="Monday, 12 October, 2026 - 19:18" class="datetime"&gt;Mon, 12/10/2026 - 19:18&lt;/time&gt;
+&lt;/span&gt;
+
+      
+
+&lt;div class="field field-recall-business field-type-string field-label-hidden"&gt;
+  
+  
+      &lt;div class="field-item"&gt;
+              Quollbrook Dairies PTY LTD
+          &lt;/div&gt;
+  
+  &lt;/div&gt;
+
+
+&lt;div class="clearfix text-formatted field field-further-information field-type-text-long field-label-hidden"&gt;
+  
+  
+      &lt;div class="field-item"&gt;&lt;p&gt;Example Business Pty Ltd&lt;/p&gt;&lt;p&gt;(00) 0000 0000&lt;/p&gt;&lt;p&gt;&lt;a href="mailto:contact@example.invalid"&gt;contact@example.invalid&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+  
+  &lt;/div&gt;
+&lt;div class="field field-publish-date field-type-datetime"&gt;
+  &lt;div id="publish-date" class="field-label"&gt;
+    Recall published &lt;time datetime="2026-10-12T08:18:03Z" class="datetime"&gt;12 October 2026&lt;/time&gt;
+
+  &lt;/div&gt;
+  &lt;div class="field-label recall-updated-date"&gt;
+          &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="photoswipe-gallery field food-recall-image-display field-food-recall-image field-type-entity-reference field-label-hidden"&gt;
+  
+      &lt;div class="field-items"&gt;
+  
+            &lt;div class="field-item"&gt;
+        &lt;div class="img-thumbnail"&gt;
+            &lt;a href="https://example.invalid/product-image.png" class="photoswipe" data-pswp-width="1024" data-pswp-height="768" data-overlay-title&gt;
+    &lt;img loading="lazy" src="https://example.invalid/product-image.png" width="480" height="360" alt="Product image" typeof="foaf:Image" class="image-style-large"&gt;
+
+
+    &lt;span role="button" aria-label="Expand food recall image to view larger version" aria-expanded="false" aria-controls="food-recall-gallery" tabindex="0"&gt;
+      Click to expand
+    &lt;/span&gt;
+  &lt;/a&gt;
+    
+        &lt;/div&gt;
+      &lt;/div&gt;
+        
+      &lt;/div&gt;
+  &lt;/div&gt;
+
+        &lt;div class="field-bare"&gt;
+        &lt;p&gt;Quollbrook Dairies PTY LTD are conducting a recall of the above products. The products have been available for sale in independent retailers in SA.&lt;/p&gt;
+
+    &lt;/div&gt;
+    
+
+
+
+
+&lt;div class="field field-location field-type-entity-reference field-label-above"&gt;
+      &lt;h3 class="field-label"&gt;Distributed in&lt;/h3&gt;
+  
+      &lt;div class="field-items"&gt;
+  
+      &lt;div class="field-item"&gt;
+              SA
+          &lt;/div&gt;
+  
+      &lt;/div&gt;
+  &lt;/div&gt;
+
+
+&lt;div class="field field-recall-type field-type-entity-reference field-label-above"&gt;
+      &lt;h3 class="field-label"&gt;Recall reason&lt;/h3&gt;
+  
+  
+      &lt;div class="field-item"&gt;
+              Microbial contamination
+          &lt;/div&gt;
+  
+  &lt;/div&gt;
+
+
+&lt;div class="field field-date-marking field-type-string-long field-label-above"&gt;
+      &lt;h3 class="field-label"&gt;Date marking(s)&lt;/h3&gt;
+  
+  
+      &lt;div class="field-item"&gt;
+              Quollbrook Reduced Fat Milk 1L&lt;br&gt;
+Use By 21/10/2026&lt;br&gt;
+&lt;br&gt;
+Quollbrook Reduced Fat Milk 2L &lt;br&gt;
+Use By 21/10/2026
+          &lt;/div&gt;
+  
+  &lt;/div&gt;
+
+
+&lt;div class="clearfix text-formatted field field-problem field-type-text-long field-label-above"&gt;
+      &lt;h3 class="field-label"&gt;Problem&lt;/h3&gt;
+  
+  
+      &lt;div class="field-item"&gt;
+              &lt;p&gt;Microbial (&lt;em&gt;E. coli&lt;/em&gt;) contamination.&lt;/p&gt;
+
+          &lt;/div&gt;
+  
+  &lt;/div&gt;
+
+
+&lt;div class="clearfix text-formatted field field-food-safety-hazard field-type-text-long field-label-above"&gt;
+      &lt;h3 class="field-label"&gt;Food safety hazard&lt;/h3&gt;
+  
+  
+      &lt;div class="field-item"&gt;
+              &lt;p&gt;Food products contaminated with &lt;em&gt;E. coli &lt;/em&gt;may cause illness if consumed.&lt;/p&gt;
+
+          &lt;/div&gt;
+  
+  &lt;/div&gt;
+
+
+&lt;div class="clearfix text-formatted field field-what-to-do field-type-text-long field-label-above"&gt;
+      &lt;h3 class="field-label"&gt;What to do&lt;/h3&gt;
+  
+  
+      &lt;div class="field-item"&gt;
+              &lt;p&gt;Consumers should not eat this product. Consumers should return the product(s) to the place of purchase for a full refund. Any consumers concerned about their health should seek medical advice.&lt;/p&gt;
+
+          &lt;/div&gt;
+  
+  &lt;/div&gt;
+
+
+&lt;div class="field field-document field-type-entity-reference field-label-above"&gt;
+      &lt;h3 class="field-label"&gt;Recall notice&lt;/h3&gt;
+  
+      &lt;div class="field-items"&gt;
+  
+      &lt;div class="field-item"&gt;
+              
+&lt;div class="field field-field-media-file field-type-file field-label-hidden"&gt;
+  
+  
+      &lt;div class="field-item"&gt;
+              &lt;p&gt;&lt;a href="https://example.invalid/recall-notice.pdf" class="file-download file-download-application file-download-pdf" target="_blank" download&gt;Recall notice.pdf&lt;/a&gt;&lt;/p&gt;
+          &lt;/div&gt;
+  
+  &lt;/div&gt;
+
+          &lt;/div&gt;
+  
+      &lt;/div&gt;
+  &lt;/div&gt;
+
+
+</description>
+  <pubDate>Mon, 12 Oct 2026 08:18:03 +0000</pubDate>
+    <dc:creator>staff.member@example.invalid</dc:creator>
+    <guid isPermaLink="false">7222 at https://www.foodstandards.gov.au</guid>
+    </item>
+<item>
+  <title>ZENTRO Chocolate Wafer Stick - 150g</title>
+  <link>https://www.foodstandards.gov.au/food-recalls/recall-alert/zentro-chocolate-wafer-stick-150g</link>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;ZENTRO Chocolate Wafer Stick - 150g&lt;/span&gt;
+&lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;span lang about="https://www.foodstandards.gov.au/members/0" typeof="schema:Person" property="schema:name" datatype&gt;staff.member@example.invalid&lt;/span&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2026-10-02T19:10:50+10:00" title="Friday, 2 October, 2026 - 19:10" class="datetime"&gt;Fri, 02/10/2026 - 19:10&lt;/time&gt;
+&lt;/span&gt;
+
+      
+
+&lt;div class="field field-recall-business field-type-string field-label-hidden"&gt;
+  
+  
+      &lt;div class="field-item"&gt;
+              Larkspur Impex Pty Ltd
+          &lt;/div&gt;
+  
+  &lt;/div&gt;
+
+
+&lt;div class="clearfix text-formatted field field-further-information field-type-text-long field-label-hidden"&gt;
+  
+  
+      &lt;div class="field-item"&gt;&lt;p&gt;Example Business Pty Ltd&lt;/p&gt;&lt;p&gt;(00) 0000 0000&lt;/p&gt;&lt;p&gt;&lt;a href="mailto:contact@example.invalid"&gt;contact@example.invalid&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+  
+  &lt;/div&gt;
+&lt;div class="field field-publish-date field-type-datetime"&gt;
+  &lt;div id="publish-date" class="field-label"&gt;
+    Recall published &lt;time datetime="2026-10-02T09:10:50Z" class="datetime"&gt;2 October 2026&lt;/time&gt;
+
+  &lt;/div&gt;
+  &lt;div class="field-label recall-updated-date"&gt;
+          &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="photoswipe-gallery field food-recall-image-display field-food-recall-image field-type-entity-reference field-label-hidden"&gt;
+  
+      &lt;div class="field-items"&gt;
+  
+            &lt;div class="field-item"&gt;
+        &lt;div class="img-thumbnail"&gt;
+            &lt;a href="https://example.invalid/product-image.png" class="photoswipe" data-pswp-width="1024" data-pswp-height="768" data-overlay-title&gt;
+    &lt;img loading="lazy" src="https://example.invalid/product-image.png" width="480" height="360" alt="Product image" typeof="foaf:Image" class="image-style-large"&gt;
+
+
+    &lt;span role="button" aria-label="Expand food recall image to view larger version" aria-expanded="false" aria-controls="food-recall-gallery" tabindex="0"&gt;
+      Click to expand
+    &lt;/span&gt;
+  &lt;/a&gt;
+    
+        &lt;/div&gt;
+      &lt;/div&gt;
+        
+      &lt;/div&gt;
+  &lt;/div&gt;
+
+        &lt;div class="field-bare"&gt;
+        &lt;p&gt;&lt;span lang="EN-GB"&gt;Larkspur Impex Pty Ltd are conducting a recall of the above product. The product has been available for sale in Asian Grocers and online in NSW.&lt;/span&gt;&lt;/p&gt;
+
+    &lt;/div&gt;
+    
+
+
+
+
+&lt;div class="field field-location field-type-entity-reference field-label-above"&gt;
+      &lt;h3 class="field-label"&gt;Distributed in&lt;/h3&gt;
+  
+      &lt;div class="field-items"&gt;
+  
+      &lt;div class="field-item"&gt;
+              NSW
+          &lt;/div&gt;
+      &lt;div class="field-item"&gt;
+              Online
+          &lt;/div&gt;
+  
+      &lt;/div&gt;
+  &lt;/div&gt;
+
+
+&lt;div class="field field-recall-type field-type-entity-reference field-label-above"&gt;
+      &lt;h3 class="field-label"&gt;Recall reason&lt;/h3&gt;
+  
+  
+      &lt;div class="field-item--allergen field-item"&gt;
+              Undeclared allergen
+          &lt;/div&gt;
+  
+  &lt;/div&gt;
+
+
+&lt;div class="field field-date-marking field-type-string-long field-label-above"&gt;
+      &lt;h3 class="field-label"&gt;Date marking(s)&lt;/h3&gt;
+  
+  
+      &lt;div class="field-item"&gt;
+              Best before: MEI 2027 (May 2027)
+          &lt;/div&gt;
+  
+  &lt;/div&gt;
+
+
+&lt;div class="clearfix text-formatted field field-problem field-type-text-long field-label-above"&gt;
+      &lt;h3 class="field-label"&gt;Problem&lt;/h3&gt;
+  
+  
+      &lt;div class="field-item"&gt;
+              &lt;p&gt;&lt;span lang="EN-GB"&gt;The presence of an undeclared allergen (cashew).&lt;/span&gt;&lt;/p&gt;
+
+          &lt;/div&gt;
+  
+  &lt;/div&gt;
+
+
+&lt;div class="clearfix text-formatted field field-food-safety-hazard field-type-text-long field-label-above"&gt;
+      &lt;h3 class="field-label"&gt;Food safety hazard&lt;/h3&gt;
+  
+  
+      &lt;div class="field-item"&gt;
+              &lt;p&gt;&lt;span lang="EN-GB"&gt;Any consumers who have a cashew allergy or intolerance may have a reaction if the product is consumed.&lt;/span&gt;&lt;/p&gt;
+
+          &lt;/div&gt;
+  
+  &lt;/div&gt;
+
+
+&lt;div class="clearfix text-formatted field field-what-to-do field-type-text-long field-label-above"&gt;
+      &lt;h3 class="field-label"&gt;What to do&lt;/h3&gt;
+  
+  
+      &lt;div class="field-item"&gt;
+              &lt;p&gt;&lt;span lang="EN-GB"&gt;Consumers who have a cashew allergy or intolerance should not consume this product. Consumers should return the product(s) to the place of purchase for a full refund. Any consumers concerned about their health should seek medical advice.&lt;/span&gt;&lt;/p&gt;
+
+          &lt;/div&gt;
+  
+  &lt;/div&gt;
+
+
+&lt;div class="field field-document field-type-entity-reference field-label-above"&gt;
+      &lt;h3 class="field-label"&gt;Recall notice&lt;/h3&gt;
+  
+      &lt;div class="field-items"&gt;
+  
+      &lt;div class="field-item"&gt;
+              
+&lt;div class="field field-field-media-file field-type-file field-label-hidden"&gt;
+  
+  
+      &lt;div class="field-item"&gt;
+              &lt;p&gt;&lt;a href="https://example.invalid/recall-notice.pdf" class="file-download file-download-application file-download-pdf" target="_blank" download&gt;Recall notice.pdf&lt;/a&gt;&lt;/p&gt;
+          &lt;/div&gt;
+  
+  &lt;/div&gt;
+
+          &lt;/div&gt;
+  
+      &lt;/div&gt;
+  &lt;/div&gt;
+
+
+</description>
+  <pubDate>Fri, 02 Oct 2026 09:10:50 +0000</pubDate>
+    <dc:creator>staff.member@example.invalid</dc:creator>
+    <guid isPermaLink="false">7218 at https://www.foodstandards.gov.au</guid>
+    </item>
+<item>
+  <title>Lanternleaf Import &amp; Export Pty Ltd - Chả Giò Rế Net Spring Roll Wrapper - 200g</title>
+  <link>https://www.foodstandards.gov.au/food-recalls/recall-alert/lanternleaf-import-export-pty-ltd-cha-gio-re-net-spring-roll-wrapper-200g</link>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Lanternleaf Import &amp;amp; Export Pty Ltd - Chả Giò Rế Net Spring Roll Wrapper - 200g&lt;/span&gt;
+&lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;span lang about="https://www.foodstandards.gov.au/members/0" typeof="schema:Person" property="schema:name" datatype&gt;staff.member@example.invalid&lt;/span&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2026-09-30T15:11:03+10:00" title="Wednesday, 30 September, 2026 - 15:11" class="datetime"&gt;Wed, 30/09/2026 - 15:11&lt;/time&gt;
+&lt;/span&gt;
+
+      &lt;div class="field field-publish-date field-type-datetime"&gt;
+  &lt;div id="publish-date" class="field-label"&gt;
+    Recall published &lt;time datetime="2026-09-30T05:11:03Z" class="datetime"&gt;30 September 2026&lt;/time&gt;
+
+  &lt;/div&gt;
+  &lt;div class="field-label recall-updated-date"&gt;
+          &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="photoswipe-gallery field food-recall-image-display field-food-recall-image field-type-entity-reference field-label-hidden"&gt;
+  
+      &lt;div class="field-items"&gt;
+  
+            &lt;div class="field-item"&gt;
+        &lt;div class="img-thumbnail"&gt;
+            &lt;a href="https://example.invalid/product-image.png" class="photoswipe" data-pswp-width="1024" data-pswp-height="768" data-overlay-title&gt;
+    &lt;img loading="lazy" src="https://example.invalid/product-image.png" width="480" height="360" alt="Product image" typeof="foaf:Image" class="image-style-large"&gt;
+
+
+    &lt;span role="button" aria-label="Expand food recall image to view larger version" aria-expanded="false" aria-controls="food-recall-gallery" tabindex="0"&gt;
+      Click to expand
+    &lt;/span&gt;
+  &lt;/a&gt;
+    
+        &lt;/div&gt;
+      &lt;/div&gt;
+        
+      &lt;/div&gt;
+  &lt;/div&gt;
+
+        &lt;div class="field-bare"&gt;
+        &lt;p&gt;Lanternleaf Import &amp;amp; Export Pty Ltd are conducting a recall of the above product. The product has been available for sale in Asian grocery stores in VIC.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Date Marking: best before 15/03/2029&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;Problem:&amp;nbsp;&lt;/h2&gt;
+&lt;p&gt;The presence of an undeclared allergen (gluten).&lt;/p&gt;
+&lt;h2&gt;Food safety hazard:&amp;nbsp;&lt;/h2&gt;
+&lt;p&gt;Any consumers who have a gluten allergy or intolerance may have a reaction if the product is consumed.&lt;/p&gt;
+&lt;h2&gt;What to do:&amp;nbsp;&lt;/h2&gt;
+&lt;p&gt;Consumers who have a gluten allergy or intolerance should not consume this product. Consumers should return the product to the place of purchase for a full refund. Any consumers concerned about their health should seek medical advice.&lt;/p&gt;
+&lt;h2&gt;For further information please contact:&lt;/h2&gt;
+&lt;p&gt;Example Business Pty Ltd&lt;/p&gt;&lt;p&gt;(00) 0000 0000&lt;/p&gt;&lt;p&gt;&lt;a href="mailto:contact@example.invalid"&gt;contact@example.invalid&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Related Links:&amp;nbsp;&lt;/h2&gt;
+&lt;div&gt;
+  
+  
+      
+&lt;div class="field field-field-media-file field-type-file field-label-visually_hidden"&gt;
+      &lt;h3 class="field-label visually-hidden"&gt;File&lt;/h3&gt;
+  
+  
+      &lt;div class="field-item"&gt;
+              &lt;p&gt;&lt;a href="https://example.invalid/recall-notice.pdf" class="file-download file-download-application file-download-pdf"&gt;Recall notice.pdf&lt;/a&gt;&lt;/p&gt;
+          &lt;/div&gt;
+  
+  &lt;/div&gt;
+
+
+
+&lt;/div&gt;
+
+    &lt;/div&gt;
+    
+
+
+
+
+&lt;div class="field field-location field-type-entity-reference field-label-above"&gt;
+      &lt;h3 class="field-label"&gt;Distributed in&lt;/h3&gt;
+  
+      &lt;div class="field-items"&gt;
+  
+      &lt;div class="field-item"&gt;
+              VIC
+          &lt;/div&gt;
+  
+      &lt;/div&gt;
+  &lt;/div&gt;
+
+
+&lt;div class="field field-recall-type field-type-entity-reference field-label-above"&gt;
+      &lt;h3 class="field-label"&gt;Recall reason&lt;/h3&gt;
+  
+  
+      &lt;div class="field-item--allergen field-item"&gt;
+              Undeclared allergen
+          &lt;/div&gt;
+  
+  &lt;/div&gt;
+
+
+</description>
+  <pubDate>Wed, 30 Sep 2026 05:11:03 +0000</pubDate>
+    <dc:creator>staff.member@example.invalid</dc:creator>
+    <guid isPermaLink="false">7217 at https://www.foodstandards.gov.au</guid>
+    </item>
+<item>
+  <title>Cellar Lane 1987 - Brie Petit Coteau - 1Kg</title>
+  <link>https://www.foodstandards.gov.au/food-recalls/recall-alert/cellar-lane-1987-brie-petit-coteau-1kg</link>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Cellar Lane 1987 - Brie Petit Coteau - 1Kg&lt;/span&gt;
+&lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;span lang about="https://www.foodstandards.gov.au/members/0" typeof="schema:Person" property="schema:name" datatype&gt;staff.member@example.invalid&lt;/span&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2026-09-04T12:57:08+10:00" title="Friday, 4 September, 2026 - 12:57" class="datetime"&gt;Fri, 04/09/2026 - 12:57&lt;/time&gt;
+&lt;/span&gt;
+
+      &lt;div class="field field-publish-date field-type-datetime"&gt;
+  &lt;div id="publish-date" class="field-label"&gt;
+    Recall published &lt;time datetime="2026-09-04T02:57:08Z" class="datetime"&gt;4 September 2026&lt;/time&gt;
+
+  &lt;/div&gt;
+  &lt;div class="field-label recall-updated-date"&gt;
+          &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="photoswipe-gallery field food-recall-image-display field-food-recall-image field-type-entity-reference field-label-hidden"&gt;
+  
+      &lt;div class="field-items"&gt;
+  
+            &lt;div class="field-item"&gt;
+        &lt;div class="img-thumbnail"&gt;
+            &lt;a href="https://example.invalid/product-image.png" class="photoswipe" data-pswp-width="1024" data-pswp-height="768" data-overlay-title&gt;
+    &lt;img loading="lazy" src="https://example.invalid/product-image.png" width="480" height="360" alt="Product image" typeof="foaf:Image" class="image-style-large"&gt;
+
+
+    &lt;span role="button" aria-label="Expand food recall image to view larger version" aria-expanded="false" aria-controls="food-recall-gallery" tabindex="0"&gt;
+      Click to expand
+    &lt;/span&gt;
+  &lt;/a&gt;
+    
+        &lt;/div&gt;
+      &lt;/div&gt;
+        
+      &lt;/div&gt;
+  &lt;/div&gt;
+
+        &lt;div class="field-bare"&gt;
+        &lt;p&gt;Cellar Lane 1987 are conducting a recall of the above product. The product has been available for sale at independent grocers in SA.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;span lang="EN-GB"&gt;&lt;strong&gt;Date Marking:&amp;nbsp;Best Before 13/10/2026&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;Problem:&amp;nbsp;&lt;/h2&gt;
+&lt;p&gt;Potential microbial (&lt;em&gt;Listeria monocytogenes&lt;/em&gt;) contamination.&amp;nbsp;&lt;/p&gt;
+&lt;h2&gt;Food safety hazard:&amp;nbsp;&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Listeria monocytogenes&lt;/em&gt; may cause severe illness in pregnant women, unborn babies, neonates, the elderly, and immunocompromised individuals. The general population can also become ill from consuming food contaminated with &lt;em&gt;Listeria monocytogenes&lt;/em&gt;.&amp;nbsp;&lt;/p&gt;
+&lt;h2&gt;What to do:&amp;nbsp;&lt;/h2&gt;
+&lt;p&gt;Consumers should not eat this product. Consumers should return the product to the place of purchase for a full refund. Any consumers concerned about their health should seek medical advice.&amp;nbsp;&lt;/p&gt;
+&lt;h2&gt;For further information please contact:&lt;/h2&gt;
+&lt;p&gt;Example Business Pty Ltd&lt;/p&gt;&lt;p&gt;(00) 0000 0000&lt;/p&gt;&lt;p&gt;&lt;a href="mailto:contact@example.invalid"&gt;contact@example.invalid&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Related Links:&lt;/h2&gt;
+&lt;div&gt;
+  
+  
+      
+&lt;div class="field field-field-media-file field-type-file field-label-visually_hidden"&gt;
+      &lt;h3 class="field-label visually-hidden"&gt;File&lt;/h3&gt;
+  
+  
+      &lt;div class="field-item"&gt;
+              &lt;p&gt;&lt;a href="https://example.invalid/recall-notice.pdf" class="file-download file-download-application file-download-pdf"&gt;Recall notice.pdf&lt;/a&gt;&lt;/p&gt;
+          &lt;/div&gt;
+  
+  &lt;/div&gt;
+
+
+
+&lt;/div&gt;
+
+    &lt;/div&gt;
+    
+
+
+
+
+&lt;div class="field field-location field-type-entity-reference field-label-above"&gt;
+      &lt;h3 class="field-label"&gt;Distributed in&lt;/h3&gt;
+  
+      &lt;div class="field-items"&gt;
+  
+      &lt;div class="field-item"&gt;
+              SA
+          &lt;/div&gt;
+  
+      &lt;/div&gt;
+  &lt;/div&gt;
+
+
+&lt;div class="field field-recall-type field-type-entity-reference field-label-above"&gt;
+      &lt;h3 class="field-label"&gt;Recall reason&lt;/h3&gt;
+  
+  
+      &lt;div class="field-item"&gt;
+              Microbial contamination
+          &lt;/div&gt;
+  
+  &lt;/div&gt;
+
+
+</description>
+  <pubDate>Fri, 04 Sep 2026 02:57:08 +0000</pubDate>
+    <dc:creator>staff.member@example.invalid</dc:creator>
+    <guid isPermaLink="false">7091 at https://www.foodstandards.gov.au</guid>
+    </item>
+</channel>
+</rss>

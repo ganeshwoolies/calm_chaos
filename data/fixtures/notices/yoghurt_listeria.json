@@ -1,0 +1,42 @@
+{
+  "candidate_id": "recall:yoghurt_listeria",
+  "kind": "recall",
+  "product_id": "P48812",
+  "hazard_type": "microbial",
+  "title_hint": "Morrowdale Vanilla Yoghurt 1kg batch B2026-091 Listeria recall",
+  "prior_incidents": [],
+  "notice": {
+    "guid": "FICTIONAL-TEST:fsanz:yoghurt_listeria",
+    "feed": "test",
+    "title": "FICTIONAL TEST: Morrowdale Vanilla Yoghurt 1kg",
+    "url": "https://example.test/notices/yoghurt-listeria",
+    "published_at": "2026-10-15T09:00:00+11:00",
+    "extract": {
+      "product_name": "Vanilla Yoghurt",
+      "brand": "Morrowdale",
+      "sizes": [
+        "1kg"
+      ],
+      "batch_codes": [
+        "B2026-091"
+      ],
+      "date_codes": [
+        {
+          "kind": "best_before",
+          "from": "2026-10-30",
+          "to": "2026-10-30"
+        }
+      ],
+      "hazard_type": "microbial",
+      "hazard_detail": "Listeria monocytogenes",
+      "consumer_action": "Do not eat. Return to the place of purchase for a full refund.",
+      "summary": "Possible Listeria contamination in one batch of 1kg vanilla yoghurt."
+    }
+  },
+  "match": {
+    "method": "embedding",
+    "distance": 0.08,
+    "confirmed": true
+  },
+  "fixture_receipt_id": "rcpt-fixture-yoghurt-0001"
+}

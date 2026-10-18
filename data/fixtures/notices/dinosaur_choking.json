@@ -1,0 +1,36 @@
+{
+  "candidate_id": "recall:dinosaur_choking",
+  "kind": "recall",
+  "product_id": "P50211",
+  "hazard_type": "choking",
+  "title_hint": "Toddlewick Light-Up Dinosaur 1 unit batch L2026-0310 Detachable horn recall",
+  "prior_incidents": [],
+  "notice": {
+    "guid": "FICTIONAL-TEST:eval:dinosaur_choking",
+    "feed": "test",
+    "title": "FICTIONAL TEST: Toddlewick Light-Up Dinosaur 1 unit",
+    "url": "https://example.test/notices/dinosaur-choking",
+    "published_at": "2026-10-16T00:00:00+00:00",
+    "extract": {
+      "product_name": "Light-Up Dinosaur",
+      "brand": "Toddlewick",
+      "sizes": [
+        "1 unit"
+      ],
+      "batch_codes": [
+        "L2026-0310"
+      ],
+      "date_codes": [],
+      "hazard_type": "choking",
+      "hazard_detail": "Detachable horn",
+      "consumer_action": "Stop using the product and return it to the place of purchase for a full refund.",
+      "summary": "Possible a detachable horn that is a choking hazard for young children in one batch of Toddlewick Light-Up Dinosaur 1 unit."
+    }
+  },
+  "match": {
+    "method": "embedding",
+    "distance": 0.1,
+    "confirmed": true
+  },
+  "fixture_receipt_id": "rcpt-fixture-dinosaur-choking"
+}

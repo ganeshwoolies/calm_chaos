@@ -1,0 +1,42 @@
+{
+  "candidate_id": "recall:eval_foreign_matter",
+  "kind": "recall",
+  "product_id": "P10031",
+  "hazard_type": "foreign_matter",
+  "title_hint": "Wattle Creek Dairy Value Light Milk 2L batch B2026-366 Pieces of hard blue plastic recall",
+  "prior_incidents": [],
+  "notice": {
+    "guid": "FICTIONAL-TEST:eval:eval_foreign_matter",
+    "feed": "test",
+    "title": "FICTIONAL TEST: Wattle Creek Dairy Value Light Milk 2L",
+    "url": "https://example.test/notices/eval-foreign-matter",
+    "published_at": "2026-10-16T00:00:00+00:00",
+    "extract": {
+      "product_name": "Value Light Milk",
+      "brand": "Wattle Creek Dairy",
+      "sizes": [
+        "2L"
+      ],
+      "batch_codes": [
+        "B2026-366"
+      ],
+      "date_codes": [
+        {
+          "kind": "best_before",
+          "from": "2026-10-27",
+          "to": "2026-10-27"
+        }
+      ],
+      "hazard_type": "foreign_matter",
+      "hazard_detail": "Pieces of hard blue plastic",
+      "consumer_action": "Do not eat. Return the product to the place of purchase for a full refund.",
+      "summary": "Possible small pieces of hard blue plastic in the product in one batch of Wattle Creek Dairy Value Light Milk 2L."
+    }
+  },
+  "match": {
+    "method": "embedding",
+    "distance": 0.1,
+    "confirmed": true
+  },
+  "fixture_receipt_id": "rcpt-fixture-eval-foreign-matter"
+}

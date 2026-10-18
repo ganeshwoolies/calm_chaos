@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#dbe8ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f2f3f" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23ff6b57'/%3E%3Cstop offset='.52' stop-color='%233d8bff'/%3E%3Cstop offset='1' stop-color='%232bd4a0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='24' height='24' rx='6' fill='%230f2f3f'/%3E%3Cpath d='M12 3.4 18.6 5.9v4.9c0 4.1-2.8 7.3-6.6 8.7-3.8-1.4-6.6-4.6-6.6-8.7V5.9z' fill='url(%23g)'/%3E%3Cpath d='M8.9 12.1l2.2 2.2 4.1-4.4' fill='none' stroke='%230f2f3f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<title>Product Safety Desk · store</title>
+<style>
+  /* The bar follows the device like the page: white in light, navy in dark. The spectrum runs coral to mint, chaos to
+     calm, and carries the brand in both modes on the mark, the hairline, the eyebrow and the active tab. */
+  :root {
+    color-scheme: light dark;
+    --bg: #f3f6f8; --surface: #ffffff; --surface-2: #e8eef2; --text: #14212b; --muted: #56697a; --line: #d7e0e6;
+    --accent: #1f6fe0; --accent-text: #ffffff; --accent-soft: #e4eeff; --focus: #7fb2ff;
+    --bar-bg: linear-gradient(90deg, #ffe3de, #dbe8ff 52%, #d5f5e9); --bar-text: #14212b; --bar-muted: #4b5f70; --bar-line: #c3d0db; --mark: #1f6fe0;
+    --tab-bg: rgba(255, 255, 255, 0.8); --sky-1: rgba(255, 107, 87, 0.30); --sky-2: rgba(61, 139, 255, 0.30); --sky-3: rgba(43, 212, 160, 0.30);
+    --spectrum: linear-gradient(90deg, #ff6b57 0%, #3d8bff 52%, #2bd4a0 100%);
+    --red-bg: #fbe3e1; --red: #9b1c16; --amber-bg: #fcefd2; --amber: #7f5200; --green-bg: #dff3e6; --green: #1b6a3a;
+    --grey-bg: #e6ecf0; --grey: #56697a; --purple-bg: #ece4fa; --purple: #5a3a9a;
+    --shadow: 0 1px 2px rgba(15, 47, 63, 0.08); --shadow-hover: 0 8px 20px rgba(15, 47, 63, 0.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d161d; --surface: #142129; --surface-2: #1c2c36; --text: #e6edf2; --muted: #94a7b5; --line: #263945;
+      --accent: #7fb2ff; --accent-text: #061a33; --accent-soft: #16304f; --focus: #a9c9ff;
+      --bar-bg: linear-gradient(90deg, rgba(255, 107, 87, 0.16), rgba(61, 139, 255, 0.16) 52%, rgba(43, 212, 160, 0.16)), #0f2f3f; --bar-text: #ffffff; --bar-muted: #a9c3cf; --bar-line: #24536a; --mark: #7fb2ff;
+      --tab-bg: rgba(255, 255, 255, 0.10); --sky-1: rgba(255, 107, 87, 0.22); --sky-2: rgba(61, 139, 255, 0.26); --sky-3: rgba(43, 212, 160, 0.22);
+      --spectrum: linear-gradient(90deg, #ff7f6b 0%, #5a9dff 52%, #3fe3b2 100%);
+      --red-bg: #4a211e; --red: #ffb3ab; --amber-bg: #46340a; --amber: #ffd27a; --green-bg: #173d28; --green: #8fdcae;
+      --grey-bg: #263945; --grey: #b3c2cc; --purple-bg: #392a5c; --purple: #d3bfff;
+      --shadow: none; --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.45);
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  html { background: var(--bg); }
+  /* The page opens under a faint spectrum sky that scrolls away with the top of the document. */
+  body { margin: 0; min-height: 100vh; color: var(--text); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-variant-numeric: tabular-nums;
+    background: radial-gradient(1100px 560px at -6% 0%, var(--sky-1), transparent 64%), radial-gradient(1100px 560px at 56% -10%, var(--sky-2), transparent 64%),
+      radial-gradient(1100px 560px at 106% 0%, var(--sky-3), transparent 64%), var(--bg); background-repeat: no-repeat; }
+  h1 { font-size: 1.125rem; font-weight: 650; margin: 0; white-space: nowrap; }
+  h2 { font-size: 1.25rem; line-height: 1.3; margin: 0 0 8px; }
+  h3 { font-size: 1.0625rem; margin: 0 0 6px; }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 20px; }
+  li { margin: 3px 0; overflow-wrap: anywhere; }
+  .muted { color: var(--muted); }
+  .red { color: var(--red); }
+  .amber { color: var(--amber); }
+  .green { color: var(--green); }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 0 16px; }
+
+  button, select, input { font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; min-height: 44px; max-width: 100%; }
+  input[type="radio"] { width: 22px; height: 22px; min-height: 0; padding: 0; margin: 0; accent-color: var(--accent); }
+  button { cursor: pointer; font-weight: 600; background: var(--surface-2); border-color: transparent; transition: background-color 0.12s, box-shadow 0.12s, filter 0.12s; }
+  button.primary { background: var(--accent); color: var(--accent-text); box-shadow: 0 2px 10px rgba(61, 139, 255, 0.35); }
+  button.primary:hover:not(:disabled) { filter: brightness(1.08); }
+  button.ghost:hover:not(:disabled) { border-color: var(--accent); }
+  .icon { width: 18px; height: 18px; flex: 0 0 auto; }
+  button.ghost { background: transparent; border-color: var(--line); }
+  button.big { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 52px; font-size: 1.0625rem; }
+  button.big .icon { width: 20px; height: 20px; }
+  button:disabled { opacity: 0.55; cursor: wait; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+  .badge { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 0.8125rem; font-weight: 600; line-height: 1.4; white-space: nowrap; background: var(--grey-bg); color: var(--grey); vertical-align: middle; }
+  .badge.red { background: var(--red-bg); color: var(--red); }
+  .badge.amber { background: var(--amber-bg); color: var(--amber); }
+  .badge.green { background: var(--green-bg); color: var(--green); }
+
+  .bar { position: sticky; top: 0; z-index: 5; background: var(--bar-bg); color: var(--bar-text); box-shadow: var(--shadow); }
+  .bar .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 0 16px; min-height: 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; margin: 0 auto 0 0; min-height: 56px; min-width: 0; font-size: 1rem; white-space: normal; }
+  .mark { flex: 0 0 auto; width: 30px; height: 30px; }
+  .lockup { display: grid; line-height: 1.15; min-width: 0; }
+  .lockup .eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.02em; color: var(--mark); }
+  @supports (background-clip: text) or (-webkit-background-clip: text) {
+    .lockup .eyebrow { background: var(--spectrum); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  }
+  .spectrum { height: 3px; background: var(--spectrum); }
+  .lockup .name { font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .store { flex: 1 0 100%; padding-bottom: 10px; font-size: 0.9375rem; color: var(--bar-muted); overflow-wrap: anywhere; }
+  .store strong { color: var(--bar-text); }
+  .strip { background: var(--surface-2); border-bottom: 1px solid var(--line); color: var(--muted); font-size: 0.9375rem; padding: 8px max(16px, calc(50% - 304px)); overflow-wrap: anywhere; }
+
+  main .wrap { padding-top: 16px; padding-bottom: 32px; }
+  section { margin-bottom: 28px; }
+  .lede { color: var(--muted); font-size: 0.9375rem; margin-bottom: 12px; }
+  .empty { color: var(--muted); text-align: center; padding: 20px 12px; margin: 0; border: 1px dashed var(--line); border-radius: 12px; }
+  .cards { display: grid; gap: 10px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px; box-shadow: var(--shadow); }
+  /* The left edge carries the incident's severity. */
+  .card.task { border-left-width: 4px; }
+  .card[data-severity="critical"] { border-left-color: var(--red); }
+  .card[data-severity="high"], .card[data-severity="medium"] { border-left-color: var(--amber); }
+  .card[data-severity="low"] { border-left-color: var(--grey); }
+  .card-head { display: flex; align-items: flex-start; gap: 12px; }
+  .row-main { flex: 1 1 auto; min-width: 0; }
+  .row-title { font-weight: 600; overflow-wrap: anywhere; }
+  .meta { color: var(--muted); font-size: 0.875rem; margin-top: 2px; overflow-wrap: anywhere; }
+  .note { color: var(--muted); font-size: 0.9375rem; margin: 10px 0 0; }
+  .card .big { margin-top: 12px; }
+  .status { color: var(--muted); font-size: 0.9375rem; min-height: 1.5em; margin-top: 8px; overflow-wrap: anywhere; }
+  .status:empty { display: none; }
+  #preview { display: block; max-width: 100%; max-height: 320px; margin: 12px auto 0; border-radius: 8px; border: 1px solid var(--line); }
+  #preview[hidden], #check[hidden] { display: none; }
+  .result { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-top: 12px; background: var(--surface-2); }
+  .result form { display: grid; gap: 4px; margin-top: 8px; }
+  label.option { display: flex; align-items: center; gap: 10px; min-height: 44px; }
+  footer { max-width: 640px; margin: 0 auto; padding: 24px 16px 32px; color: var(--muted); font-size: 0.8125rem; text-align: center; }
+
+  @media (min-width: 720px) {
+    .store { flex: 1 1 auto; padding-bottom: 0; text-align: right; }
+  }
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <h1 class="brand"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><defs><linearGradient id="spectrum-mark" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff6b57"/><stop offset=".52" stop-color="#3d8bff"/><stop offset="1" stop-color="#2bd4a0"/></linearGradient></defs><path d="M12 2.2 20.2 5.3v5.9c0 5-3.4 8.9-8.2 10.6C7.2 20.1 3.8 16.2 3.8 11.2V5.3z" fill="url(#spectrum-mark)"/><path d="M8.2 12.1l2.6 2.6 5-5.4" fill="none" stroke="var(--bar-bg)" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lockup"><span class="eyebrow">CalmChaosRetail</span><span class="name">Product Safety Desk</span></span></h1>
+    <div class="store" id="store-name">Opening the store link…</div>
+  </div>
+  <div class="spectrum" aria-hidden="true"></div>
+  <div class="strip" id="link-status" role="status" aria-live="polite" hidden></div>
+</header>
+<main>
+  <div class="wrap">
+    <section aria-labelledby="tasks-title">
+      <h2 id="tasks-title">Tasks at this store</h2>
+      <p class="lede">Take the stock off the shelf, then photograph the shelf where the product is displayed. Gemini checks
+        the photo; a task closes only when no unit is left on the shelf.</p>
+      <input id="shelf-photo" type="file" accept="image/*" capture="environment" aria-label="Shelf photo" hidden>
+      <div id="tasks" class="cards"><p class="empty">No open tasks.</p></div>
+      <div class="status" id="tasks-status" role="status" aria-live="polite"></div>
+    </section>
+
+    <section aria-labelledby="label-title">
+      <h2 id="label-title">Check a label</h2>
+      <div class="card">
+        <p class="lede">Photograph the back of the pack, flat and without glare, so the ingredients, warnings and lot can be read.</p>
+        <input id="photo" type="file" accept="image/*" capture="environment" aria-label="Label photo" hidden>
+        <button class="primary big" id="pick"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h4l2-3h4l2 3h4v12H4zM12 17a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>Photograph the label</button>
+        <img id="preview" alt="The label photo to check" hidden>
+        <button class="primary big" id="check" disabled hidden>Check this label</button>
+        <div class="status" id="label-status" role="status" aria-live="polite"></div>
+        <div id="result"></div>
+      </div>
+    </section>
+  </div>
+</main>
+<footer>Built with Gemini on Google Cloud. A fictional retailer (CalmChaosRetail) and fictional products. Nothing is sent and no stock moves.
+  An independent hackathon entry, not affiliated with or endorsed by any retailer, FSANZ or the ACCC.</footer>
+<script>
+  "use strict";
+  const MAX_SIDE = 1600;
+  const RULE_WORDS = {
+    allergen_undeclared_on_pack: "Allergen in the spec is missing from the pack",
+    allergen_missing_in_listing: "Allergen on the pack is missing from the online listing",
+    allergen_extra_in_listing: "Allergen in the listing is on neither the pack nor the spec",
+    warning_missing_on_pack: "Warning the spec requires is missing from the pack",
+    warning_missing_in_listing: "Warning on the pack is missing from the online listing",
+    mark_missing_on_pack: "Compliance mark the spec requires is missing from the pack",
+    ingredients_differ: "Ingredients differ from the spec",
+    origin_differs: "Origin differs from the online listing",
+  };
+  const STATUS_WORDS = { verified_clear: "clear", not_clear: "not clear", retake: "retake", open: "open" };
+  const TONE = { verified_clear: "green", checked: "green", not_clear: "red", critical: "red", open: "amber", retake: "amber", high: "amber", medium: "amber" };
+  // The store link names the store in its query and carries the store's token in its fragment, never sent to a server.
+  const STORE = new URLSearchParams(location.search).get("store") || "";
+  const TOKEN = new URLSearchParams(location.hash.replace(/^#/, "")).get("token") || "";
+  let photo = null;
+  let busy = false;
+  let linked = false;
+  // The task the next shelf photo is for. One file input serves every task, so a redraw never drops a chosen photo.
+  let photoTask = null;
+  // What the last shelf photo for each task came back with, redrawn under its card.
+  const taskMessages = new Map();
+  const SHELF_WORDS = {
+    verified_clear: "Clear: no unit is left on the shelf. The task is closed.",
+    not_clear: "Not clear: stock is still on the shelf. Take it off, then photograph the shelf again.",
+    retake: "Retake: the photo could not be checked with enough confidence. Take another, steady and without glare.",
+  };
+
+  function el(tag, attrs, ...children) {
+    const node = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs || {})) {
+      if (k === "class") node.className = v; else if (v !== undefined && v !== null) node.setAttribute(k, v);
+    }
+    for (const c of children) if (c !== null && c !== undefined) node.append(c instanceof Node ? c : String(c));
+    return node;
+  }
+  function badge(value, text) { return el("span", { class: "badge " + (TONE[value] || "grey") }, text ?? (STATUS_WORDS[value] || value.replace("_", " "))); }
+  function camera() {
+    const ns = "http://www.w3.org/2000/svg";
+    const node = document.createElementNS(ns, "svg");
+    for (const [k, v] of Object.entries({ class: "icon", viewBox: "0 0 24 24", "aria-hidden": "true", fill: "none", stroke: "currentColor",
+      "stroke-width": "2", "stroke-linecap": "round", "stroke-linejoin": "round" })) node.setAttribute(k, v);
+    const path = document.createElementNS(ns, "path");
+    path.setAttribute("d", "M4 8h4l2-3h4l2 3h4v12H4zM12 17a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z");
+    node.append(path);
+    return node;
+  }
+  // A target is an element id, or task:<task_id> for the line under that task's card.
+  function say(target, text) {
+    if (target.startsWith("task:")) {
+      const id = target.slice(5);
+      if (text) taskMessages.set(id, text); else taskMessages.delete(id);
+      const line = document.querySelector(`[data-task="${CSS.escape(id)}"]`);
+      if (line) line.textContent = text;
+      return;
+    }
+    const node = document.getElementById(target);
+    node.textContent = text;
+    if (node.classList.contains("strip")) node.hidden = !text;
+  }
+
+  async function api(method, path, body) {
+    const response = await fetch("/store/api" + path, {
+      method,
+      headers: { "Content-Type": "application/json", "X-Store-Id": STORE, "X-Store-Token": TOKEN },
+      body: body === undefined ? undefined : JSON.stringify(body),
+    });
+    if (!response.ok) {
+      const text = await response.text();
+      let detail = text;
+      try { detail = JSON.parse(text).detail || text; } catch (e) { /* not JSON */ }
+      throw new Error(String(detail).slice(0, 300));
+    }
+    return response.json();
+  }
+
+  // The photo is shrunk in the browser: a phone camera's full size is not needed to read a label.
+  function shrink(file) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => {
+        const scale = Math.min(1, MAX_SIDE / Math.max(img.naturalWidth, img.naturalHeight));
+        const canvas = document.createElement("canvas");
+        canvas.width = Math.round(img.naturalWidth * scale);
+        canvas.height = Math.round(img.naturalHeight * scale);
+        canvas.getContext("2d").drawImage(img, 0, 0, canvas.width, canvas.height);
+        URL.revokeObjectURL(img.src);
+        resolve(canvas.toDataURL("image/jpeg", 0.88));
+      };
+      img.onerror = () => reject(new Error("That file is not an image this browser can open."));
+      img.src = URL.createObjectURL(file);
+    });
+  }
+
+  function findingItem(f) {
+    return el("li", {}, badge(f.severity), " ", (RULE_WORDS[f.rule] || f.rule) + ": " + f.value);
+  }
+
+  function showResult(r) {
+    const box = document.getElementById("result");
+    box.replaceChildren();
+    const card = el("div", { class: "result" });
+    if (r.status === "retake") {
+      card.append(el("h3", { class: "amber" }, "Retake the photo"),
+        el("p", {}, "The label could not be read clearly enough (legibility " + (r.legibility ?? 0).toFixed(2) +
+          "). Hold the pack flat, avoid glare and fill the frame."));
+    } else if (r.status === "needs_product") {
+      card.append(el("h3", { class: "amber" }, "Which product is this?"),
+        el("p", { class: "muted" }, "The label matched no product closely enough. Pick the one in your hand."));
+      const form = el("form");
+      r.options.forEach((o, i) => form.append(el("label", { class: "option" },
+        el("input", { type: "radio", name: "product", value: o.product_id, ...(i === 0 ? { checked: "" } : {}) }), o.label)));
+      form.append(el("button", { class: "primary", type: "submit" }, "Use this product"));
+      form.onsubmit = (event) => {
+        event.preventDefault();
+        const picked = form.querySelector("input[name=product]:checked");
+        if (picked) act("label-status", "Comparing with the listing and the spec…",
+          () => api("POST", `/labels/${r.check_id}/product`, { product_id: picked.value }).then(showResult));
+      };
+      card.append(form);
+    } else {
+      card.append(el("h3", {}, r.product ? r.product.label : "Label checked"),
+        el("p", { class: "muted" }, `Lot ${r.lot || "unreadable"} · matched by ${(r.match && r.match.method) || "-"} · check ${r.check_id}`));
+      if (!r.findings.length) {
+        card.append(el("p", { class: "green" }, "Checked: the pack matches the online listing and the supplier spec."));
+      } else {
+        card.append(el("ul", {}, ...r.findings.map(findingItem)));
+        card.append(el("p", {}, r.candidate_id
+          ? "Sent to the coordinator as a " + r.max_severity + " label incident. Any hold for this store will appear under Tasks."
+          : "Recorded as a minor finding for the coordinator."));
+      }
+    }
+    box.append(card);
+  }
+
+  async function act(target, label, fn) {
+    if (busy) { say(target, "One action at a time: wait for the current one to finish."); return; }
+    busy = true;
+    document.querySelectorAll("button").forEach(b => b.disabled = true);
+    say(target, label);
+    try { const said = await fn(); say(target, typeof said === "string" ? said : ""); }
+    catch (e) { say(target, e.message); }
+    finally {
+      busy = false;
+      document.querySelectorAll("button").forEach(b => b.disabled = false);
+      document.getElementById("check").disabled = !photo || !linked;
+      refreshTasks();
+    }
+  }
+
+  function taskCard(t) {
+    const card = el("article", { class: "card task" });
+    card.dataset.severity = (t.incident && t.incident.severity) || "";
+    const product = (t.incident && (t.incident.product_name || t.incident.title)) || "-";
+    const meta = [t.kind, t.code, t.aisle ? "aisle " + t.aisle : null, `${t.qty_on_hand ?? "-"} on hand`].filter(Boolean).join(" · ");
+    card.append(el("div", { class: "card-head" },
+      el("div", { class: "row-main" }, el("div", { class: "row-title" }, product), el("div", { class: "meta" }, meta)), badge(t.status)));
+    const message = taskMessages.get(t.task_id);
+    if (t.note && t.status !== "open" && !message) card.append(el("p", { class: "note" }, t.note));
+    if (t.status === "open") {
+      const shoot = el("button", { class: "primary big" }, camera(), "Photograph the shelf");
+      shoot.onclick = () => {
+        if (busy) { say("tasks-status", "One action at a time: wait for the current one to finish."); return; }
+        photoTask = t;
+        const input = document.getElementById("shelf-photo");
+        input.value = "";
+        input.click();
+      };
+      card.append(shoot);
+    }
+    card.append(el("div", { class: "status", "data-task": t.task_id, role: "status", "aria-live": "polite" }, message || ""));
+    return card;
+  }
+
+  function renderTasks(list) {
+    document.getElementById("tasks").replaceChildren(...(list.length ? list.map(taskCard) : [el("p", { class: "empty" }, "No tasks for this store.")]));
+  }
+
+  // A refresh clears only an error it showed itself: the result of the store's last action stays on screen.
+  let refreshError = "";
+  async function refreshTasks() {
+    if (busy || !linked) return;
+    try {
+      const list = await api("GET", "/tasks");
+      if (busy) return;
+      renderTasks(list);
+      if (refreshError && document.getElementById("tasks-status").textContent === refreshError) say("tasks-status", "");
+      refreshError = "";
+    } catch (e) { refreshError = e.message; say("tasks-status", e.message); }
+  }
+
+  async function start() {
+    if (!STORE) { say("store-name", "This page opens from a store link, which the coordinator page gives out."); return; }
+    try {
+      const me = await api("GET", "/me");
+      linked = true;
+      document.getElementById("store-name").replaceChildren(el("strong", {}, me.store_id), ` · ${me.name} (${me.state})`);
+      document.getElementById("check").disabled = !photo;
+      refreshTasks();
+      listen();
+    } catch (e) {
+      say("store-name", "This store link does not open a store.");
+      say("link-status", e.message);
+    }
+  }
+
+  // On Firebase Hosting the store link is exchanged for a token that lets this page listen to its own store's tasks,
+  // so a task issued or closed elsewhere shows at once. Anywhere else, or if that fails, the page keeps polling.
+  const FIREBASE_SDK = "https://www.gstatic.com/firebasejs/10.12.2/";
+  let listening = false;
+  function loadScript(src) {
+    return new Promise((resolve, reject) => {
+      const s = document.createElement("script");
+      s.src = src; s.onload = resolve; s.onerror = () => reject(new Error("Could not load " + src));
+      document.head.append(s);
+    });
+  }
+  async function listen() {
+    try {
+      const r = await fetch("/__/firebase/init.json");
+      if (!r.ok) return;
+      const config = await r.json();
+      for (const name of ["firebase-app-compat.js", "firebase-auth-compat.js", "firebase-firestore-compat.js"]) await loadScript(FIREBASE_SDK + name);
+      // An app of its own per store: its sign-in never signs out a coordinator or another store in another tab.
+      const app = firebase.initializeApp(config, "store-" + STORE);
+      const { token } = await api("POST", "/firebase-token");
+      await app.auth().signInWithCustomToken(token);
+      let timer = null;
+      app.firestore().collection("psd_tasks").where("store_id", "==", STORE).onSnapshot(
+        () => { clearTimeout(timer); timer = setTimeout(refreshTasks, 400); },
+        () => { listening = false; });
+      listening = true;
+    } catch (e) { listening = false; }
+  }
+
+  document.getElementById("pick").onclick = () => {
+    const input = document.getElementById("photo");
+    input.value = "";
+    input.click();
+  };
+  document.getElementById("photo").onchange = async (event) => {
+    const file = event.target.files && event.target.files[0];
+    const check = document.getElementById("check");
+    photo = null;
+    check.disabled = true;
+    document.getElementById("result").replaceChildren();
+    if (!file) return;
+    try {
+      photo = await shrink(file);
+      const preview = document.getElementById("preview");
+      preview.src = photo;
+      preview.hidden = false;
+      check.hidden = false;
+      check.disabled = busy || !linked;
+      document.getElementById("pick").replaceChildren(camera(), "Photograph the label again");
+      document.getElementById("pick").className = "ghost big";
+      say("label-status", "");
+    } catch (e) { say("label-status", e.message); }
+  };
+  document.getElementById("shelf-photo").onchange = async (event) => {
+    const file = event.target.files && event.target.files[0];
+    const task = photoTask;
+    photoTask = null;
+    if (!file || !task) return;
+    let image;
+    try { image = await shrink(file); } catch (e) { say("tasks-status", e.message); return; }
+    act(`task:${task.task_id}`, `Checking the shelf for ${task.code} with Gemini…`, async () => {
+      const out = await api("POST", `/tasks/${task.task_id}/photo`, { image_base64: image.split(",", 2)[1], mime_type: "image/jpeg" });
+      renderTasks(out.tasks);
+      const seen = out.check && out.check.reason ? ` (${out.check.reason})` : "";
+      return (SHELF_WORDS[out.verdict] || out.verdict) + seen;
+    });
+  };
+  document.getElementById("check").onclick = () => {
+    if (!photo) return;
+    act("label-status", "Reading the label with Gemini and comparing it with the listing and the spec…", () =>
+      api("POST", "/labels", { image_base64: photo.split(",", 2)[1], mime_type: "image/jpeg" }).then(showResult));
+  };
+  // With Firestore listening, a poll only backs it up.
+  let polls = 0;
+  setInterval(() => { polls += 1; if (!listening || polls % 6 === 0) refreshTasks(); }, 10000);
+  start();
+</script>
+</body>
+</html>

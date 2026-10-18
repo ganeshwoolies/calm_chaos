@@ -1,0 +1,18 @@
+name: product-safety-desk
+acli_version: 1.10.0
+agent_directory: app
+region: us-central1
+base_template: adk
+generated_at: '2026-10-15T18:20:27.658082+00:00'
+language: python
+framework: google-adk
+create_params:
+  root_agent_name: product_safety_desk
+  deployment_target: cloud_run
+  session_type: agent_platform_sessions
+  cicd_runner: skip
+  is_a2a: true
+  agent_gateway: false
+  agent_guidance_filename: AGENTS.md
+  agent_runtime:
+    identity_default: agent_identity

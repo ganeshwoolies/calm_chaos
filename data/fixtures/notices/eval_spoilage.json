@@ -1,0 +1,42 @@
+{
+  "candidate_id": "recall:eval_spoilage",
+  "kind": "recall",
+  "product_id": "P10042",
+  "hazard_type": "spoilage",
+  "title_hint": "Saltbush Snacks Value Salt & Vinegar Potato Chips 175g batch B2026-399 Faulty seal recall",
+  "prior_incidents": [],
+  "notice": {
+    "guid": "FICTIONAL-TEST:eval:eval_spoilage",
+    "feed": "test",
+    "title": "FICTIONAL TEST: Saltbush Snacks Value Salt & Vinegar Potato Chips 175g",
+    "url": "https://example.test/notices/eval-spoilage",
+    "published_at": "2026-10-16T00:00:00+00:00",
+    "extract": {
+      "product_name": "Value Salt & Vinegar Potato Chips",
+      "brand": "Saltbush Snacks",
+      "sizes": [
+        "175g"
+      ],
+      "batch_codes": [
+        "B2026-399"
+      ],
+      "date_codes": [
+        {
+          "kind": "best_before",
+          "from": "2027-04-13",
+          "to": "2027-04-13"
+        }
+      ],
+      "hazard_type": "spoilage",
+      "hazard_detail": "Faulty seal",
+      "consumer_action": "Do not eat. Return the product to the place of purchase for a full refund.",
+      "summary": "Possible a faulty seal that may let the product spoil before its best-before date in one batch of Saltbush Snacks Value Salt & Vinegar Potato Chips 175g."
+    }
+  },
+  "match": {
+    "method": "embedding",
+    "distance": 0.1,
+    "confirmed": true
+  },
+  "fixture_receipt_id": "rcpt-fixture-eval-spoilage"
+}

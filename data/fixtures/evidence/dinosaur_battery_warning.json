@@ -1,0 +1,154 @@
+{
+  "candidate_id": "label:P50211:7a0d3f",
+  "kind": "label",
+  "product": {
+    "product_id": "P50211",
+    "name": "Light-Up Dinosaur",
+    "brand": "Toddlewick",
+    "size": "1 unit",
+    "category": "toys",
+    "supplier_id": "SUP-019",
+    "supplier_name": "Toddlewick Toys"
+  },
+  "hazard_type": "injury",
+  "title_hint": "Toddlewick Light-Up Dinosaur lot L2026-0311 missing button battery warning",
+  "checks": [
+    {
+      "check_id": "lc-0001",
+      "store_id": "S012",
+      "checked_at": "2026-10-16T10:41:07+11:00",
+      "photo_uri": "gs://psd-fixtures/labels/lc-0001.jpg",
+      "lot": "L2026-0311",
+      "findings": [
+        {
+          "rule": "warning_missing_on_pack",
+          "field": "warnings",
+          "value": "button battery",
+          "severity": "critical",
+          "actions": [
+            "hold",
+            "supplier_notice"
+          ],
+          "hazard_type": "injury"
+        }
+      ]
+    }
+  ],
+  "lineage": {
+    "receipt_id": "rcpt-fixture-dino-0001",
+    "as_of": "2026-10-17T00:00:00+00:00",
+    "rows": [
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P50211-0311",
+        "code": "L2026-0311",
+        "store_id": "S012",
+        "delivered": 12,
+        "on_hand": 9,
+        "aisle": "18",
+        "last_delivered": "2026-10-03T00:00:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P50211-0311",
+        "code": "L2026-0311",
+        "store_id": "S061",
+        "delivered": 12,
+        "on_hand": 8,
+        "aisle": "15",
+        "last_delivered": "2026-10-03T00:00:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P50211-0311",
+        "code": "L2026-0311",
+        "store_id": "S027",
+        "delivered": 12,
+        "on_hand": 7,
+        "aisle": "7",
+        "last_delivered": "2026-10-03T00:00:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P50211-0311",
+        "code": "L2026-0311",
+        "store_id": "S004",
+        "delivered": 12,
+        "on_hand": 6,
+        "aisle": "20",
+        "last_delivered": "2026-10-03T00:00:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P50211-0311",
+        "code": "L2026-0311",
+        "store_id": "S039",
+        "delivered": 12,
+        "on_hand": 6,
+        "aisle": "11",
+        "last_delivered": "2026-10-03T00:00:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P50211-0311",
+        "code": "L2026-0311",
+        "store_id": "S021",
+        "delivered": 12,
+        "on_hand": 5,
+        "aisle": "23",
+        "last_delivered": "2026-10-03T00:00:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P50211-0311",
+        "code": "L2026-0311",
+        "store_id": "S052",
+        "delivered": 12,
+        "on_hand": 5,
+        "aisle": "16",
+        "last_delivered": "2026-10-03T00:00:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P50211-0311",
+        "code": "L2026-0311",
+        "store_id": "S009",
+        "delivered": 12,
+        "on_hand": 4,
+        "aisle": "18",
+        "last_delivered": "2026-10-03T00:00:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P50211-0311",
+        "code": "L2026-0311",
+        "store_id": "S044",
+        "delivered": 12,
+        "on_hand": 4,
+        "aisle": "9",
+        "last_delivered": "2026-10-03T00:00:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P50211-0311",
+        "code": "L2026-0311",
+        "store_id": "S018",
+        "delivered": 12,
+        "on_hand": 3,
+        "aisle": "19",
+        "last_delivered": "2026-10-03T00:00:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P50211-0311",
+        "code": "L2026-0311",
+        "store_id": "S033",
+        "delivered": 12,
+        "on_hand": 2,
+        "aisle": "2",
+        "last_delivered": "2026-10-03T00:00:00+00:00"
+      }
+    ]
+  },
+  "prior_incidents": []
+}

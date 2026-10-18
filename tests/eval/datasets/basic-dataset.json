@@ -1,0 +1,340 @@
+{
+  "eval_cases": [
+    {
+      "eval_case_id": "recall_yoghurt_listeria",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "{\"candidate_id\": \"recall:yoghurt_listeria\", \"kind\": \"recall\"}"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Morrowdale Vanilla Yoghurt 1kg, batch B2026-091: Listeria monocytogenes (microbial, severity critical). Proposed: pull at 14 stores holding 212 units. Message 37 online orders; the customer message names the product and batch, says what to do and offers a full refund. A checkout block is requested. A supplier notice is sent. A vendor case is opened."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "recall_allergen",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "{\"candidate_id\": \"recall:eval_allergen\", \"kind\": \"recall\"}"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Marlowe & Pike Organic Ginger Nut Biscuits 250g, batch B2026-632: Undeclared peanut (allergen, severity critical). Proposed: pull at 15 stores holding 214 units. Message 2 online orders; the customer message names the product and batch, says what to do and offers a full refund. A checkout block is requested. A supplier notice is sent. A vendor case is opened."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "recall_foreign_matter",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "{\"candidate_id\": \"recall:eval_foreign_matter\", \"kind\": \"recall\"}"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Wattle Creek Dairy Value Light Milk 2L, batch B2026-366: Pieces of hard blue plastic (foreign_matter, severity high). Proposed: pull at 3 stores holding 71 units. A supplier notice is sent. A vendor case is opened. There is no customer message."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "recall_spoilage",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "{\"candidate_id\": \"recall:eval_spoilage\", \"kind\": \"recall\"}"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Saltbush Snacks Value Salt & Vinegar Potato Chips 175g, batch B2026-399: Faulty seal (spoilage, severity medium). Proposed: pull at 13 stores holding 158 units. Message 2 online orders; the customer message names the product and batch, says what to do and offers a full refund. A supplier notice is sent. A vendor case is opened."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "recall_chemical",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "{\"candidate_id\": \"recall:eval_chemical\", \"kind\": \"recall\"}"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Clearwell Eco Eucalyptus Laundry Liquid 1L, batch L2026-2708: Corrosive ingredient above the labelled level (chemical, severity high). Proposed: pull at 6 stores holding 22 units. A supplier notice is sent. A vendor case is opened. There is no customer message."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "recall_electrical_fire",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "{\"candidate_id\": \"recall:eval_electrical_fire\", \"kind\": \"recall\"}"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Kestrel Home Essentials Brushed Steel Toaster 4 slice, batch L2026-6250: Internal wiring fault (electrical_fire, severity critical). Proposed: pull at 23 stores holding 49 units. Message 5 online orders; the customer message names the product and batch, says what to do and offers a full refund. A checkout block is requested. A supplier notice is sent. A vendor case is opened."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "recall_injury",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "{\"candidate_id\": \"recall:eval_injury\", \"kind\": \"recall\"}"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Bumble Box Honey Plush Bear Large, batch L2026-3627: Sharp edge when broken (injury, severity high). Proposed: pull at 21 stores holding 39 units. A supplier notice is sent. A vendor case is opened. There is no customer message."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "recall_dinosaur_choking",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "{\"candidate_id\": \"recall:dinosaur_choking\", \"kind\": \"recall\"}"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Toddlewick Light-Up Dinosaur 1 unit, batch L2026-0310: Detachable horn (choking, severity critical). Proposed: pull at 9 stores holding 39 units. Message 12 online orders; the customer message names the product and batch, says what to do and offers a full refund. A checkout block is requested. A supplier notice is sent. A vendor case is opened."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "label_dinosaur_battery_warning",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "{\"candidate_id\": \"label:P50211:7a0d3f\", \"kind\": \"label\"}"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Toddlewick Light-Up Dinosaur 1 unit: label check at store S012, lot L2026-0311, finding warning missing on pack (button battery), severity critical. Proposed: hold at 11 stores holding 59 units. A supplier notice is sent. A vendor case is opened. There is no customer message."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "label_muesli_almond_listing_fix",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "{\"candidate_id\": \"label:P31007:4c19e2\", \"kind\": \"label\"}"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Nutty Fields Toasted Muesli 750g: label check at store S004, lot B2026-118, finding allergen missing in listing (almond), severity high. Listing fix: add almond to allergens. There is no customer message."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "label_allergen_extra_in_listing",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "{\"candidate_id\": \"label:P10055:e9e089\", \"kind\": \"label\"}"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Ironbark Mills Organic Rye Bread 800g: label check at store S105, finding allergen extra in listing (sesame), severity low. Listing fix: remove sesame from allergens. There is no customer message."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "label_allergen_undeclared_on_pack",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "{\"candidate_id\": \"label:P10054:798a8d\", \"kind\": \"label\"}"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Harbour Bakehouse Organic Original Crumpets 12 pack: label check at store S100, lot B2026-222, finding allergen undeclared on pack (wheat), severity critical. Proposed: hold at 9 stores holding 92 units. A supplier notice is sent. A vendor case is opened. There is no customer message."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "label_ingredients_differ",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "{\"candidate_id\": \"label:P10077:e7e077\", \"kind\": \"label\"}"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Saltbush Snacks Organic Unsalted Mixed Nuts 250g: label check at store S094, finding ingredients differ (new ingredient: palm oil), severity medium. A supplier notice is sent. There is no customer message."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "label_origin_differs",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "{\"candidate_id\": \"label:P10082:76e57f\", \"kind\": \"label\"}"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Wattle Creek Dairy Sour Cream 300mL: label check at store S029, finding origin differs (New Zealand), severity low. Listing fix: set origin to New Zealand. A supplier notice is sent. There is no customer message."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "label_warning_missing_in_listing",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "{\"candidate_id\": \"label:P11648:4a4c26\", \"kind\": \"label\"}"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Kite & Kin Mini Space Building Bricks 250 piece: label check at store S111, finding warning missing in listing (not suitable for children under 3 years), severity medium. Listing fix: add not suitable for children under 3 years to warnings. There is no customer message."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "label_kettle_rcm",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "{\"candidate_id\": \"label:P62240:347687\", \"kind\": \"label\"}"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Hearthwell Rapid Kettle 1.7L: label check at store S015, lot L2026-0442, finding mark missing on pack (RCM), severity high. Proposed: hold at 6 stores holding 15 units. A supplier notice is sent. A vendor case is opened. There is no customer message."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

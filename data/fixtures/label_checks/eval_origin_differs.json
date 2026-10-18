@@ -1,0 +1,31 @@
+{
+  "candidate_id": "label:P10082:76e57f",
+  "kind": "label",
+  "product_id": "P10082",
+  "hazard_type": "quality_only",
+  "title_hint": "Wattle Creek Dairy Sour Cream 300mL origin differs: New Zealand",
+  "prior_incidents": [],
+  "checks": [
+    {
+      "check_id": "lc-eval-origin-differs",
+      "store_id": "S029",
+      "checked_at": "2026-10-16T18:00:00+00:00",
+      "photo_uri": "gs://psd-fixtures/labels/eval_origin_differs.jpg",
+      "lot": null,
+      "findings": [
+        {
+          "rule": "origin_differs",
+          "field": "origin",
+          "value": "New Zealand",
+          "severity": "low",
+          "actions": [
+            "listing_fix",
+            "supplier_notice"
+          ],
+          "hazard_type": "quality_only"
+        }
+      ]
+    }
+  ],
+  "fixture_receipt_id": "rcpt-fixture-eval-origin-differs"
+}

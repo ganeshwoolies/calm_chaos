@@ -1,0 +1,36 @@
+{
+  "candidate_id": "recall:eval_electrical_fire",
+  "kind": "recall",
+  "product_id": "P11498",
+  "hazard_type": "electrical_fire",
+  "title_hint": "Kestrel Home Essentials Brushed Steel Toaster 4 slice batch L2026-6250 Internal wiring fault recall",
+  "prior_incidents": [],
+  "notice": {
+    "guid": "FICTIONAL-TEST:eval:eval_electrical_fire",
+    "feed": "test",
+    "title": "FICTIONAL TEST: Kestrel Home Essentials Brushed Steel Toaster 4 slice",
+    "url": "https://example.test/notices/eval-electrical-fire",
+    "published_at": "2026-10-16T00:00:00+00:00",
+    "extract": {
+      "product_name": "Essentials Brushed Steel Toaster",
+      "brand": "Kestrel Home",
+      "sizes": [
+        "4 slice"
+      ],
+      "batch_codes": [
+        "L2026-6250"
+      ],
+      "date_codes": [],
+      "hazard_type": "electrical_fire",
+      "hazard_detail": "Internal wiring fault",
+      "consumer_action": "Stop using the product and return it to the place of purchase for a full refund.",
+      "summary": "Possible an internal wiring fault that can overheat and start a fire in one batch of Kestrel Home Essentials Brushed Steel Toaster 4 slice."
+    }
+  },
+  "match": {
+    "method": "embedding",
+    "distance": 0.1,
+    "confirmed": true
+  },
+  "fixture_receipt_id": "rcpt-fixture-eval-electrical-fire"
+}

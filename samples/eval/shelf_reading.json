@@ -1,0 +1,201 @@
+[
+  {
+    "photo": "yoghurt_listeria_present",
+    "expected": "not_clear",
+    "verdict": "not_clear",
+    "reading": {
+      "target_present": true,
+      "confidence": 0.99,
+      "what_was_seen": [
+        "Morrowdale Mango Yoghurt 160g",
+        "Morrowdale Mango Yoghurt 500g",
+        "Morrowdale Natural Yoghurt 500g",
+        "Morrowdale Value Blueberry Yoghurt 1kg",
+        "Wattle Creek Dairy Strawberry Yoghurt 500g",
+        "Wrenwhistle Farm Value Honey Yoghurt 500g",
+        "Wattle Creek Dairy Value Natural Yoghurt 160g",
+        "Morrowdale Vanilla Yoghurt 1kg",
+        "Wrenwhistle Farm Natural Yoghurt 160g",
+        "Wrenwhistle Farm Organic Honey Yoghurt 1kg",
+        "Wattle Creek Dairy Value Mango Yoghurt 500g",
+        "Wattle Creek Dairy Organic Vanilla Yoghurt 500g",
+        "Wrenwhistle Farm Organic Mango Yoghurt 500g",
+        "Wattle Creek Dairy Value Blueberry Yoghurt 1kg"
+      ],
+      "codes_seen": [
+        "B2026-091"
+      ],
+      "reason": "Two units of Morrowdale Vanilla Yoghurt 1kg are clearly visible on the middle shelf.",
+      "retake": false
+    }
+  },
+  {
+    "photo": "yoghurt_listeria_clear",
+    "expected": "verified_clear",
+    "verdict": "verified_clear",
+    "reading": {
+      "target_present": false,
+      "confidence": 1.0,
+      "what_was_seen": [
+        "Morrowdale Mango Yoghurt 160g",
+        "Morrowdale Mango Yoghurt 500g",
+        "Morrowdale Natural Yoghurt 500g",
+        "Morrowdale Value Blueberry Yoghurt 1kg",
+        "Wattle Creek Dairy Strawberry Yoghurt 500g",
+        "Wrenwhistle Farm Value Honey Yoghurt 500g",
+        "Wattle Creek Dairy Value Natural Yoghurt 160g",
+        "Wrenwhistle Farm Natural Yoghurt 160g",
+        "Wrenwhistle Farm Organic Honey Yoghurt 1kg",
+        "Wattle Creek Dairy Value Mango Yoghurt 500g",
+        "Wattle Creek Dairy Organic Vanilla Yoghurt 500g",
+        "Wrenwhistle Farm Organic Mango Yoghurt 500g",
+        "Wattle Creek Dairy Value Blueberry Yoghurt 1kg"
+      ],
+      "codes_seen": [],
+      "reason": "The shelf position above the Morrowdale Vanilla Yoghurt 1kg label is completely empty.",
+      "retake": false
+    }
+  },
+  {
+    "photo": "yoghurt_listeria_blurred",
+    "expected": "retake",
+    "verdict": "retake",
+    "reading": {
+      "target_present": false,
+      "confidence": 0.0,
+      "what_was_seen": [],
+      "codes_seen": [],
+      "reason": "The image is heavily blurred and illegible, making it impossible to identify any products or text.",
+      "retake": true
+    }
+  },
+  {
+    "photo": "yoghurt_listeria_note",
+    "expected": "not_clear",
+    "verdict": "not_clear",
+    "reading": {
+      "target_present": true,
+      "confidence": 0.99,
+      "what_was_seen": [
+        "Morrowdale Mango Yoghurt 160g",
+        "Morrowdale Mango Yoghurt 500g",
+        "Morrowdale Natural Yoghurt",
+        "Morrowdale Value Blueberry Yoghurt 1kg",
+        "Wattle Creek Dairy Strawberry Yoghurt 500g",
+        "Wrenwhistle Farm Value Honey Yoghurt 500g",
+        "Wattle Creek Dairy Value Natural Yoghurt 160g",
+        "Morrowdale Vanilla Yoghurt 1kg",
+        "Wrenwhistle Farm Natural Yoghurt 160g",
+        "Wrenwhistle Farm Organic Honey Yoghurt 1kg",
+        "Wattle Creek Dairy Value Mango Yoghurt 500g",
+        "Wattle Creek Dairy Organic Vanilla Yoghurt 500g",
+        "Wrenwhistle Farm Organic Mango Yoghurt 500g",
+        "Wattle Creek Dairy Value Blueberry Yoghurt 1kg"
+      ],
+      "codes_seen": [
+        "B2026-091"
+      ],
+      "reason": "Two units of Morrowdale Vanilla Yoghurt 1kg are clearly present on the middle shelf.",
+      "retake": false
+    }
+  },
+  {
+    "photo": "dinosaur_choking_present",
+    "expected": "not_clear",
+    "verdict": "not_clear",
+    "reading": {
+      "target_present": true,
+      "confidence": 1.0,
+      "what_was_seen": [
+        "Toddlewick Deluxe Light-Up Robot",
+        "Starling Toys Mini Light-Up Robot",
+        "Starling Toys Mini Light-Up Rocket",
+        "Starling Toys Light-Up Rocket",
+        "Starling Toys Light-Up Robot",
+        "Starling Toys Light-Up Dinosaur",
+        "Starling Toys Deluxe Light-Up Unicorn",
+        "Toddlewick Light-Up Dinosaur",
+        "Moonbeam Play Mini Cocoa Plush Bear",
+        "Tinker Trail Natural Wooden Blocks",
+        "Kite & Kin Deluxe Space Building Bricks",
+        "Pebble & Pip Mini Nursery Rhymes Musical Book",
+        "Pebble & Pip Deluxe Duck Bath Toys",
+        "Starling Toys Space Building Bricks"
+      ],
+      "codes_seen": [
+        "L2026-0310"
+      ],
+      "reason": "Two units of Toddlewick Light-Up Dinosaur (1 unit) are clearly displayed on the middle shelf.",
+      "retake": false
+    }
+  },
+  {
+    "photo": "dinosaur_choking_clear",
+    "expected": "verified_clear",
+    "verdict": "verified_clear",
+    "reading": {
+      "target_present": false,
+      "confidence": 0.99,
+      "what_was_seen": [
+        "Toddlewick Deluxe Light-Up Robot 1 unit",
+        "Starling Toys Mini Light-Up Robot 1 unit",
+        "Starling Toys Mini Light-Up Rocket 1 unit",
+        "Starling Toys Light-Up Rocket 1 unit",
+        "Starling Toys Light-Up Robot 1 unit",
+        "Starling Toys Light-Up Dinosaur 1 unit",
+        "Starling Toys Deluxe Light-Up Unicorn 1 unit",
+        "Moonbeam Play Mini Cocoa Plush Bear Small",
+        "Tinker Trail Natural Wooden Blocks 30 piece",
+        "Kite & Kin Deluxe Space Building Bricks 250 piece",
+        "Pebble & Pip Mini Nursery Rhymes Musical Book 1 unit",
+        "Pebble & Pip Deluxe Duck Bath Toys 5 pack",
+        "Starling Toys Space Building Bricks 500 piece"
+      ],
+      "codes_seen": [],
+      "reason": "The shelf location above the Toddlewick Light-Up Dinosaur 1 unit label is empty, with only Starling Toys brand dinosaurs present elsewhere.",
+      "retake": false
+    }
+  },
+  {
+    "photo": "dinosaur_choking_blurred",
+    "expected": "retake",
+    "verdict": "retake",
+    "reading": {
+      "target_present": false,
+      "confidence": 0.0,
+      "what_was_seen": [],
+      "codes_seen": [],
+      "reason": "The image is heavily blurred and no products or labels are legible.",
+      "retake": true
+    }
+  },
+  {
+    "photo": "dinosaur_choking_note",
+    "expected": "not_clear",
+    "verdict": "not_clear",
+    "reading": {
+      "target_present": true,
+      "confidence": 0.99,
+      "what_was_seen": [
+        "Toddlewick Deluxe Light-Up Robot 1 unit",
+        "Starling Toys Mini Light-Up Robot 1 unit",
+        "Starling Toys Light-Up Rocket 1 unit",
+        "Starling Toys Light-Up Robot 1 unit",
+        "Starling Toys Light-Up Dinosaur 1 unit",
+        "Starling Toys Deluxe Light-Up Unicorn 1 unit",
+        "Toddlewick Light-Up Dinosaur 1 unit",
+        "Moonbeam Play Mini Cocoa Plush Bear Small",
+        "Tinker Trail Natural Wooden Blocks 30 piece",
+        "Kite & Kin Deluxe Space Building Bricks 250 piece",
+        "Pebble & Pip Mini Nursery Rhymes Musical Book 1 unit",
+        "Pebble & Pip Deluxe Duck Bath Toys 5 pack",
+        "Starling Toys Space Building Bricks 500 piece"
+      ],
+      "codes_seen": [
+        "L2026-0310"
+      ],
+      "reason": "Two units of Toddlewick Light-Up Dinosaur 1 unit are clearly visible on the middle shelf.",
+      "retake": false
+    }
+  }
+]

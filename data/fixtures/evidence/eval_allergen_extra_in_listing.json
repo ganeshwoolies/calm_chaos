@@ -1,0 +1,36 @@
+{
+  "candidate_id": "label:P10055:e9e089",
+  "kind": "label",
+  "product": {
+    "product_id": "P10055",
+    "name": "Organic Rye Bread",
+    "brand": "Ironbark Mills",
+    "size": "800g",
+    "category": "food",
+    "supplier_id": "SUP-005",
+    "supplier_name": "Ironbark Mills"
+  },
+  "hazard_type": "allergen",
+  "title_hint": "Ironbark Mills Organic Rye Bread 800g allergen extra in listing: sesame",
+  "checks": [
+    {
+      "check_id": "lc-eval-allergen-extra-in-listing",
+      "store_id": "S105",
+      "checked_at": "2026-10-16T18:00:00+00:00",
+      "photo_uri": "gs://psd-fixtures/labels/eval_allergen_extra_in_listing.jpg",
+      "findings": [
+        {
+          "rule": "allergen_extra_in_listing",
+          "field": "allergens",
+          "value": "sesame",
+          "severity": "low",
+          "actions": [
+            "listing_fix"
+          ],
+          "hazard_type": "allergen"
+        }
+      ]
+    }
+  ],
+  "prior_incidents": []
+}

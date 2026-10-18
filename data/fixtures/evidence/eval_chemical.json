@@ -1,0 +1,110 @@
+{
+  "candidate_id": "recall:eval_chemical",
+  "kind": "recall",
+  "product": {
+    "product_id": "P11219",
+    "name": "Eco Eucalyptus Laundry Liquid",
+    "brand": "Clearwell",
+    "size": "1L",
+    "category": "household",
+    "supplier_id": "SUP-026",
+    "supplier_name": "Clearwell"
+  },
+  "hazard_type": "chemical",
+  "title_hint": "Clearwell Eco Eucalyptus Laundry Liquid 1L batch L2026-2708 Corrosive ingredient above the labelled level recall",
+  "notice": {
+    "guid": "FICTIONAL-TEST:eval:eval_chemical",
+    "feed": "test",
+    "title": "FICTIONAL TEST: Clearwell Eco Eucalyptus Laundry Liquid 1L",
+    "url": "https://example.test/notices/eval-chemical",
+    "published_at": "2026-10-16T00:00:00+00:00",
+    "extract": {
+      "product_name": "Eco Eucalyptus Laundry Liquid",
+      "brand": "Clearwell",
+      "sizes": [
+        "1L"
+      ],
+      "batch_codes": [
+        "L2026-2708"
+      ],
+      "date_codes": [],
+      "hazard_type": "chemical",
+      "hazard_detail": "Corrosive ingredient above the labelled level",
+      "consumer_action": "Stop using the product and return it to the place of purchase for a full refund.",
+      "summary": "Possible more of a corrosive ingredient than the label states in one batch of Clearwell Eco Eucalyptus Laundry Liquid 1L."
+    }
+  },
+  "match": {
+    "method": "embedding",
+    "distance": 0.1,
+    "confirmed": true
+  },
+  "checks": [],
+  "lineage": {
+    "receipt_id": "rcpt-fixture-eval-chemical",
+    "as_of": "2026-10-17T00:00:00+00:00",
+    "rows": [
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P11219-2708",
+        "code": "L2026-2708",
+        "store_id": "S007",
+        "delivered": 7,
+        "on_hand": 6,
+        "aisle": "22",
+        "last_delivered": "2026-10-16T13:24:40+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P11219-2708",
+        "code": "L2026-2708",
+        "store_id": "S109",
+        "delivered": 10,
+        "on_hand": 6,
+        "aisle": "12",
+        "last_delivered": "2026-10-16T21:05:36+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P11219-2708",
+        "code": "L2026-2708",
+        "store_id": "S014",
+        "delivered": 4,
+        "on_hand": 4,
+        "aisle": "16",
+        "last_delivered": "2026-10-16T15:33:23+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P11219-2708",
+        "code": "L2026-2708",
+        "store_id": "S039",
+        "delivered": 10,
+        "on_hand": 4,
+        "aisle": "21",
+        "last_delivered": "2026-10-16T20:25:04+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P11219-2708",
+        "code": "L2026-2708",
+        "store_id": "S020",
+        "delivered": 8,
+        "on_hand": 2,
+        "aisle": "3",
+        "last_delivered": "2026-10-16T22:42:41+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P11219-2708",
+        "code": "L2026-2708",
+        "store_id": "S089",
+        "delivered": 6,
+        "on_hand": 0,
+        "aisle": "2",
+        "last_delivered": "2026-10-16T13:05:01+00:00"
+      }
+    ]
+  },
+  "prior_incidents": []
+}

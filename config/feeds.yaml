@@ -1,0 +1,25 @@
+# Feeds the recall poller reads.
+#
+# ACCC Product Safety is not here: its server refuses automated clients, and the desk does not disguise itself to get
+# past that. Live ACCC data needs the ACCC's agreement first.
+#
+# The poller names itself in its User-Agent and uses conditional GET, so an unchanged feed costs one 304.
+#
+# attribution is stored with every notice from the feed and shown wherever the notice is. match: false means the scope
+# job never matches the feed's notices to the catalogue: they are real notices naming real brands, the catalogue is
+# fictional, so they always end as not in the catalogue. fictional: true labels every notice from the
+# feed FICTIONAL TEST, in its title, whatever the feed item says.
+user_agent: "ProductSafetyDesk/0.1 (hackathon prototype; reads the recall feed every 15 minutes)"
+timeout_seconds: 20
+feeds:
+  - name: fsanz
+    url: https://www.foodstandards.gov.au/food-recalls-rss.xml
+    attribution: "© Food Standards Australia New Zealand (https://www.foodstandards.gov.au/legal-policies/copyright). Licensed under Creative Commons Attribution (https://creativecommons.org/licenses/by/3.0/au/). Shortened; fields extracted by AI; not endorsed by FSANZ."
+    match: false
+  # Fictional notices in FSANZ and ACCC layouts, published by data/gen_notices.py. {feeds_bucket} is PSD_FEEDS_BUCKET,
+  # by default the project id followed by -psd-feeds.
+  - name: test
+    url: gs://{feeds_bucket}/test/feed.xml
+    attribution: "Fictional test notice: not issued by FSANZ or the ACCC"
+    match: true
+    fictional: true

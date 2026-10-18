@@ -1,0 +1,31 @@
+{
+  "candidate_id": "label:P50211:7a0d3f",
+  "kind": "label",
+  "product_id": "P50211",
+  "hazard_type": "injury",
+  "title_hint": "Toddlewick Light-Up Dinosaur lot L2026-0311 missing button battery warning",
+  "prior_incidents": [],
+  "checks": [
+    {
+      "check_id": "lc-0001",
+      "store_id": "S012",
+      "checked_at": "2026-10-16T10:41:07+11:00",
+      "photo_uri": "gs://psd-fixtures/labels/lc-0001.jpg",
+      "lot": "L2026-0311",
+      "findings": [
+        {
+          "rule": "warning_missing_on_pack",
+          "field": "warnings",
+          "value": "button battery",
+          "severity": "critical",
+          "actions": [
+            "hold",
+            "supplier_notice"
+          ],
+          "hazard_type": "injury"
+        }
+      ]
+    }
+  ],
+  "fixture_receipt_id": "rcpt-fixture-dino-0001"
+}

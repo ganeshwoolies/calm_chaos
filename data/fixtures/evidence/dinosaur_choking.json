@@ -1,0 +1,224 @@
+{
+  "candidate_id": "recall:dinosaur_choking",
+  "kind": "recall",
+  "product": {
+    "product_id": "P50211",
+    "name": "Light-Up Dinosaur",
+    "brand": "Toddlewick",
+    "size": "1 unit",
+    "category": "toys",
+    "supplier_id": "SUP-019",
+    "supplier_name": "Toddlewick Toys"
+  },
+  "hazard_type": "choking",
+  "title_hint": "Toddlewick Light-Up Dinosaur 1 unit batch L2026-0310 Detachable horn recall",
+  "notice": {
+    "guid": "FICTIONAL-TEST:eval:dinosaur_choking",
+    "feed": "test",
+    "title": "FICTIONAL TEST: Toddlewick Light-Up Dinosaur 1 unit",
+    "url": "https://example.test/notices/dinosaur-choking",
+    "published_at": "2026-10-16T00:00:00+00:00",
+    "extract": {
+      "product_name": "Light-Up Dinosaur",
+      "brand": "Toddlewick",
+      "sizes": [
+        "1 unit"
+      ],
+      "batch_codes": [
+        "L2026-0310"
+      ],
+      "date_codes": [],
+      "hazard_type": "choking",
+      "hazard_detail": "Detachable horn",
+      "consumer_action": "Stop using the product and return it to the place of purchase for a full refund.",
+      "summary": "Possible a detachable horn that is a choking hazard for young children in one batch of Toddlewick Light-Up Dinosaur 1 unit."
+    }
+  },
+  "match": {
+    "method": "embedding",
+    "distance": 0.1,
+    "confirmed": true
+  },
+  "checks": [],
+  "lineage": {
+    "receipt_id": "rcpt-fixture-dinosaur-choking",
+    "as_of": "2026-10-17T00:00:00+00:00",
+    "rows": [
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P50211-0310",
+        "code": "L2026-0310",
+        "store_id": "S033",
+        "delivered": 12,
+        "on_hand": 7,
+        "aisle": "2",
+        "last_delivered": "2026-09-12T00:00:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P50211-0310",
+        "code": "L2026-0310",
+        "store_id": "S018",
+        "delivered": 12,
+        "on_hand": 6,
+        "aisle": "19",
+        "last_delivered": "2026-09-12T00:00:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P50211-0310",
+        "code": "L2026-0310",
+        "store_id": "S004",
+        "delivered": 12,
+        "on_hand": 5,
+        "aisle": "20",
+        "last_delivered": "2026-09-13T00:00:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P50211-0310",
+        "code": "L2026-0310",
+        "store_id": "S061",
+        "delivered": 12,
+        "on_hand": 5,
+        "aisle": "15",
+        "last_delivered": "2026-09-13T00:00:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P50211-0310",
+        "code": "L2026-0310",
+        "store_id": "S012",
+        "delivered": 12,
+        "on_hand": 4,
+        "aisle": "18",
+        "last_delivered": "2026-09-13T00:00:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P50211-0310",
+        "code": "L2026-0310",
+        "store_id": "S044",
+        "delivered": 12,
+        "on_hand": 4,
+        "aisle": "9",
+        "last_delivered": "2026-09-12T00:00:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P50211-0310",
+        "code": "L2026-0310",
+        "store_id": "S009",
+        "delivered": 12,
+        "on_hand": 3,
+        "aisle": "18",
+        "last_delivered": "2026-09-12T00:00:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P50211-0310",
+        "code": "L2026-0310",
+        "store_id": "S039",
+        "delivered": 12,
+        "on_hand": 3,
+        "aisle": "11",
+        "last_delivered": "2026-09-13T00:00:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P50211-0310",
+        "code": "L2026-0310",
+        "store_id": "S027",
+        "delivered": 12,
+        "on_hand": 2,
+        "aisle": "7",
+        "last_delivered": "2026-09-13T00:00:00+00:00"
+      },
+      {
+        "row_kind": "order",
+        "batch_id": "LOT-P50211-0310",
+        "code": "L2026-0310",
+        "store_id": "S004",
+        "order_id": "O-900038"
+      },
+      {
+        "row_kind": "order",
+        "batch_id": "LOT-P50211-0310",
+        "code": "L2026-0310",
+        "store_id": "S004",
+        "order_id": "O-900047"
+      },
+      {
+        "row_kind": "order",
+        "batch_id": "LOT-P50211-0310",
+        "code": "L2026-0310",
+        "store_id": "S009",
+        "order_id": "O-900039"
+      },
+      {
+        "row_kind": "order",
+        "batch_id": "LOT-P50211-0310",
+        "code": "L2026-0310",
+        "store_id": "S009",
+        "order_id": "O-900048"
+      },
+      {
+        "row_kind": "order",
+        "batch_id": "LOT-P50211-0310",
+        "code": "L2026-0310",
+        "store_id": "S012",
+        "order_id": "O-900040"
+      },
+      {
+        "row_kind": "order",
+        "batch_id": "LOT-P50211-0310",
+        "code": "L2026-0310",
+        "store_id": "S012",
+        "order_id": "O-900049"
+      },
+      {
+        "row_kind": "order",
+        "batch_id": "LOT-P50211-0310",
+        "code": "L2026-0310",
+        "store_id": "S018",
+        "order_id": "O-900041"
+      },
+      {
+        "row_kind": "order",
+        "batch_id": "LOT-P50211-0310",
+        "code": "L2026-0310",
+        "store_id": "S027",
+        "order_id": "O-900042"
+      },
+      {
+        "row_kind": "order",
+        "batch_id": "LOT-P50211-0310",
+        "code": "L2026-0310",
+        "store_id": "S033",
+        "order_id": "O-900043"
+      },
+      {
+        "row_kind": "order",
+        "batch_id": "LOT-P50211-0310",
+        "code": "L2026-0310",
+        "store_id": "S039",
+        "order_id": "O-900044"
+      },
+      {
+        "row_kind": "order",
+        "batch_id": "LOT-P50211-0310",
+        "code": "L2026-0310",
+        "store_id": "S044",
+        "order_id": "O-900045"
+      },
+      {
+        "row_kind": "order",
+        "batch_id": "LOT-P50211-0310",
+        "code": "L2026-0310",
+        "store_id": "S061",
+        "order_id": "O-900046"
+      }
+    ]
+  },
+  "prior_incidents": []
+}

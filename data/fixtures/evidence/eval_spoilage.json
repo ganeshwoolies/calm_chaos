@@ -1,0 +1,200 @@
+{
+  "candidate_id": "recall:eval_spoilage",
+  "kind": "recall",
+  "product": {
+    "product_id": "P10042",
+    "name": "Value Salt & Vinegar Potato Chips",
+    "brand": "Saltbush Snacks",
+    "size": "175g",
+    "category": "food",
+    "supplier_id": "SUP-012",
+    "supplier_name": "Saltbush Snacks"
+  },
+  "hazard_type": "spoilage",
+  "title_hint": "Saltbush Snacks Value Salt & Vinegar Potato Chips 175g batch B2026-399 Faulty seal recall",
+  "notice": {
+    "guid": "FICTIONAL-TEST:eval:eval_spoilage",
+    "feed": "test",
+    "title": "FICTIONAL TEST: Saltbush Snacks Value Salt & Vinegar Potato Chips 175g",
+    "url": "https://example.test/notices/eval-spoilage",
+    "published_at": "2026-10-16T00:00:00+00:00",
+    "extract": {
+      "product_name": "Value Salt & Vinegar Potato Chips",
+      "brand": "Saltbush Snacks",
+      "sizes": [
+        "175g"
+      ],
+      "batch_codes": [
+        "B2026-399"
+      ],
+      "date_codes": [
+        {
+          "kind": "best_before",
+          "from": "2027-04-13",
+          "to": "2027-04-13"
+        }
+      ],
+      "hazard_type": "spoilage",
+      "hazard_detail": "Faulty seal",
+      "consumer_action": "Do not eat. Return the product to the place of purchase for a full refund.",
+      "summary": "Possible a faulty seal that may let the product spoil before its best-before date in one batch of Saltbush Snacks Value Salt & Vinegar Potato Chips 175g."
+    }
+  },
+  "match": {
+    "method": "embedding",
+    "distance": 0.1,
+    "confirmed": true
+  },
+  "checks": [],
+  "lineage": {
+    "receipt_id": "rcpt-fixture-eval-spoilage",
+    "as_of": "2026-10-17T00:00:00+00:00",
+    "rows": [
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10042-399",
+        "code": "B2026-399",
+        "store_id": "S046",
+        "delivered": 32,
+        "on_hand": 31,
+        "aisle": "5",
+        "last_delivered": "2026-10-16T13:45:37+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10042-399",
+        "code": "B2026-399",
+        "store_id": "S098",
+        "delivered": 29,
+        "on_hand": 29,
+        "aisle": "11",
+        "last_delivered": "2026-10-16T20:31:35+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10042-399",
+        "code": "B2026-399",
+        "store_id": "S033",
+        "delivered": 25,
+        "on_hand": 17,
+        "aisle": "6",
+        "last_delivered": "2026-10-16T20:56:12+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10042-399",
+        "code": "B2026-399",
+        "store_id": "S076",
+        "delivered": 30,
+        "on_hand": 14,
+        "aisle": "17",
+        "last_delivered": "2026-10-16T09:19:25+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10042-399",
+        "code": "B2026-399",
+        "store_id": "S053",
+        "delivered": 25,
+        "on_hand": 12,
+        "aisle": "22",
+        "last_delivered": "2026-10-16T14:19:41+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10042-399",
+        "code": "B2026-399",
+        "store_id": "S064",
+        "delivered": 23,
+        "on_hand": 12,
+        "aisle": "20",
+        "last_delivered": "2026-10-16T16:10:13+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10042-399",
+        "code": "B2026-399",
+        "store_id": "S102",
+        "delivered": 20,
+        "on_hand": 12,
+        "aisle": "15",
+        "last_delivered": "2026-10-16T15:29:07+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10042-399",
+        "code": "B2026-399",
+        "store_id": "S028",
+        "delivered": 23,
+        "on_hand": 9,
+        "aisle": "3",
+        "last_delivered": "2026-10-16T17:35:45+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10042-399",
+        "code": "B2026-399",
+        "store_id": "S073",
+        "delivered": 14,
+        "on_hand": 9,
+        "aisle": "3",
+        "last_delivered": "2026-10-16T22:03:25+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10042-399",
+        "code": "B2026-399",
+        "store_id": "S008",
+        "delivered": 22,
+        "on_hand": 5,
+        "aisle": "1",
+        "last_delivered": "2026-10-16T16:39:09+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10042-399",
+        "code": "B2026-399",
+        "store_id": "S020",
+        "delivered": 18,
+        "on_hand": 5,
+        "aisle": "24",
+        "last_delivered": "2026-10-16T11:30:27+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10042-399",
+        "code": "B2026-399",
+        "store_id": "S099",
+        "delivered": 12,
+        "on_hand": 2,
+        "aisle": "15",
+        "last_delivered": "2026-10-16T11:02:49+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10042-399",
+        "code": "B2026-399",
+        "store_id": "S038",
+        "delivered": 33,
+        "on_hand": 1,
+        "aisle": "18",
+        "last_delivered": "2026-10-16T15:42:30+00:00"
+      },
+      {
+        "row_kind": "order",
+        "batch_id": "BAT-P10042-399",
+        "code": "B2026-399",
+        "store_id": "S013",
+        "order_id": "O-000281"
+      },
+      {
+        "row_kind": "order",
+        "batch_id": "BAT-P10042-399",
+        "code": "B2026-399",
+        "store_id": "S084",
+        "order_id": "O-000189"
+      }
+    ]
+  },
+  "prior_incidents": []
+}

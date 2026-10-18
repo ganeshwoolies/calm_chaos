@@ -1,0 +1,30 @@
+CREATE TABLE IF NOT EXISTS events (
+  event_id STRING,
+  source STRING,
+  feed STRING,
+  guid STRING,
+  title STRING,
+  url STRING,
+  store_id STRING,
+  submitted_at TIMESTAMP,
+  text STRING,
+  product_name STRING,
+  product_id STRING,
+  category STRING,
+  hazard_type STRING,
+  severity STRING,
+  summary STRING,
+  tag_confidence FLOAT64,
+  model STRING,
+  tagged_at TIMESTAMP,
+  recall_extract STRING,
+  label_payload STRING,
+  tag_error STRING,
+  screen_flagged BOOL,
+  subscription_name STRING,
+  message_id STRING,
+  publish_time TIMESTAMP,
+  attributes STRING
+)
+PARTITION BY DATE(publish_time)
+CLUSTER BY source;

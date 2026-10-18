@@ -1,0 +1,220 @@
+{
+  "candidate_id": "recall:eval_allergen",
+  "kind": "recall",
+  "product": {
+    "product_id": "P10012",
+    "name": "Organic Ginger Nut Biscuits",
+    "brand": "Marlowe & Pike",
+    "size": "250g",
+    "category": "food",
+    "supplier_id": "SUP-020",
+    "supplier_name": "Marlowe & Pike"
+  },
+  "hazard_type": "allergen",
+  "title_hint": "Marlowe & Pike Organic Ginger Nut Biscuits 250g batch B2026-632 Undeclared peanut recall",
+  "notice": {
+    "guid": "FICTIONAL-TEST:eval:eval_allergen",
+    "feed": "test",
+    "title": "FICTIONAL TEST: Marlowe & Pike Organic Ginger Nut Biscuits 250g",
+    "url": "https://example.test/notices/eval-allergen",
+    "published_at": "2026-10-16T00:00:00+00:00",
+    "extract": {
+      "product_name": "Organic Ginger Nut Biscuits",
+      "brand": "Marlowe & Pike",
+      "sizes": [
+        "250g"
+      ],
+      "batch_codes": [
+        "B2026-632"
+      ],
+      "date_codes": [
+        {
+          "kind": "best_before",
+          "from": "2027-07-12",
+          "to": "2027-07-12"
+        }
+      ],
+      "hazard_type": "allergen",
+      "hazard_detail": "Undeclared peanut",
+      "consumer_action": "Do not eat. Return the product to the place of purchase for a full refund.",
+      "summary": "Possible peanut not declared on the label in one batch of Marlowe & Pike Organic Ginger Nut Biscuits 250g."
+    }
+  },
+  "match": {
+    "method": "embedding",
+    "distance": 0.1,
+    "confirmed": true
+  },
+  "checks": [],
+  "lineage": {
+    "receipt_id": "rcpt-fixture-eval-allergen",
+    "as_of": "2026-10-17T00:00:00+00:00",
+    "rows": [
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10012-632",
+        "code": "B2026-632",
+        "store_id": "S059",
+        "delivered": 36,
+        "on_hand": 31,
+        "aisle": "5",
+        "last_delivered": "2026-10-16T06:25:43+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10012-632",
+        "code": "B2026-632",
+        "store_id": "S072",
+        "delivered": 31,
+        "on_hand": 28,
+        "aisle": "24",
+        "last_delivered": "2026-10-16T17:27:48+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10012-632",
+        "code": "B2026-632",
+        "store_id": "S008",
+        "delivered": 33,
+        "on_hand": 27,
+        "aisle": "1",
+        "last_delivered": "2026-10-16T18:18:25+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10012-632",
+        "code": "B2026-632",
+        "store_id": "S016",
+        "delivered": 25,
+        "on_hand": 25,
+        "aisle": "23",
+        "last_delivered": "2026-10-16T07:54:46+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10012-632",
+        "code": "B2026-632",
+        "store_id": "S010",
+        "delivered": 28,
+        "on_hand": 18,
+        "aisle": "14",
+        "last_delivered": "2026-10-16T18:38:57+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10012-632",
+        "code": "B2026-632",
+        "store_id": "S004",
+        "delivered": 33,
+        "on_hand": 16,
+        "aisle": "23",
+        "last_delivered": "2026-10-16T22:36:15+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10012-632",
+        "code": "B2026-632",
+        "store_id": "S058",
+        "delivered": 36,
+        "on_hand": 14,
+        "aisle": "1",
+        "last_delivered": "2026-10-16T20:55:38+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10012-632",
+        "code": "B2026-632",
+        "store_id": "S115",
+        "delivered": 21,
+        "on_hand": 13,
+        "aisle": "12",
+        "last_delivered": "2026-10-16T16:47:55+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10012-632",
+        "code": "B2026-632",
+        "store_id": "S047",
+        "delivered": 26,
+        "on_hand": 10,
+        "aisle": "9",
+        "last_delivered": "2026-10-16T18:22:53+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10012-632",
+        "code": "B2026-632",
+        "store_id": "S020",
+        "delivered": 26,
+        "on_hand": 9,
+        "aisle": "24",
+        "last_delivered": "2026-10-16T15:20:03+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10012-632",
+        "code": "B2026-632",
+        "store_id": "S032",
+        "delivered": 16,
+        "on_hand": 8,
+        "aisle": "20",
+        "last_delivered": "2026-10-16T19:55:17+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10012-632",
+        "code": "B2026-632",
+        "store_id": "S021",
+        "delivered": 12,
+        "on_hand": 6,
+        "aisle": "2",
+        "last_delivered": "2026-10-16T21:35:29+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10012-632",
+        "code": "B2026-632",
+        "store_id": "S019",
+        "delivered": 29,
+        "on_hand": 4,
+        "aisle": "6",
+        "last_delivered": "2026-10-16T05:43:47+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10012-632",
+        "code": "B2026-632",
+        "store_id": "S096",
+        "delivered": 33,
+        "on_hand": 4,
+        "aisle": "24",
+        "last_delivered": "2026-10-16T15:33:50+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "BAT-P10012-632",
+        "code": "B2026-632",
+        "store_id": "S042",
+        "delivered": 30,
+        "on_hand": 1,
+        "aisle": "11",
+        "last_delivered": "2026-10-16T18:07:07+00:00"
+      },
+      {
+        "row_kind": "order",
+        "batch_id": "BAT-P10012-632",
+        "code": "B2026-632",
+        "store_id": "S071",
+        "order_id": "O-000455"
+      },
+      {
+        "row_kind": "order",
+        "batch_id": "BAT-P10012-632",
+        "code": "B2026-632",
+        "store_id": "S092",
+        "order_id": "O-000366"
+      }
+    ]
+  },
+  "prior_incidents": []
+}

@@ -1,0 +1,31 @@
+{
+  "candidate_id": "label:P62240:347687",
+  "kind": "label",
+  "product_id": "P62240",
+  "hazard_type": "electrical_fire",
+  "title_hint": "Hearthwell Rapid Kettle 1.7L mark missing on pack: RCM",
+  "prior_incidents": [],
+  "checks": [
+    {
+      "check_id": "lc-kettle-rcm",
+      "store_id": "S015",
+      "checked_at": "2026-10-16T18:00:00+00:00",
+      "photo_uri": "gs://psd-fixtures/labels/kettle_rcm.jpg",
+      "lot": "L2026-0442",
+      "findings": [
+        {
+          "rule": "mark_missing_on_pack",
+          "field": "marks",
+          "value": "RCM",
+          "severity": "high",
+          "actions": [
+            "hold",
+            "supplier_notice"
+          ],
+          "hazard_type": "electrical_fire"
+        }
+      ]
+    }
+  ],
+  "fixture_receipt_id": "rcpt-fixture-kettle-rcm"
+}

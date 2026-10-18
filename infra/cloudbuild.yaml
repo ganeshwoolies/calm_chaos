@@ -1,0 +1,131 @@
+# The psd-main pipeline: a push to main that changes the desk is validated, tested, evaluated, built once and deployed
+# as both services; then the promotions it carries are settled. Any failed step stops the pipeline before the deploy.
+#
+# One image serves both services: psd-agents runs its CMD, and psd-api keeps the command it was first deployed with
+# (`uvicorn api.main:app`), since a deploy that names only the image leaves the rest of a service's settings as they are.
+
+substitutions:
+  _REGION: us-central1
+  _REPO: us-central1-docker.pkg.dev/${PROJECT_ID}/psd
+  _AGENTS_URL: ""   # psd-agents' URL, for the settle step
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+  machineType: E2_HIGHCPU_8
+  env:
+    - GOOGLE_CLOUD_PROJECT=${PROJECT_ID}
+    - GOOGLE_CLOUD_LOCATION=global
+    - GOOGLE_GENAI_USE_ENTERPRISE=true
+    - PSD_REGION=${_REGION}
+
+steps:
+  - id: knowledge
+    name: ghcr.io/astral-sh/uv:python3.12-bookworm
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        set -euo pipefail
+        uv sync --frozen --extra lint
+        uv run python tools/okf_validate.py knowledge
+        uv run python tools/stale_report.py knowledge
+        uv run python tools/gen_skill_refs.py --check
+        uv run python tools/gen_transforms.py --check
+        uv run python data/write_fixtures.py --check
+
+  - id: lint-and-unit-tests
+    name: ghcr.io/astral-sh/uv:python3.12-bookworm
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        set -euo pipefail
+        uv sync --frozen --extra lint
+        uv run ruff check .
+        uv run ruff format --check .
+        uv run codespell
+        uv run ty check .
+        uv run pytest tests/unit -q
+
+  # BigQuery SQL tests on psd_test and the loaded world; the ones that call Gemini stay off (no PSD_GEMINI_TESTS).
+  - id: sql-tests
+    name: ghcr.io/astral-sh/uv:python3.12-bookworm
+    entrypoint: bash
+    args: [-c, "uv sync --frozen && uv run pytest tests/sql -q"]
+
+  # The drafting eval on its 16 cases, offline evidence, about 32 to 50 Gemini calls; the trigger runs this pipeline only
+  # for changes that can move a draft.
+  - id: eval-gate
+    name: ghcr.io/astral-sh/uv:python3.12-bookworm
+    entrypoint: bash
+    env: [PSD_EVIDENCE_SOURCE=fixtures]
+    args:
+      - -c
+      - |
+        set -euo pipefail
+        uv sync --frozen --extra eval
+        uv tool install "google-agents-cli~=1.10.0"
+        export PATH="$$HOME/.local/bin:$$PATH"
+        agents-cli eval run
+        uv run python tools/eval_gate.py
+
+  - id: image
+    name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - --build-arg=PSD_KNOWLEDGE_VERSION=${SHORT_SHA}
+      - -t
+      - ${_REPO}/desk:${SHORT_SHA}
+      - .
+
+  - id: push
+    name: gcr.io/cloud-builders/docker
+    args: [push, "${_REPO}/desk:${SHORT_SHA}"]
+
+  - id: deploy
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        set -euo pipefail
+        gcloud run deploy psd-agents --image=${_REPO}/desk:${SHORT_SHA} --region=${_REGION} --quiet
+        gcloud run deploy psd-api --image=${_REPO}/desk:${SHORT_SHA} --region=${_REGION} --quiet
+
+  - id: transform-files
+    name: ghcr.io/astral-sh/uv:python3.12-bookworm
+    entrypoint: bash
+    args: [-c, "uv sync --frozen && uv run python tools/gen_transforms.py --project ${PROJECT_ID}"]
+
+  - id: transforms
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        set -euo pipefail
+        gcloud pubsub topics update psd-events --message-transforms-file=transforms/build/topic-transforms.yaml
+        gcloud pubsub subscriptions update psd-events-tag --message-transforms-file=transforms/build/subscription-transforms.yaml
+
+  # Promotions merged into this commit are now deployed: their memories are deleted. Promotion unavailable (no GitHub
+  # token on psd-agents) is reported and passes; any other failure fails the build.
+  - id: settle-promotions
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        set -euo pipefail
+        if [ -z "${_AGENTS_URL}" ]; then echo "_AGENTS_URL is not set: promotions not settled"; exit 0; fi
+        status=$$(curl -sS -o /tmp/settle.json -w '%{http_code}' -X POST \
+          -H "Authorization: Bearer $$(gcloud auth print-identity-token --audiences=${_AGENTS_URL})" \
+          -H 'Content-Type: application/json' -d '{"deployed_sha": "${COMMIT_SHA}"}' \
+          ${_AGENTS_URL}/internal/promotions/settle)
+        cat /tmp/settle.json; echo
+        if [ "$$status" = 503 ]; then echo "promotion is unavailable on psd-agents: nothing to settle"; exit 0; fi
+        [ "$$status" = 200 ]
+
+images:
+  - ${_REPO}/desk:${SHORT_SHA}
+
+timeout: 3600s

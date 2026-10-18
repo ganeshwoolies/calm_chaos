@@ -1,0 +1,21 @@
+metrics_to_run:
+  - custom_response_quality
+  - trajectory
+  - draft_schema
+
+custom_metrics:
+  # Local LLM-as-judge (see response_quality.py). Runs in-process via google-genai on the Gemini platform with
+  # Application Default Credentials; compares with each case's reference (golden text) when it has one.
+  - name: custom_response_quality
+    custom_function_file: response_quality.py
+  # Code metrics, no model call: the workflow's steps in order with nothing executed before approval, and a draft that
+  # is a complete IncidentText. tools/eval_gate.py holds the bars.
+  - name: trajectory
+    custom_function_file: trajectory.py
+  - name: draft_schema
+    custom_function_file: draft_schema.py
+  - name: agent_turn_count
+    custom_function: |
+      def evaluate(instance):
+          turns = (instance.get("agent_data") or {}).get("turns", [])
+          return {'score': len(turns)}

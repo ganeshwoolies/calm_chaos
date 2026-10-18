@@ -1,0 +1,34 @@
+# The psd-pr check, on every pull request into main: the knowledge bundle, the promotion rule, lint and unit tests. No
+# Gemini call, no deploy. Its status is what a promotion pull request's auto-merge waits for.
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+steps:
+  - id: promotion-paths
+    name: gcr.io/cloud-builders/git
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        set -euo pipefail
+        git fetch --unshallow --quiet || true
+        git fetch --quiet origin ${_BASE_BRANCH}
+        git diff --name-only FETCH_HEAD...HEAD > /workspace/changed.txt
+        cat /workspace/changed.txt
+
+  - id: knowledge-lint-and-unit-tests
+    name: ghcr.io/astral-sh/uv:python3.12-bookworm
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        set -euo pipefail
+        uv sync --frozen --extra lint
+        uv run python tools/check_promotion_pr.py --branch "${_HEAD_BRANCH}" < /workspace/changed.txt
+        uv run python tools/okf_validate.py knowledge
+        uv run python tools/gen_skill_refs.py --check
+        uv run ruff check .
+        uv run ruff format --check .
+        uv run ty check .
+        uv run pytest tests/unit -q

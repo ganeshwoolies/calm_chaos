@@ -1,0 +1,36 @@
+{
+  "candidate_id": "label:P10077:e7e077",
+  "kind": "label",
+  "product": {
+    "product_id": "P10077",
+    "name": "Organic Unsalted Mixed Nuts",
+    "brand": "Saltbush Snacks",
+    "size": "250g",
+    "category": "food",
+    "supplier_id": "SUP-012",
+    "supplier_name": "Saltbush Snacks"
+  },
+  "hazard_type": "quality_only",
+  "title_hint": "Saltbush Snacks Organic Unsalted Mixed Nuts 250g ingredients differ: new ingredient: palm oil",
+  "checks": [
+    {
+      "check_id": "lc-eval-ingredients-differ",
+      "store_id": "S094",
+      "checked_at": "2026-10-16T18:00:00+00:00",
+      "photo_uri": "gs://psd-fixtures/labels/eval_ingredients_differ.jpg",
+      "findings": [
+        {
+          "rule": "ingredients_differ",
+          "field": "ingredients",
+          "value": "new ingredient: palm oil",
+          "severity": "medium",
+          "actions": [
+            "supplier_notice"
+          ],
+          "hazard_type": "quality_only"
+        }
+      ]
+    }
+  ],
+  "prior_incidents": []
+}

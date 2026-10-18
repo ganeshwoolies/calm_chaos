@@ -1,0 +1,38 @@
+{
+  "candidate_id": "label:P31007:4c19e2",
+  "kind": "label",
+  "product": {
+    "product_id": "P31007",
+    "name": "Toasted Muesli",
+    "brand": "Nutty Fields",
+    "size": "750g",
+    "category": "food",
+    "supplier_id": "SUP-011",
+    "supplier_name": "Nutty Fields Foods"
+  },
+  "hazard_type": "allergen",
+  "title_hint": "Nutty Fields Toasted Muesli 750g listing missing almond allergen",
+  "checks": [
+    {
+      "check_id": "lc-0002",
+      "store_id": "S004",
+      "checked_at": "2026-10-16T11:05:12+11:00",
+      "photo_uri": "gs://psd-fixtures/labels/lc-0002.jpg",
+      "lot": "B2026-118",
+      "findings": [
+        {
+          "rule": "allergen_missing_in_listing",
+          "field": "allergens",
+          "value": "almond",
+          "severity": "high",
+          "actions": [
+            "listing_fix",
+            "qa_alert"
+          ],
+          "hazard_type": "allergen"
+        }
+      ]
+    }
+  ],
+  "prior_incidents": []
+}

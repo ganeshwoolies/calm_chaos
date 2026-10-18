@@ -1,0 +1,104 @@
+{
+  "candidate_id": "label:P62240:347687",
+  "kind": "label",
+  "product": {
+    "product_id": "P62240",
+    "name": "Rapid Kettle",
+    "brand": "Hearthwell",
+    "size": "1.7L",
+    "category": "electrical",
+    "supplier_id": "SUP-031",
+    "supplier_name": "Hearthwell Appliances"
+  },
+  "hazard_type": "electrical_fire",
+  "title_hint": "Hearthwell Rapid Kettle 1.7L mark missing on pack: RCM",
+  "checks": [
+    {
+      "check_id": "lc-kettle-rcm",
+      "store_id": "S015",
+      "checked_at": "2026-10-16T18:00:00+00:00",
+      "photo_uri": "gs://psd-fixtures/labels/kettle_rcm.jpg",
+      "lot": "L2026-0442",
+      "findings": [
+        {
+          "rule": "mark_missing_on_pack",
+          "field": "marks",
+          "value": "RCM",
+          "severity": "high",
+          "actions": [
+            "hold",
+            "supplier_notice"
+          ],
+          "hazard_type": "electrical_fire"
+        }
+      ]
+    }
+  ],
+  "lineage": {
+    "receipt_id": "rcpt-fixture-kettle-rcm",
+    "as_of": "2026-10-17T00:00:00+00:00",
+    "rows": [
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P62240-0442",
+        "code": "L2026-0442",
+        "store_id": "S023",
+        "delivered": 4,
+        "on_hand": 4,
+        "aisle": "3",
+        "last_delivered": "2026-10-05T00:00:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P62240-0442",
+        "code": "L2026-0442",
+        "store_id": "S007",
+        "delivered": 4,
+        "on_hand": 3,
+        "aisle": "23",
+        "last_delivered": "2026-10-05T00:00:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P62240-0442",
+        "code": "L2026-0442",
+        "store_id": "S070",
+        "delivered": 4,
+        "on_hand": 3,
+        "aisle": "2",
+        "last_delivered": "2026-10-04T00:00:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P62240-0442",
+        "code": "L2026-0442",
+        "store_id": "S015",
+        "delivered": 4,
+        "on_hand": 2,
+        "aisle": "23",
+        "last_delivered": "2026-10-04T00:00:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P62240-0442",
+        "code": "L2026-0442",
+        "store_id": "S058",
+        "delivered": 4,
+        "on_hand": 2,
+        "aisle": "12",
+        "last_delivered": "2026-10-05T00:00:00+00:00"
+      },
+      {
+        "row_kind": "store",
+        "batch_id": "LOT-P62240-0442",
+        "code": "L2026-0442",
+        "store_id": "S041",
+        "delivered": 4,
+        "on_hand": 1,
+        "aisle": "6",
+        "last_delivered": "2026-10-04T00:00:00+00:00"
+      }
+    ]
+  },
+  "prior_incidents": []
+}

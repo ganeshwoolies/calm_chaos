@@ -1,0 +1,36 @@
+{
+  "candidate_id": "recall:eval_injury",
+  "kind": "recall",
+  "product_id": "P11647",
+  "hazard_type": "injury",
+  "title_hint": "Bumble Box Honey Plush Bear Large batch L2026-3627 Sharp edge when broken recall",
+  "prior_incidents": [],
+  "notice": {
+    "guid": "FICTIONAL-TEST:eval:eval_injury",
+    "feed": "test",
+    "title": "FICTIONAL TEST: Bumble Box Honey Plush Bear Large",
+    "url": "https://example.test/notices/eval-injury",
+    "published_at": "2026-10-16T00:00:00+00:00",
+    "extract": {
+      "product_name": "Honey Plush Bear",
+      "brand": "Bumble Box",
+      "sizes": [
+        "Large"
+      ],
+      "batch_codes": [
+        "L2026-3627"
+      ],
+      "date_codes": [],
+      "hazard_type": "injury",
+      "hazard_detail": "Sharp edge when broken",
+      "consumer_action": "Stop using the product and return it to the place of purchase for a full refund.",
+      "summary": "Possible a part that can snap and leave a sharp edge in one batch of Bumble Box Honey Plush Bear Large."
+    }
+  },
+  "match": {
+    "method": "embedding",
+    "distance": 0.1,
+    "confirmed": true
+  },
+  "fixture_receipt_id": "rcpt-fixture-eval-injury"
+}

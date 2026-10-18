@@ -1,0 +1,5 @@
+# Every change needs a code owner's review, except the notes the desk's promotion pull requests write under
+# knowledge/learned/: those merge once the pull-request check passes, and that check refuses a promotion pull request
+# that touches anything else.
+*                    @ganeshwoolies @mathewswoolies
+/knowledge/learned/

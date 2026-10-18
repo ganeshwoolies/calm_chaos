@@ -1,0 +1,1227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#dbe8ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f2f3f" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23ff6b57'/%3E%3Cstop offset='.52' stop-color='%233d8bff'/%3E%3Cstop offset='1' stop-color='%232bd4a0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='24' height='24' rx='6' fill='%230f2f3f'/%3E%3Cpath d='M12 3.4 18.6 5.9v4.9c0 4.1-2.8 7.3-6.6 8.7-3.8-1.4-6.6-4.6-6.6-8.7V5.9z' fill='url(%23g)'/%3E%3Cpath d='M8.9 12.1l2.2 2.2 4.1-4.4' fill='none' stroke='%230f2f3f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<title>Product Safety Desk</title>
+<style>
+  /* The bar follows the device like the page: white in light, navy in dark. The spectrum runs coral to mint, chaos to
+     calm, and carries the brand in both modes on the mark, the hairline, the eyebrow and the active tab. */
+  :root {
+    color-scheme: light dark;
+    --bg: #f3f6f8; --surface: #ffffff; --surface-2: #e8eef2; --text: #14212b; --muted: #56697a; --line: #d7e0e6;
+    --accent: #1f6fe0; --accent-text: #ffffff; --accent-soft: #e4eeff; --focus: #7fb2ff;
+    --bar-bg: linear-gradient(90deg, #ffe3de, #dbe8ff 52%, #d5f5e9); --bar-text: #14212b; --bar-muted: #4b5f70; --bar-line: #c3d0db; --mark: #1f6fe0;
+    --tab-bg: rgba(255, 255, 255, 0.8); --sky-1: rgba(255, 107, 87, 0.30); --sky-2: rgba(61, 139, 255, 0.30); --sky-3: rgba(43, 212, 160, 0.30);
+    --spectrum: linear-gradient(90deg, #ff6b57 0%, #3d8bff 52%, #2bd4a0 100%);
+    --spectrum-calm: linear-gradient(90deg, #1f6fe0, #12a079);
+    --red-bg: #fbe3e1; --red: #9b1c16; --amber-bg: #fcefd2; --amber: #7f5200; --green-bg: #dff3e6; --green: #1b6a3a;
+    --grey-bg: #e6ecf0; --grey: #56697a; --purple-bg: #ece4fa; --purple: #5a3a9a;
+    --shadow: 0 1px 2px rgba(15, 47, 63, 0.08); --shadow-hover: 0 8px 20px rgba(15, 47, 63, 0.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d161d; --surface: #142129; --surface-2: #1c2c36; --text: #e6edf2; --muted: #94a7b5; --line: #263945;
+      --accent: #7fb2ff; --accent-text: #061a33; --accent-soft: #16304f; --focus: #a9c9ff;
+      --bar-bg: linear-gradient(90deg, rgba(255, 107, 87, 0.16), rgba(61, 139, 255, 0.16) 52%, rgba(43, 212, 160, 0.16)), #0f2f3f; --bar-text: #ffffff; --bar-muted: #a9c3cf; --bar-line: #24536a; --mark: #7fb2ff;
+      --tab-bg: rgba(255, 255, 255, 0.10); --sky-1: rgba(255, 107, 87, 0.22); --sky-2: rgba(61, 139, 255, 0.26); --sky-3: rgba(43, 212, 160, 0.22);
+      --spectrum: linear-gradient(90deg, #ff7f6b 0%, #5a9dff 52%, #3fe3b2 100%);
+      --spectrum-calm: linear-gradient(90deg, #7fb2ff, #3fe3b2);
+      --red-bg: #4a211e; --red: #ffb3ab; --amber-bg: #46340a; --amber: #ffd27a; --green-bg: #173d28; --green: #8fdcae;
+      --grey-bg: #263945; --grey: #b3c2cc; --purple-bg: #392a5c; --purple: #d3bfff;
+      --shadow: none; --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.45);
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  html { background: var(--bg); }
+  /* The page opens under a faint spectrum sky that scrolls away with the top of the document. */
+  body { margin: 0; min-height: 100vh; color: var(--text); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-variant-numeric: tabular-nums;
+    background: radial-gradient(1100px 560px at -6% 0%, var(--sky-1), transparent 64%), radial-gradient(1100px 560px at 56% -10%, var(--sky-2), transparent 64%),
+      radial-gradient(1100px 560px at 106% 0%, var(--sky-3), transparent 64%), var(--bg); background-repeat: no-repeat; }
+  a { color: var(--accent); }
+  h1 { font-size: 1.125rem; font-weight: 650; margin: 0; white-space: nowrap; }
+  h2 { font-size: 1.25rem; line-height: 1.3; margin: 0 0 8px; overflow-wrap: anywhere; }
+  h3 { display: flex; align-items: center; gap: 8px; font-size: 0.8125rem; font-weight: 650; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin: 20px 0 8px; }
+  h3::before { content: ""; flex: 0 0 auto; width: 14px; height: 3px; border-radius: 2px; background: var(--spectrum); }
+  .count { display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; padding: 0 7px; border-radius: 999px; background: var(--accent); color: var(--accent-text); font-size: 0.75rem; letter-spacing: 0; }
+  .count:empty { display: none; }
+  ul.iconed { list-style: none; padding: 0; display: grid; gap: 6px; }
+  ul.iconed li { display: flex; align-items: flex-start; gap: 8px; margin: 0; }
+  ul.iconed .icon { margin-top: 3px; color: var(--accent); }
+  ul.iconed.note .icon { color: var(--amber); }
+  ul.iconed.doc .icon { color: var(--muted); }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 20px; }
+  li { margin: 3px 0; overflow-wrap: anywhere; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; margin: 0 0 12px; }
+  pre.card { font: 0.9rem/1.45 ui-monospace, Consolas, monospace; background: var(--surface-2); border-radius: 8px; padding: 12px; }
+  .muted { color: var(--muted); }
+  .small { font-size: 0.875rem; }
+  .red { color: var(--red); }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+
+  button, select, input, textarea { font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; min-height: 44px; max-width: 100%; }
+  textarea { width: 100%; resize: vertical; min-height: 88px; }
+  input[type="text"], input[type="password"] { width: 100%; }
+  input[type="checkbox"] { width: 22px; height: 22px; min-height: 0; padding: 0; margin: 0; accent-color: var(--accent); }
+  button { cursor: pointer; font-weight: 600; background: var(--surface-2); border-color: transparent; transition: background-color 0.12s, box-shadow 0.12s, filter 0.12s; }
+  button.primary { background: var(--accent); color: var(--accent-text); box-shadow: 0 2px 10px rgba(61, 139, 255, 0.35); }
+  button.primary:hover:not(:disabled) { filter: brightness(1.08); }
+  button.ghost:hover:not(:disabled) { border-color: var(--accent); }
+  .icon { width: 18px; height: 18px; flex: 0 0 auto; }
+  button.ghost { background: transparent; border-color: var(--line); }
+  button:disabled { opacity: 0.55; cursor: wait; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+  .badge { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 0.8125rem; font-weight: 600; line-height: 1.4; white-space: nowrap; background: var(--grey-bg); color: var(--grey); vertical-align: middle; }
+  .badge.red { background: var(--red-bg); color: var(--red); }
+  .badge.amber { background: var(--amber-bg); color: var(--amber); }
+  .badge.green { background: var(--green-bg); color: var(--green); }
+  .badge.purple { background: var(--purple-bg); color: var(--purple); }
+  .badges { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+
+  /* Top bar: the brand, the five views and the scenarios button; the views scroll sideways on a phone. */
+  .bar { position: sticky; top: 0; z-index: 5; background: var(--bar-bg); color: var(--bar-text); box-shadow: var(--shadow); }
+  .bar .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 0 16px; }
+  .bar-top { flex: 1 0 100%; display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 56px; }
+  .brand { display: flex; align-items: center; min-width: 0; margin: 0; font-size: 1rem; white-space: normal; }
+  .brand a { display: flex; align-items: center; gap: 10px; min-width: 0; color: inherit; text-decoration: none; }
+  .mark { flex: 0 0 auto; width: 30px; height: 30px; }
+  .lockup { display: grid; line-height: 1.15; min-width: 0; }
+  .lockup .eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.02em; color: var(--mark); }
+  @supports (background-clip: text) or (-webkit-background-clip: text) {
+    .lockup .eyebrow { background: var(--spectrum); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  }
+  .spectrum { height: 3px; background: var(--spectrum); }
+  .lockup .name { font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #controls-toggle, #signout { flex: 0 0 auto; min-height: 40px; padding: 6px 12px; font-size: 0.875rem; color: var(--bar-text); background: transparent; border-color: var(--bar-line); white-space: nowrap; }
+  #controls-toggle[aria-expanded="true"] { background: var(--bar-line); }
+  .views { flex: 1 0 100%; display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 0 12px; }
+  .views::-webkit-scrollbar { display: none; }
+  .views .icon { display: none; margin-right: 6px; opacity: 0.9; }
+  .views a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; color: var(--bar-muted); font-weight: 600; text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; }
+  .views a[aria-current="page"] { color: var(--bar-text); border-radius: 8px 8px 0 0; background: var(--spectrum) bottom / 100% 2px no-repeat, var(--tab-bg); }
+  .strip { background: var(--surface-2); border-bottom: 1px solid var(--line); color: var(--muted); font-size: 0.9375rem; padding: 8px max(16px, calc(50% - 584px)); overflow-wrap: anywhere; }
+  /* Scenarios: the story's three steps, in the order a run takes them. */
+  .controls { background: var(--surface-2); border-bottom: 1px solid var(--line); }
+  .controls .wrap { display: grid; gap: 12px; padding-top: 14px; padding-bottom: 16px; }
+  .controls .lede { margin: 0; }
+  .steps { display: grid; gap: 10px; }
+  .step { display: grid; gap: 8px; align-content: start; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; box-shadow: var(--shadow); }
+  .step-head { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+  .step-n { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; width: 24px; height: 24px; border-radius: 50%; background: var(--spectrum); color: #ffffff; font-size: 0.8125rem; font-weight: 700; }
+  .step select { width: 100%; min-width: 0; }
+  .row-buttons { display: flex; flex-wrap: wrap; gap: 8px; }
+  .row-buttons button { flex: 1 1 auto; }
+
+  main .wrap { padding-top: 16px; padding-bottom: 32px; }
+  .lede { color: var(--muted); font-size: 0.9375rem; margin-bottom: 12px; }
+  .empty { color: var(--muted); text-align: center; padding: 20px 12px; margin: 0; border: 1px dashed var(--line); border-radius: 12px; }
+  .gate { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-bottom: 16px; max-width: 480px; }
+  .gate form { display: grid; gap: 8px; }
+  .gate form[hidden], .gate div[hidden] { display: none; }
+  #signin:not([hidden]) { display: grid; gap: 12px; }
+  /* Until the desk opens, the page shows the gate alone: no views, tabs or scenarios, and none of their data. */
+  body.locked .views, body.locked #controls-toggle, body.locked .controls, body.locked .view { display: none; }
+  body.locked .gate { margin: 32px auto; }
+  #opening { max-width: 480px; margin: 32px auto; }
+  body:not(.locked) #opening, .gate:not([hidden]) ~ #opening { display: none; }
+
+  /* Rows: a headline, a meta line and a badge; used by notices, label checks and store tasks. */
+  .rows { display: grid; gap: 8px; }
+  .row { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 8px 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; box-shadow: var(--shadow); transition: box-shadow 0.12s, transform 0.12s, border-color 0.12s; }
+  .row-main { flex: 1 1 200px; min-width: 0; }
+  .row-title { font-weight: 600; overflow-wrap: anywhere; }
+  .meta { color: var(--muted); font-size: 0.875rem; margin-top: 2px; overflow-wrap: anywhere; }
+  .findings { display: grid; gap: 4px; margin-top: 8px; font-size: 0.9375rem; }
+  a.row { color: inherit; text-decoration: none; }
+  a.row:hover { border-color: var(--accent); box-shadow: var(--shadow-hover); transform: translateY(-1px); }
+
+  /* Home: what needs the coordinator, what is in progress, the inputs and three headline figures, from data already polled. */
+  .home, .home-main, .home-side, .home-block { display: grid; gap: 20px; align-content: start; }
+  .home-block { gap: 8px; }
+  .home-block h3 { margin: 0; }
+  .tiles.home-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .home-tiles .tile { padding: 10px 12px; color: inherit; text-decoration: none; }
+  .home-tiles .tile-title { font-size: 0.8125rem; line-height: 1.3; }
+  .home-tiles .tile-value { font-size: 1.5rem; }
+  .feed-lines { display: grid; gap: 2px; }
+
+  /* Incidents: the list beside the chosen incident on a wide screen; one or the other below 960px. */
+  .split { display: grid; gap: 16px; align-items: start; }
+  .list { display: grid; gap: 8px; align-content: start; }
+  .detail { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); min-width: 0; }
+  .detail:empty { display: none; }
+  .split[data-mode="detail"] .list, .split[data-mode="list"] .detail { display: none; }
+  .incident-row { display: block; color: inherit; text-decoration: none; background: var(--surface); border: 1px solid var(--line); border-left-width: 4px; border-radius: 12px; padding: 12px 14px; box-shadow: var(--shadow); transition: box-shadow 0.12s, transform 0.12s, border-color 0.12s; }
+  .incident-row:hover { border-color: var(--accent); box-shadow: var(--shadow-hover); transform: translateY(-1px); }
+  .incident-row[aria-current="true"] { border-color: var(--accent); background: var(--accent-soft); }
+  /* The left edge carries the severity, on the list rows and on the store task rows alike. */
+  .incident-row[data-severity="critical"], .task[data-severity="critical"] { border-left-color: var(--red); }
+  .incident-row[data-severity="high"], .incident-row[data-severity="medium"], .task[data-severity="high"], .task[data-severity="medium"] { border-left-color: var(--amber); }
+  .incident-row[data-severity="low"], .task[data-severity="low"] { border-left-color: var(--grey); }
+  .incident-row .row-title { font-size: 0.9375rem; }
+  .incident-row .badges, .counts { margin-top: 6px; }
+  .counts { display: flex; flex-wrap: wrap; gap: 12px; color: var(--muted); font-size: 0.875rem; }
+  .detail-body { padding: 16px; }
+  .detail-head { margin: -16px -16px 16px; padding: 16px; border-bottom: 1px solid var(--line); border-radius: 12px 12px 0 0; background: linear-gradient(135deg, rgba(255, 107, 87, 0.10), rgba(61, 139, 255, 0.10) 55%, rgba(43, 212, 160, 0.10)); }
+  .back { display: inline-flex; align-items: center; min-height: 44px; margin: -8px 0 0 -8px; padding: 0 8px; font-weight: 600; text-decoration: none; }
+  .detail h2 { margin-top: 8px; }
+  .narrative { font-size: 1.0625rem; }
+  .receipt { color: var(--green); font-size: 0.8125rem; overflow-wrap: anywhere; }
+  details.block { border: 1px solid var(--line); border-radius: 10px; padding: 0 12px; margin: 12px 0; }
+  details.block summary { display: flex; align-items: center; min-height: 44px; cursor: pointer; font-weight: 600; }
+  .tasks { display: grid; gap: 6px; }
+  .task { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; border: 1px solid var(--line); border-left-width: 4px; border-radius: 12px; padding: 10px 12px; }
+  .task .note { flex: 1 0 100%; color: var(--muted); font-size: 0.875rem; margin: 0; }
+  .task button { flex: 1 0 100%; }
+  .toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  /* The decision bar keeps to the foot of the screen while the detail is taller than it. */
+  .actions { position: sticky; bottom: 0; display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 16px; background: var(--surface); border-top: 1px solid var(--line); border-radius: 0 0 12px 12px; }
+  .actions input[type="text"] { order: -1; flex: 1 1 100%; }
+  .actions button { flex: 1 1 auto; }
+  .editor { border-top: 1px dashed var(--line); margin-top: 16px; padding-top: 8px; }
+  .edit-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+  .edit-row .row-main { flex: 1 1 160px; }
+  .edit-row select { min-width: 96px; }
+  .check { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; }
+  .field { display: block; margin: 12px 0 4px; color: var(--muted); font-size: 0.875rem; }
+  .trace { list-style: none; margin: 8px 0 0; padding: 0; font-size: 0.875rem; }
+  .trace li { padding: 6px 0; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+  .trace .when { color: var(--muted); margin-right: 8px; }
+  .trace .node { font-weight: 600; margin-right: 8px; }
+  .trace .error { color: var(--red); }
+
+  .tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .tile { position: relative; overflow: hidden; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 14px 12px; min-width: 0; box-shadow: var(--shadow); transition: box-shadow 0.12s, transform 0.12s; }
+  .tile::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; background: var(--spectrum); }
+  a.tile:hover { box-shadow: var(--shadow-hover); transform: translateY(-1px); }
+  .tile-title { font-weight: 600; font-size: 0.9375rem; }
+  /* Figures take the calm half of the spectrum, sized to the digits, so a number never reads as a red alert. */
+  .tile-value { width: fit-content; max-width: 100%; font-size: 2rem; font-weight: 750; letter-spacing: -0.01em; line-height: 1.15; margin-top: 6px; overflow-wrap: anywhere; color: var(--accent); }
+  @supports (background-clip: text) or (-webkit-background-clip: text) {
+    .tile-value { background: var(--spectrum-calm); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  }
+  .tile-unit { color: var(--muted); font-size: 0.875rem; }
+  .tile details { margin-top: 6px; font-size: 0.8125rem; }
+  .tile summary { display: flex; align-items: center; min-height: 32px; cursor: pointer; color: var(--accent); }
+  .tile .receipt { margin-top: 8px; font-size: 0.75rem; }
+  .tile .dash { color: var(--muted); font-size: 0.8125rem; margin-top: 4px; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { text-align: left; vertical-align: top; padding: 4px 6px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th { color: var(--muted); font-weight: 600; }
+  .table-scroll { overflow-x: auto; }
+
+  footer { max-width: 1200px; margin: 0 auto; padding: 24px 16px 32px; color: var(--muted); font-size: 0.8125rem; text-align: center; }
+
+  @media (min-width: 720px) {
+    .brand { font-size: 1.0625rem; }
+    .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .views .icon { display: inline-block; }
+    .task button { flex: 0 0 auto; }
+    .actions input[type="text"] { order: 0; flex: 1 1 200px; }
+    .actions button { flex: 0 0 auto; }
+    .tiles { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  }
+  @media (min-width: 960px) {
+    .bar .wrap { flex-wrap: nowrap; }
+    .bar-top { display: contents; }
+    .brand { margin-right: auto; min-height: 56px; }
+    .views { flex: 0 1 auto; margin: 0; padding: 0; }
+    #controls-toggle { order: 1; }
+    #signout { order: 2; }
+    .home { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
+    .split { grid-template-columns: minmax(300px, 380px) minmax(0, 1fr); }
+    .split[data-mode] .list { display: grid; position: sticky; top: 72px; max-height: calc(100vh - 88px); overflow-y: auto; padding: 2px; }
+    .split[data-mode] .detail { display: block; }
+    .back { display: none; }
+  }
+  /* The brand, six tabs and both buttons share one row from 960px; below 1240px the tab icons give up their room. */
+  @media (min-width: 960px) and (max-width: 1239px) {
+    .views .icon { display: none; }
+    .views a { padding: 0 10px; }
+  }
+</style>
+</head>
+<body class="locked">
+<header class="bar">
+  <div class="wrap">
+    <div class="bar-top">
+      <h1 class="brand"><a href="#home"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><defs><linearGradient id="spectrum-mark" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff6b57"/><stop offset=".52" stop-color="#3d8bff"/><stop offset="1" stop-color="#2bd4a0"/></linearGradient></defs><path d="M12 2.2 20.2 5.3v5.9c0 5-3.4 8.9-8.2 10.6C7.2 20.1 3.8 16.2 3.8 11.2V5.3z" fill="url(#spectrum-mark)"/><path d="M8.2 12.1l2.6 2.6 5-5.4" fill="none" stroke="var(--bar-bg)" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lockup"><span class="eyebrow">CalmChaosRetail</span><span class="name">Product Safety Desk</span></span></a></h1>
+      <button id="signout" class="ghost" type="button" hidden>Sign out</button>
+      <button id="controls-toggle" class="ghost" aria-expanded="false" aria-controls="controls">Scenarios</button>
+    </div>
+    <nav class="views" aria-label="Views">
+      <a href="#home" data-view="home"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 3l9 8v9a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1z"/></svg>Home</a>
+      <a href="#notices" data-view="notices"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 1 1 12 0v5l2 2H4zM10 21h4"/></svg>Notices</a>
+      <a href="#labels" data-view="labels"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12V3h9l9 9-9 9zM7.5 7.5h.01"/></svg>Label checks</a>
+      <a href="#incidents" data-view="incidents"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4h12l-2 4 2 4H5"/></svg>Incidents</a>
+      <a href="#learned" data-view="learned"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5zM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>Learned</a>
+      <a href="#scoreboard" data-view="scoreboard"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M7 16V9M12 16V4M17 16v-6"/></svg>Scoreboard</a>
+    </nav>
+  </div>
+  <div class="spectrum" aria-hidden="true"></div>
+  <div class="strip" id="status" role="status" aria-live="polite" hidden></div>
+</header>
+<section class="controls" id="controls" aria-label="Scenarios" hidden>
+  <div class="wrap">
+    <p class="lede">Run the story end to end: publish a fictional recall notice to the test feed, move it through the feeds and the
+      scope job, then open a store's page to clear its shelf.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-head"><span class="step-n">1</span><label for="scenario">Publish a fictional notice</label></div>
+        <select id="scenario"></select>
+        <button class="primary" id="publish">Publish to the test feed</button>
+      </div>
+      <div class="step">
+        <div class="step-head"><span class="step-n">2</span>Move it along</div>
+        <div class="row-buttons"><button id="poll">Poll feeds now</button><button id="scope">Run the scope job now</button></div>
+      </div>
+      <div class="step">
+        <div class="step-head"><span class="step-n">3</span><label for="store-pick">Open a store's page</label></div>
+        <select id="store-pick"></select>
+        <button id="open-store">Open this store's page</button>
+      </div>
+    </div>
+  </div>
+</section>
+<main>
+  <div class="wrap">
+    <section class="gate" id="gate" aria-labelledby="gate-title" hidden>
+      <h2 id="gate-title">Passcode</h2>
+      <form id="gate-form">
+        <label for="passcode" class="field">Passcode</label>
+        <input id="passcode" type="password" autocomplete="current-password" required>
+        <button class="primary" type="submit">Open the desk</button>
+      </form>
+      <div id="signin" hidden>
+        <p class="muted">Sign in with a coordinator account.</p>
+        <button class="primary" id="google-signin" type="button">Sign in with Google</button>
+        <form id="email-form">
+          <label for="email" class="field">Email</label>
+          <input id="email" type="email" autocomplete="username" required>
+          <label for="password" class="field">Password</label>
+          <input id="password" type="password" autocomplete="current-password" required>
+          <button type="submit">Sign in</button>
+        </form>
+      </div>
+    </section>
+    <p class="empty" id="opening">Opening the desk…</p>
+
+    <section class="view" id="view-home" aria-labelledby="home-title">
+      <h2 id="home-title" class="sr-only">Home</h2>
+      <div class="home">
+        <div class="home-main">
+          <section class="home-block" aria-labelledby="needs-title">
+            <h3 id="needs-title">Needs you now<span class="count" id="needs-count"></span></h3>
+            <div class="list" id="home-needs"><p class="empty">Loading…</p></div>
+          </section>
+          <section class="home-block" aria-labelledby="progress-title">
+            <h3 id="progress-title">In progress<span class="count" id="progress-count"></span></h3>
+            <div class="list" id="home-progress"></div>
+          </section>
+        </div>
+        <div class="home-side">
+          <section class="home-block" aria-labelledby="inputs-title">
+            <h3 id="inputs-title">Inputs</h3>
+            <div class="rows" id="home-inputs"><p class="empty">Loading…</p></div>
+          </section>
+          <section class="home-block" aria-labelledby="figures-title">
+            <h3 id="figures-title">Headline figures</h3>
+            <div class="tiles home-tiles" id="home-tiles"></div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" id="view-incidents" aria-labelledby="incidents-title">
+      <h2 id="incidents-title" class="sr-only">Incidents</h2>
+      <div class="split" id="incidents-split" data-mode="list">
+        <div class="list" id="incident-list"><p class="empty">No incidents yet.</p></div>
+        <div class="detail" id="incident-detail"></div>
+      </div>
+    </section>
+
+    <section class="view" id="view-notices" aria-labelledby="notices-title" hidden>
+      <h2 id="notices-title">Recall notices</h2>
+      <p class="lede" id="feeds"></p>
+      <div class="rows" id="notices"></div>
+    </section>
+
+    <section class="view" id="view-labels" aria-labelledby="labels-title" hidden>
+      <h2 id="labels-title">Label checks</h2>
+      <p class="lede">Store associates check labels on the <a href="/store">store page</a>. A high or critical finding opens a label incident.</p>
+      <div class="rows" id="labels"></div>
+    </section>
+
+    <section class="view" id="view-learned" aria-labelledby="learned-title" hidden>
+      <h2 id="learned-title">Learned</h2>
+      <p class="lede">Observations the desk wrote from closed incidents, kept in Memory Bank. They are unverified, reach a
+        draft only as background, and expire unless verified. Verify and promote one to make it a note in the knowledge
+        bundle; it arrives as a pull request and is used once the merge is deployed.</p>
+      <p class="muted small" id="promotion-state"></p>
+      <h3>Observations<span class="count" id="observations-count"></span></h3>
+      <div class="rows" id="observations"><p class="empty">Loading…</p></div>
+      <h3>Promoted notes</h3>
+      <div class="rows" id="learned-notes"></div>
+      <h3>Staleness</h3>
+      <div class="rows" id="staleness"></div>
+    </section>
+
+    <section class="view" id="view-scoreboard" aria-labelledby="scoreboard-title" hidden>
+      <h2 id="scoreboard-title">Scoreboard</h2>
+      <p class="lede">Every number here is what an attested computation returned, with its receipt. A tile whose computation
+        is unreviewed or does not attest shows a dash, never a number. Also public at <a href="/metrics">/metrics</a>.</p>
+      <div class="tiles" id="scoreboard"><p class="empty">Loading the scoreboard…</p></div>
+    </section>
+  </div>
+</main>
+<footer>Built with Gemini on Google Cloud. A fictional retailer (CalmChaosRetail) and fictional products. Nothing is sent and no stock moves.
+  An independent hackathon entry, not affiliated with or endorsed by any retailer, FSANZ or the ACCC.</footer>
+<script>
+  "use strict";
+  const STATUS_WORDS = {
+    pending: "pending", matched: "matched", matched_no_exposure: "matched, no exposure", not_in_range: "not in catalogue",
+    ambiguous: "ambiguous", extraction_failed: "extraction failed", awaiting_approval: "awaiting approval",
+    approved: "approved", verifying: "verifying shelves", drafting: "drafting", closed: "closed", dismissed: "dismissed",
+    failed: "failed", open: "open", verified_clear: "clear", not_clear: "not clear", retake: "retake asked",
+    blocked: "blocked by screening", needs_product: "awaiting product", checked: "no findings", fictional: "FICTIONAL TEST",
+  };
+  const TONE = {
+    critical: "red", failed: "red", blocked: "red", not_clear: "red", extraction_failed: "red",
+    high: "amber", medium: "amber", pending: "amber", ambiguous: "amber", awaiting_approval: "amber", approved: "amber",
+    verifying: "amber", drafting: "amber", open: "amber", retake: "amber", needs_product: "amber",
+    matched: "green", closed: "green", verified_clear: "green", checked: "green", fictional: "purple",
+  };
+  const SCREEN_WORDS = { passed: "passed", blocked: "blocked", unscreened: "not screened" };
+  const VIEWS = ["home", "notices", "labels", "incidents", "learned", "scoreboard"];
+  const SCOPE_WORDS = { supplier_id: "Supplier", product_id: "Product", store_id: "Store", playbook: "Coordinator practice" };
+  // A promoted note goes stale this long after promotion unless someone verifies it again.
+  const PROMOTE_DAYS = 180;
+  // The three figures the home shows, in this order; the scoreboard has every tile.
+  const HOME_METRICS = ["minutes-to-candidate", "minutes-to-approve", "minutes-to-shelf-clear"];
+  const TEXT_FIELDS = [
+    ["title", "Title", false], ["narrative", "Narrative", true],
+    ["customer_message_subject", "Customer message subject", false], ["customer_message_body", "Customer message", true],
+    ["supplier_notice", "Supplier notice", true], ["vendor_case_body", "Vendor case", true], ["qa_alert", "QA alert", true],
+  ];
+
+  function screeningLine(screen) {
+    const parts = [["prompt", "prompt"], ["response", "draft"]]
+      .filter(([key]) => screen[key])
+      .map(([key, label]) => {
+        const v = screen[key];
+        const filters = v.verdict === "blocked" && (v.filters || []).length ? ` (${v.filters.join(", ").replaceAll("_", " ")})` : "";
+        return `${label} ${SCREEN_WORDS[v.verdict] || v.verdict}${filters}`;
+      });
+    return parts.length ? "Model Armor: " + parts.join("; ") + "." : "";
+  }
+  let passcode = "";
+  try { passcode = sessionStorage.getItem("desk-passcode") || ""; } catch (e) { passcode = ""; }
+  let busy = false;
+  // The page holds desk data only while the desk is open: until a coordinator signs in or the passcode is accepted,
+  // and again after a sign-out, it shows the gate alone. A response that lands after the desk closed is dropped.
+  let locked = true;
+  let session = 0;
+  // The incident whose editor is open: the view is not redrawn under it, so nothing typed is lost.
+  let editing = null;
+  let lastIncidents = [];
+  // What the other views last showed, so the home is drawn from the same data without another request.
+  let loaded = false;
+  let lastNotices = null;
+  let lastLabels = null;
+  let lastBoard = null;
+  // Traces left open, by incident id, so a redraw keeps them on screen.
+  const traces = new Map();
+  // The hash names the view and, as #incidents/<id>, the incident whose detail is open.
+  let view = "incidents";
+  let selected = null;
+  const wide = matchMedia("(min-width: 960px)");
+
+  function el(tag, attrs, ...children) {
+    const node = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs || {})) {
+      if (k === "class") node.className = v; else if (v !== undefined && v !== null) node.setAttribute(k, v);
+    }
+    for (const c of children) if (c !== null && c !== undefined) node.append(c instanceof Node ? c : String(c));
+    return node;
+  }
+  function badge(value, text) { return el("span", { class: "badge " + (TONE[value] || "grey") }, text ?? (STATUS_WORDS[value] || value || "-")); }
+  const ICONS = {
+    home: "M3 11 12 3l9 8v9a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1z",
+    bell: "M6 16V11a6 6 0 1 1 12 0v5l2 2H4zM10 21h4",
+    tag: "M3 12V3h9l9 9-9 9zM7.5 7.5h.01",
+    flag: "M5 21V4h12l-2 4 2 4H5",
+    chart: "M3 20h18M7 16V9M12 16V4M17 16v-6",
+    check: "M20 6 9 17l-5-5",
+    doc: "M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6",
+    note: "M12 9v4M12 17h.01M10.3 3.9 2.6 17a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z",
+    camera: "M4 8h4l2-3h4l2 3h4v12H4zM12 17a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z",
+  };
+  function icon(name) {
+    const ns = "http://www.w3.org/2000/svg";
+    const node = document.createElementNS(ns, "svg");
+    for (const [k, v] of Object.entries({ class: "icon", viewBox: "0 0 24 24", "aria-hidden": "true", fill: "none", stroke: "currentColor",
+      "stroke-width": "2", "stroke-linecap": "round", "stroke-linejoin": "round" })) node.setAttribute(k, v);
+    const path = document.createElementNS(ns, "path");
+    path.setAttribute("d", ICONS[name]);
+    node.append(path);
+    return node;
+  }
+  function iconList(items, name) { return el("ul", { class: "iconed " + name }, ...items.map(t => el("li", {}, icon(name), el("span", {}, t)))); }
+  function say(text) {
+    const strip = document.getElementById("status");
+    strip.textContent = text;
+    strip.hidden = !text;
+  }
+  function safeLink(url, text) {
+    return /^https:\/\//.test(url || "") ? el("a", { href: url, target: "_blank", rel: "noopener noreferrer" }, text) : el("span", {}, text);
+  }
+  function when(iso) { return iso ? new Date(iso).toLocaleString([], { dateStyle: "medium", timeStyle: "short" }) : "-"; }
+  function age(iso) {
+    const seconds = Math.max(0, (Date.now() - new Date(iso).getTime()) / 1000);
+    if (seconds < 60) return "just now";
+    if (seconds < 3600) return Math.round(seconds / 60) + " min ago";
+    if (seconds < 86400) return Math.round(seconds / 3600) + " h ago";
+    return Math.round(seconds / 86400) + " d ago";
+  }
+  function count(n, noun) { return `${n} ${n === 1 ? noun : noun + "s"}`; }
+
+  // On Firebase Hosting a coordinator signs in with Firebase Authentication instead of the passcode, and the incident
+  // and task lists refresh as soon as their Firestore records change. Served by psd-api itself, the page keeps the
+  // passcode and polls.
+  const FIREBASE_SDK = "https://www.gstatic.com/firebasejs/10.12.2/";
+  let fb = null;
+  let fbUser = null;
+  let listening = false;
+  let unsubscribers = [];
+  function loadScript(src) {
+    return new Promise((resolve, reject) => {
+      const s = document.createElement("script");
+      s.src = src; s.onload = resolve; s.onerror = () => reject(new Error("Could not load " + src));
+      document.head.append(s);
+    });
+  }
+  async function firebaseSetup() {
+    let config;
+    try {
+      const r = await fetch("/__/firebase/init.json");
+      if (!r.ok) return null;
+      config = await r.json();
+    } catch (e) { return null; }
+    for (const name of ["firebase-app-compat.js", "firebase-auth-compat.js", "firebase-firestore-compat.js"]) await loadScript(FIREBASE_SDK + name);
+    // An app of its own: a store page signing in from another tab of this site never signs the coordinator out.
+    const app = firebase.initializeApp(config, "desk");
+    return { auth: app.auth(), db: app.firestore() };
+  }
+  function showSignin(message) {
+    document.getElementById("gate").hidden = false;
+    document.getElementById("gate-title").textContent = "Sign in";
+    document.getElementById("gate-form").hidden = true;
+    document.getElementById("signin").hidden = false;
+    if (message) say(message);
+  }
+  function listen() {
+    if (!fb || listening) return;
+    listening = true;
+    let timer = null;
+    const soon = () => { clearTimeout(timer); timer = setTimeout(() => refresh(true), 400); };
+    for (const name of ["psd_incidents", "psd_tasks"]) {
+      unsubscribers.push(fb.db.collection(name).onSnapshot(soon, e => { listening = false; if (!locked) say("Live updates stopped: " + e.message); }));
+    }
+  }
+
+  // Closing the desk drops everything it read, from memory and from the page, so the next person at the screen sees
+  // the gate and nothing behind it.
+  function lock() {
+    if (!locked) say("");
+    session += 1;
+    locked = true;
+    document.body.classList.add("locked");
+    // An email and password left in the form would let the next person sign in as the last coordinator.
+    for (const id of ["email-form", "gate-form"]) document.getElementById(id).reset();
+    for (const stop of unsubscribers) stop();
+    unsubscribers = [];
+    listening = false;
+    lastIncidents = []; lastNotices = null; lastLabels = null; lastLearned = null; loaded = false;
+    editing = null; promoting = null;
+    traces.clear();
+    shown.incidents = shown.notices = shown.labels = "";
+    refresh.notices = 0;
+    document.getElementById("controls").hidden = true;
+    document.getElementById("controls-toggle").setAttribute("aria-expanded", "false");
+    for (const id of ["home-progress", "incident-list", "incident-detail", "notices", "labels", "learned-notes", "staleness", "scenario", "store-pick"]) {
+      document.getElementById(id).replaceChildren();
+    }
+    for (const id of ["needs-count", "progress-count", "observations-count", "feeds", "promotion-state"]) document.getElementById(id).textContent = "";
+    for (const id of ["home-needs", "home-inputs", "observations"]) document.getElementById(id).replaceChildren(el("p", { class: "empty" }, "Loading…"));
+  }
+  function unlock() {
+    locked = false;
+    document.body.classList.remove("locked");
+  }
+
+  async function api(method, path, body) {
+    const headers = { "Content-Type": "application/json" };
+    const user = fbUser;
+    if (user) headers.Authorization = "Bearer " + await user.getIdToken();
+    else headers["X-Desk-Passcode"] = passcode;
+    const response = await fetch("/desk/api" + path, {
+      method, headers, body: body === undefined ? undefined : JSON.stringify(body),
+    });
+    if (response.status === 401 && fb) {
+      // Refused while the same account is still signed in: its coordinator role was revoked. It is signed out, so
+      // signing in again, once the role is back, is a fresh sign-in.
+      if (user && user === fbUser) {
+        if (!locked) lock();
+        showSignin("Sign in with an account that has the coordinator role.");
+        fb.auth.signOut();
+      }
+      throw new Error("Sign in with an account that has the coordinator role.");
+    }
+    // Firebase Hosting gives up on a Cloud Run call after 60 s; the call itself runs on, and Firestore shows its result.
+    if (response.status === 504 && fb) throw new Error("Still working: the desk updates when it finishes.");
+    if (response.status === 401) {
+      const message = passcode ? "That passcode was not accepted. Check it and try again." : "Enter the passcode.";
+      if (passcode) {
+        try { sessionStorage.removeItem("desk-passcode"); } catch (e) { /* nothing was stored */ }
+      }
+      if (!locked) { lock(); say(message); }
+      document.getElementById("gate").hidden = false;
+      throw new Error(message);
+    }
+    if (!response.ok) {
+      const raw = await response.text();
+      let message = raw;
+      try { const parsed = JSON.parse(raw); if (typeof parsed.detail === "string") message = parsed.detail; } catch (e) { /* not JSON */ }
+      throw new Error(message.slice(0, 300));
+    }
+    return response.json();
+  }
+
+  function route() {
+    const [name, id] = location.hash.replace(/^#/, "").split("/");
+    view = VIEWS.includes(name) ? name : "home";
+    selected = view === "incidents" && id ? decodeURIComponent(id) : null;
+    if (editing && editing !== selected) editing = null;
+    for (const v of VIEWS) document.getElementById("view-" + v).hidden = v !== view;
+    for (const a of document.querySelectorAll(".views a")) {
+      if (a.dataset.view === view) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    }
+    // On a phone the tab bar scrolls sideways; the current tab is kept in sight.
+    document.querySelector(".views a[aria-current]")?.scrollIntoView({ block: "nearest", inline: "nearest" });
+    if (view === "incidents") renderIncidents(lastIncidents);
+    if (view === "home") renderHome();
+    if (view === "learned") refreshLearned();
+    if (!wide.matches) window.scrollTo(0, 0);
+  }
+
+  function editor(i) {
+    const e = i.editable;
+    const box = el("div", { class: "editor" });
+    box.append(el("p", { class: "muted" }, "Edit the proposal, then approve. The desk stops updating while this is open."));
+    const stores = [];
+    if (e.store_actions.length) box.append(el("h3", {}, "Store actions"));
+    for (const a of e.store_actions) {
+      const action = el("select", { "aria-label": `Action at ${a.store_id}` }, el("option", { value: "hold" }, "hold"), el("option", { value: "pull" }, "pull"));
+      action.value = a.action;
+      // A proposed pull is never softened to a hold.
+      if (a.action === "pull") action.disabled = true;
+      const drop = el("input", { type: "checkbox", "aria-label": `Drop ${a.store_id}` });
+      stores.push({ a, action, drop });
+      box.append(el("div", { class: "edit-row" },
+        el("div", { class: "row-main" }, el("div", { class: "row-title" }, a.store_id), el("div", { class: "meta" }, [a.code, a.aisle ? "aisle " + a.aisle : null, `${a.qty_on_hand} on hand`].filter(Boolean).join(" · "))),
+        action, el("label", { class: "check" }, drop, "Drop")));
+    }
+    const optional = [];
+    if (e.optional_store_actions.length) {
+      box.append(el("h3", {}, "Optional stores"));
+      for (const a of e.optional_store_actions) {
+        const add = el("input", { type: "checkbox", "aria-label": `Add ${a.store_id}` });
+        optional.push({ a, add });
+        box.append(el("div", { class: "edit-row" },
+          el("div", { class: "row-main" }, el("div", { class: "row-title" }, a.store_id), el("div", { class: "meta" }, `${a.code} · ${a.qty_on_hand} on hand · ${a.action}`)),
+          el("label", { class: "check" }, add, "Add")));
+      }
+    }
+    const block = el("input", { type: "checkbox" });
+    block.checked = e.checkout_block;
+    box.append(el("h3", {}, "Checkout block"), el("label", { class: "check" }, block, "Request a checkout block for the affected batches"));
+    if (e.checkout_block_drop_needs_reason) box.append(el("p", { class: "muted small" }, "Policy: dropping this checkout block needs a reason."));
+    const facts = [`${e.orders_to_message} online orders to message`, ...e.listing_fixes.map(f => `listing fix on ${f.field}`)];
+    box.append(el("p", { class: "muted small" }, facts.join(" · ")));
+    box.append(el("h3", {}, "Texts"));
+    const texts = {};
+    for (const [field, label, long] of TEXT_FIELDS) {
+      if (!(field in e.text)) continue;
+      const id = `${field}-${i.incident_id}`;
+      const input = long ? el("textarea", { id, rows: "4" }) : el("input", { id, type: "text" });
+      input.value = e.text[field];
+      texts[field] = input;
+      box.append(el("label", { class: "field", for: id }, label), input);
+    }
+    const reasonId = `reason-${i.incident_id}`;
+    const reason = el("input", { id: reasonId, type: "text", placeholder: "Why these edits" });
+    box.append(el("label", { class: "field", for: reasonId }, "Reason (needed to drop a required checkout block)"), reason);
+    const submit = el("button", { class: "primary" }, "Approve with these edits");
+    const cancel = el("button", { class: "ghost" }, "Cancel");
+    cancel.onclick = () => { editing = null; renderIncidents(lastIncidents); };
+    submit.onclick = () => {
+      const decision = { decision: "approve", actor: "coordinator", remove_stores: [], pull_stores: [], add_stores: [], text: {} };
+      for (const s of stores) {
+        if (s.drop.checked) decision.remove_stores.push(s.a.store_id);
+        else if (s.a.action === "hold" && s.action.value === "pull") decision.pull_stores.push(s.a.store_id);
+      }
+      for (const o of optional) if (o.add.checked) decision.add_stores.push(o.a.store_id);
+      if (block.checked !== e.checkout_block) decision.checkout_block = block.checked;
+      for (const [field, input] of Object.entries(texts)) if (input.value !== e.text[field]) decision.text[field] = input.value;
+      if (reason.value.trim()) decision.reason = reason.value.trim();
+      if (e.checkout_block_drop_needs_reason && !block.checked && !decision.reason) { say("Dropping this checkout block needs a reason."); reason.focus(); return; }
+      // The editor closes only when the approval goes through; a refusal leaves it open with the reason shown.
+      act(`Approving ${i.incident_id} with edits…`, async () => {
+        const out = await api("POST", `/incidents/${i.incident_id}/decision`, decision);
+        editing = null;
+        return out;
+      });
+    };
+    return { box, submit, cancel };
+  }
+
+  function traceList(steps) {
+    if (!steps.length) return el("p", { class: "muted" }, "No steps recorded for this run.");
+    return el("ol", { class: "trace", "aria-label": "Run trace" }, ...steps.map(s => el("li", { class: s.kind === "error" ? "error" : "" },
+      el("span", { class: "when" }, new Date(s.at).toLocaleTimeString()), el("span", { class: "node" }, s.node.replaceAll("_", " ")), s.summary)));
+  }
+
+  function traceToggle(i) {
+    const box = el("div");
+    const button = el("button", { class: "ghost" }, traces.has(i.incident_id) ? "Hide trace" : "Show trace");
+    const load = async () => {
+      try {
+        const out = await api("GET", `/incidents/${i.incident_id}/trace`);
+        if (!traces.has(i.incident_id)) return;
+        traces.set(i.incident_id, out.steps);
+        box.replaceChildren(traceList(out.steps));
+      } catch (e) { if (traces.has(i.incident_id)) say(e.message); }
+    };
+    button.onclick = () => {
+      if (traces.has(i.incident_id)) { traces.delete(i.incident_id); box.replaceChildren(); button.textContent = "Show trace"; return; }
+      traces.set(i.incident_id, []);
+      button.textContent = "Hide trace";
+      box.replaceChildren(el("p", { class: "muted" }, "Loading the trace…"));
+      load();
+    };
+    // An open trace is redrawn from what it last showed, then brought up to date.
+    if (traces.has(i.incident_id)) { box.append(traceList(traces.get(i.incident_id))); load(); }
+    return { button, box };
+  }
+
+  function cell(value) {
+    if (value === null || value === undefined) return "–";
+    if (typeof value === "number") return Number.isInteger(value) ? value.toLocaleString() : String(Math.round(value * 1000) / 1000);
+    if (/^\d{4}-\d{2}-\d{2}T/.test(String(value))) return new Date(value).toLocaleString();
+    return String(value).replaceAll("_", " ");
+  }
+
+  function renderScoreboard(board) {
+    const box = document.getElementById("scoreboard");
+    box.replaceChildren();
+    for (const t of board.tiles || []) {
+      const tile = el("div", { class: "tile", title: t.description || "" }, el("div", { class: "tile-title" }, t.title));
+      if (t.rows) {
+        const first = t.rows[0] || {};
+        const headline = (t.headline || "").replaceAll("_", " ");
+        const unit = t.unit && !headline.includes(t.unit) && !t.unit.includes(headline) ? ` · ${t.unit}` : "";
+        tile.append(el("div", { class: "tile-value" }, cell(first[t.headline])), el("div", { class: "tile-unit" }, headline + unit));
+        if (t.rows.length) {
+          const columns = Object.keys(first);
+          const rows = t.rows.map(r => el("tr", {}, ...columns.map(c => el("td", {}, cell(r[c])))));
+          tile.append(el("details", {}, el("summary", {}, "Figures"),
+            el("div", { class: "table-scroll" }, el("table", {}, el("thead", {}, el("tr", {}, ...columns.map(c => el("th", {}, c.replaceAll("_", " "))))), el("tbody", {}, ...rows)))));
+        }
+        tile.append(el("div", { class: "receipt" }, "attested · " + t.receipt_id));
+      } else {
+        tile.append(el("div", { class: "tile-value" }, "—"), el("div", { class: "dash" }, t.unavailable || "unavailable"));
+      }
+      box.append(tile);
+    }
+    if (!(board.tiles || []).length) box.append(el("p", { class: "empty" }, "No metrics in the knowledge bundle."));
+    lastBoard = board;
+    renderHome();
+  }
+
+  async function refreshScoreboard() {
+    try {
+      const response = await fetch("/metrics");
+      if (!response.ok) throw new Error((await response.text()).slice(0, 200));
+      renderScoreboard(await response.json());
+    } catch (e) {
+      document.getElementById("scoreboard").replaceChildren(el("p", { class: "empty" }, "The scoreboard could not be read: " + e.message));
+    }
+  }
+
+  // The observation whose promotion form is open: a periodic refresh does not redraw the view under it.
+  let promoting = null;
+  let lastLearned = null;
+  function redrawLearned() { if (lastLearned) renderLearned(...lastLearned); }
+
+  function scopeTitle(scope) {
+    const [key, value] = Object.entries(scope || {})[0] || ["", ""];
+    return key === "playbook" ? SCOPE_WORDS.playbook : `${SCOPE_WORDS[key] || key} ${value}`;
+  }
+
+  function promoteForm(o) {
+    const box = el("div", { class: "editor" });
+    const wordingId = `wording-${o.id}`, staleId = `stale-${o.id}`;
+    const wording = el("textarea", { id: wordingId, rows: "3" });
+    wording.value = o.fact;
+    const stale = el("input", { id: staleId, type: "date" });
+    stale.value = new Date(Date.now() + PROMOTE_DAYS * 86400000).toISOString().slice(0, 10);
+    const submit = el("button", { class: "primary" }, "Verify and open the pull request");
+    const cancel = el("button", { class: "ghost" }, "Cancel");
+    cancel.onclick = () => { promoting = null; redrawLearned(); };
+    submit.onclick = () => {
+      if (!wording.value.trim()) { say("The note needs wording."); wording.focus(); return; }
+      const body = { actor: "coordinator", stale_after: stale.value + "T00:00:00Z" };
+      if (wording.value.trim() !== o.fact) body.text = wording.value.trim();
+      act(`Promoting ${o.id}…`, async () => {
+        const out = await api("POST", `/memories/${encodeURIComponent(o.id)}/promote`, body);
+        promoting = null;
+        await refreshLearned();
+        return out;
+      });
+    };
+    box.append(el("p", { class: "muted" }, "You verify this as true. It becomes a note citing its incidents, by pull request."),
+      el("label", { class: "field", for: wordingId }, "Wording"), wording,
+      el("label", { class: "field", for: staleId }, "Stale after"), stale,
+      el("div", { class: "actions" }, submit, cancel));
+    return box;
+  }
+
+  function renderLearned(memories, bundle) {
+    const promotion = memories.promotion || {};
+    document.getElementById("promotion-state").textContent = promotion.available ? "" : "Promotion is unavailable: " + (promotion.reason || "not configured") + ".";
+    const list = memories.observations || [];
+    document.getElementById("observations-count").textContent = list.length || "";
+    const rows = list.map(o => {
+      const meta = [o.updated ? "updated " + age(o.updated) : null, o.expires ? "expires " + when(o.expires) : null,
+        o.incidents.length ? count(o.incidents.length, "incident") + ": " + o.incidents.join(", ") : "no linked incident"].filter(Boolean).join(" · ");
+      const main = el("div", { class: "row-main" }, el("div", { class: "row-title" }, scopeTitle(o.scope)), el("p", {}, o.fact), el("div", { class: "meta" }, meta));
+      const row = el("div", { class: "row" }, main);
+      if (o.promotion) {
+        row.append(el("div", { class: "actions" }, badge("awaiting_approval", "pull request open"), safeLink(o.promotion.url, "#" + o.promotion.pr)));
+      } else {
+        const verify = el("button", { class: "primary", title: promotion.available ? "" : promotion.reason || "" }, "Verify and promote");
+        if (!promotion.available) verify.setAttribute("aria-disabled", "true");
+        verify.onclick = () => {
+          if (!promotion.available) { say("Promotion is unavailable: " + (promotion.reason || "not configured") + "."); return; }
+          promoting = o.id; redrawLearned();
+          document.getElementById(`wording-${o.id}`)?.focus();
+        };
+        const del = el("button", { class: "ghost" }, "Delete");
+        del.onclick = () => {
+          if (!confirm("Delete this observation from Memory Bank? It cannot be undone.")) return;
+          act(`Deleting ${o.id}…`, async () => {
+            const out = await api("DELETE", `/memories/${encodeURIComponent(o.id)}?actor=coordinator`);
+            await refreshLearned();
+            return out;
+          });
+        };
+        row.append(el("div", { class: "actions" }, verify, del));
+        if (promoting === o.id) main.append(promoteForm(o));
+      }
+      return row;
+    });
+    document.getElementById("observations").replaceChildren(...(rows.length ? rows : [el("p", { class: "empty" }, "No observations yet. They are written when an incident closes.")]));
+    const notes = (bundle.learned || []).map(n => el("div", { class: "row" },
+      el("div", { class: "row-main" }, el("div", { class: "row-title" }, n.title),
+        el("div", { class: "meta" }, [n.path, n.verified_by.length ? "verified by " + n.verified_by.join(", ") : null, n.stale_after ? "stale after " + when(n.stale_after) : null].filter(Boolean).join(" · "))),
+      badge(n.usable ? "closed" : "failed", n.usable ? "in use" : "not usable")));
+    document.getElementById("learned-notes").replaceChildren(...(notes.length ? notes : [el("p", { class: "empty" }, "No promoted notes in this deploy's knowledge bundle yet.")]));
+    const lines = [...(bundle.stale || []).map(s => [s, "failed", "stale"]), ...(bundle.due || []).map(s => [s, "pending", "due"])];
+    document.getElementById("staleness").replaceChildren(...(lines.length
+      ? lines.map(([s, tone, word]) => el("div", { class: "row" }, el("div", { class: "row-main" }, el("div", { class: "meta" }, s)), badge(tone, word)))
+      : [el("p", { class: "empty" }, `Nothing stale; no policy due within 30 days. Knowledge version ${bundle.version || "-"}.`)]));
+  }
+
+  async function refreshLearned(periodic) {
+    if (locked) return;
+    const at = session;
+    const active = document.activeElement;
+    if (periodic && promoting && active && ["INPUT", "TEXTAREA"].includes(active.tagName) && document.getElementById("view-learned").contains(active)) return;
+    try {
+      const [memories, bundle] = await Promise.all([api("GET", "/memories"), api("GET", "/knowledge")]);
+      if (at !== session) return;
+      lastLearned = [memories, bundle];
+      renderLearned(memories, bundle);
+    } catch (e) {
+      if (at === session) document.getElementById("observations").replaceChildren(el("p", { class: "empty" }, "The observations could not be read: " + e.message));
+    }
+  }
+
+  function renderNotices(data) {
+    const rows = data.notices.map(n => {
+      const meta = el("div", { class: "meta" }, when(n.first_seen), " · ", n.fictional ? badge("fictional") : n.feed.toUpperCase());
+      const product = n.matched_product_id || (n.match_options && n.match_options.length ? n.match_options.join(" or ") : null);
+      if (product) meta.append(" · " + product);
+      if (!n.fictional && n.attribution) meta.append(el("div", {}, n.attribution));
+      // A fictional notice's link is on a reserved domain that never resolves: its text arrived in the feed item itself.
+      const title = n.fictional ? el("span", { title: "Fictional test notice: it has no public page." }, n.title) : safeLink(n.url, n.title);
+      return el("div", { class: "row" }, el("div", { class: "row-main" }, el("div", { class: "row-title" }, title), meta), badge(n.match_status));
+    });
+    document.getElementById("notices").replaceChildren(...(rows.length ? rows : [el("p", { class: "empty" }, "No notices yet.")]));
+    const feeds = (data.feeds || []).map(f => `${f.feed}: ${f.ok === false ? "error" : "ok"}${f.last_poll ? ", polled " + new Date(f.last_poll).toLocaleTimeString() : ""}`);
+    document.getElementById("feeds").textContent = feeds.length ? "Feeds — " + feeds.join(" · ") : "";
+    lastNotices = data;
+    renderHome();
+  }
+
+  function renderLabels(list) {
+    const rows = list.map(c => {
+      const main = el("div", { class: "row-main" },
+        el("div", { class: "row-title" }, c.product_id ? `${c.brand} ${c.name} ${c.size}` : "Product not identified"),
+        el("div", { class: "meta" }, [when(c.checked_at), c.store_id, c.lot ? "lot " + c.lot : null].filter(Boolean).join(" · ")));
+      let state;
+      if (c.status === "retake" || c.status === "needs_product") state = badge(c.status);
+      else if (!c.findings.length) state = badge("checked");
+      else state = badge(c.max_severity || c.findings[0].severity, count(c.findings.length, "finding"));
+      if (c.findings.length) main.append(el("div", { class: "findings" }, ...c.findings.map(f => el("div", {}, badge(f.severity), " " + f.rule.replaceAll("_", " ") + ": " + f.value))));
+      if (c.candidate_id) main.append(el("div", { class: "meta" }, "incident candidate " + c.candidate_id));
+      return el("div", { class: "row" }, main, state);
+    });
+    document.getElementById("labels").replaceChildren(...(rows.length ? rows : [el("p", { class: "empty" }, "No label checks yet.")]));
+    lastLabels = list;
+    renderHome();
+  }
+
+  function homeRow(href, title, meta, state) {
+    return el("a", { class: "row", href }, el("div", { class: "row-main" }, el("div", { class: "row-title" }, title), el("div", { class: "meta" }, meta)), state);
+  }
+
+  function renderHome() {
+    const needs = lastIncidents.filter(i => i.status === "awaiting_approval");
+    document.getElementById("needs-count").textContent = needs.length || "";
+    document.getElementById("home-needs").replaceChildren(...(needs.length ? needs.map(i => incidentRow(i, false))
+      : [el("p", { class: "empty" }, loaded ? "Nothing is waiting for a decision." : "Loading…")]));
+    const progress = lastIncidents.filter(i => i.status === "verifying" || i.status === "approved").map(i => {
+      const stores = new Set((i.tasks || []).map(t => t.store_id)).size;
+      const clear = new Set((i.tasks || []).filter(t => t.status === "verified_clear").map(t => t.store_id)).size;
+      return homeRow("#incidents/" + encodeURIComponent(i.incident_id), i.title || i.product_name || i.candidate_id,
+        `${clear} of ${stores} stores clear`, badge(i.status));
+    });
+    document.getElementById("progress-count").textContent = progress.length || "";
+    document.getElementById("home-progress").replaceChildren(...(progress.length ? progress : [el("p", { class: "empty" }, loaded ? "No shelves being verified." : "")]));
+    const inputs = [];
+    if (lastNotices) {
+      const feeds = lastNotices.feeds || [];
+      if (feeds.length) {
+        const lines = el("div", { class: "feed-lines" }, ...feeds.map(f => el("div", {},
+          `${f.feed} · ${f.ok === false ? "error" : "ok"}${f.last_poll ? " · polled " + new Date(f.last_poll).toLocaleTimeString() : ""}`)));
+        const state = feeds.some(f => f.ok === false) ? badge("failed", "error") : badge("matched", "ok");
+        inputs.push(el("a", { class: "row", href: "#notices" }, el("div", { class: "row-main" }, el("div", { class: "row-title" }, "Feeds"), el("div", { class: "meta" }, lines)), state));
+      }
+      const n = lastNotices.notices[0];
+      if (n) {
+        const meta = el("span", {}, "Latest notice · ", when(n.first_seen), " · ", n.fictional ? badge("fictional") : n.feed.toUpperCase());
+        inputs.push(homeRow("#notices", n.title, meta, badge(n.match_status)));
+      }
+    }
+    if (lastLabels && lastLabels[0]) {
+      const c = lastLabels[0];
+      const state = c.status === "retake" || c.status === "needs_product" ? badge(c.status)
+        : !c.findings.length ? badge("checked") : badge(c.max_severity || c.findings[0].severity, count(c.findings.length, "finding"));
+      inputs.push(homeRow("#labels", c.product_id ? `${c.brand} ${c.name} ${c.size}` : "Product not identified",
+        ["Latest label check", when(c.checked_at), c.store_id].join(" · "), state));
+    }
+    document.getElementById("home-inputs").replaceChildren(...(inputs.length ? inputs : [el("p", { class: "empty" }, lastNotices ? "No notices or label checks yet." : "Loading…")]));
+    const tiles = lastBoard ? HOME_METRICS.map(slug => (lastBoard.tiles || []).find(t => String(t.metric || "").includes(slug))).filter(Boolean) : [];
+    document.getElementById("home-tiles").replaceChildren(...tiles.map(t => {
+      const first = (t.rows || [])[0] || {};
+      return el("a", { class: "tile", href: "#scoreboard", title: t.description || "" }, el("div", { class: "tile-title" }, t.title),
+        el("div", { class: "tile-value" }, t.rows ? cell(first[t.headline]) : "—"),
+        el("div", { class: "tile-unit" }, t.rows ? (t.headline || "").replaceAll("_", " ") : "unavailable"));
+    }));
+  }
+
+  function incidentRow(i, active) {
+    const row = el("a", { class: "incident-row", href: "#incidents/" + encodeURIComponent(i.incident_id) });
+    row.dataset.severity = i.severity || "";
+    if (active) row.setAttribute("aria-current", "true");
+    row.append(el("div", { class: "row-title" }, i.title || i.product_name || i.candidate_id));
+    if (i.title && i.product_name) row.append(el("div", { class: "meta" }, i.product_name));
+    row.append(el("div", { class: "badges" }, i.severity ? badge(i.severity) : null, badge(i.status), i.kind ? el("span", { class: "muted small" }, i.kind) : null));
+    const stores = new Set((i.tasks || []).map(t => t.store_id)).size || (i.editable ? i.editable.store_actions.length : 0);
+    const orders = (i.messages && i.messages.customer) || (i.editable ? i.editable.orders_to_message : 0);
+    const counts = el("div", { class: "counts" });
+    if (stores) counts.append(el("span", {}, count(stores, "store")));
+    if (orders) counts.append(el("span", {}, count(orders, "order")));
+    if (i.created_at) counts.append(el("time", { class: "age", datetime: i.created_at, title: when(i.created_at) }, age(i.created_at)));
+    row.append(counts);
+    return row;
+  }
+
+  function taskRow(t, severity) {
+    const row = el("div", { class: "task" });
+    row.dataset.severity = severity || "";
+    const store = /^\/store\?/.test(t.store_link || "")
+      ? el("a", { href: t.store_link, target: "_blank", rel: "noopener", title: "Open this store's page" }, t.store_id)
+      : el("span", {}, t.store_id);
+    const meta = [t.kind, t.code, t.aisle ? "aisle " + t.aisle : null, `${t.qty_on_hand ?? "-"} on hand`].filter(Boolean).join(" · ");
+    row.append(el("div", { class: "row-main" }, el("div", { class: "row-title" }, store), el("div", { class: "meta" }, meta)), badge(t.status));
+    if (t.status === "open") {
+      const clear = el("button", { class: "ghost", title: "In use the store verifies its own shelf, from its store page. This shortcut stands in for its photo." }, "Mark clear");
+      clear.onclick = () => act(`Recording ${t.store_id} clear…`, () => api("POST", `/tasks/${t.task_id}/verdict`, { verdict: "verified_clear", note: "Marked clear from the coordinator page" }));
+      row.append(clear);
+    }
+    if (t.note && t.status !== "open") row.append(el("p", { class: "note" }, t.note));
+    return row;
+  }
+
+  function decisionBar(i) {
+    const reason = el("input", { type: "text", placeholder: "Reason, to dismiss", "aria-label": "Reason to dismiss" });
+    const approve = el("button", { class: "primary" }, "Approve");
+    const edit = i.editable ? el("button", {}, "Edit then approve") : null;
+    const dismiss = el("button", { class: "ghost" }, "Dismiss");
+    approve.onclick = () => act(`Approving ${i.incident_id}…`, () => api("POST", `/incidents/${i.incident_id}/decision`, { decision: "approve", actor: "coordinator" }));
+    if (edit) edit.onclick = () => { editing = i.incident_id; renderIncidents(lastIncidents); };
+    dismiss.onclick = () => {
+      if (!reason.value.trim()) { say("A dismissal needs a reason."); reason.focus(); return; }
+      act(`Dismissing ${i.incident_id}…`, () => api("POST", `/incidents/${i.incident_id}/decision`, { decision: "dismiss", actor: "coordinator", reason: reason.value.trim() }));
+    };
+    return el("div", { class: "actions" }, approve, edit, dismiss, reason);
+  }
+
+  function back() { return el("a", { class: "back", href: "#incidents" }, "‹ Incidents"); }
+
+  function incidentDetail(i) {
+    const head = el("div", { class: "detail-head" }, back());
+    const body = el("article", { class: "detail-body", "aria-label": "Incident" }, head);
+    head.append(el("div", { class: "badges" }, i.severity ? badge(i.severity) : null, badge(i.status),
+      el("span", { class: "muted small" }, [i.kind, i.incident_id].filter(Boolean).join(" · "))));
+    head.append(el("h2", {}, i.title || i.product_name || i.candidate_id));
+    const credit = [(i.detail || i.card) ? "Drafted by Gemini" : "", i.screening ? screeningLine(i.screening) : ""].filter(Boolean).join(" · ");
+    if (credit) head.append(el("p", { class: "muted small" }, credit));
+    if (i.failure) body.append(el("p", { class: "red" }, "Failed at " + (i.failure.node || "?") + ": " + JSON.stringify(i.failure.error).slice(0, 300)));
+    if (i.status === "blocked") body.append(el("p", { class: "red" }, "Not drafted: Model Armor blocked the drafter's prompt, so there is no text to approve. The actions policy proposed are kept on the incident."));
+    const d = i.detail;
+    if (d) {
+      body.append(el("p", { class: "narrative" }, d.narrative));
+      body.append(el("h3", {}, d.basis === "approved" ? "Approved actions" : "Proposed actions"), iconList(d.actions, "check"));
+      if (d.considerations.length) body.append(el("h3", {}, "Considerations"), iconList(d.considerations, "note"));
+      body.append(el("h3", {}, "Evidence"), iconList(d.evidence, "doc"));
+      if (d.receipts.length) body.append(el("p", { class: "receipt" }, "Attestation receipts: " + d.receipts.join(", ")));
+    } else if (i.card) {
+      // A psd-agents that serves the card as text only.
+      body.append(el("pre", { class: "card" }, i.card));
+    }
+    if (i.approval && (i.approval.edits.length || i.approval.notes.length)) {
+      const said = [];
+      if (i.approval.edits.length) said.push("Edits: " + i.approval.edits.join("; ") + ".");
+      if (i.approval.notes.length) said.push("Notes: " + i.approval.notes.join("; ") + ".");
+      body.append(el("p", { class: "muted small" }, `Approved by ${i.approval.approved_by}. ` + said.join(" ")));
+    }
+    const sent = Object.entries(i.messages || {}).map(([k, v]) => `${v} ${k}`).join(", ");
+    if (sent) body.append(el("p", { class: "muted small" }, "Messages (simulated): " + sent));
+    const message = (d && d.customer_message) || i.customer_message;
+    if (message) body.append(el("details", { class: "block" }, el("summary", {}, "Customer message"), el("p", {}, el("strong", {}, message.subject)), el("pre", {}, message.body)));
+    if (i.tasks && i.tasks.length) body.append(el("h3", {}, `Store tasks (${i.tasks.length})`), el("div", { class: "tasks" }, ...i.tasks.map(t => taskRow(t, i.severity))));
+    const trace = traceToggle(i);
+    body.append(el("div", { class: "toolbar" }, trace.button), trace.box);
+    const parts = [body];
+    if (i.status === "awaiting_approval") {
+      if (editing === i.incident_id && i.editable) {
+        const ed = editor(i);
+        body.append(ed.box);
+        parts.push(el("div", { class: "actions" }, ed.submit, ed.cancel));
+      } else {
+        parts.push(decisionBar(i));
+      }
+    }
+    return parts;
+  }
+
+  function renderIncidents(list) {
+    const listBox = document.getElementById("incident-list");
+    const detailBox = document.getElementById("incident-detail");
+    // On a wide screen the newest incident is open until one is chosen; on a phone only a chosen one opens.
+    const chosen = list.find(i => i.incident_id === selected) || (!selected && wide.matches ? list[0] : null);
+    listBox.replaceChildren(...(list.length ? list.map(i => incidentRow(i, chosen && i.incident_id === chosen.incident_id)) : [el("p", { class: "empty" }, "No incidents yet.")]));
+    document.getElementById("incidents-split").dataset.mode = selected ? "detail" : "list";
+    if (chosen) detailBox.replaceChildren(...incidentDetail(chosen));
+    else if (selected) detailBox.replaceChildren(el("div", { class: "detail-body" }, back(), el("p", { class: "empty" }, `No incident ${selected} on this desk.`)));
+    else detailBox.replaceChildren();
+  }
+
+  async function act(label, fn) {
+    if (busy) { say("One action at a time: wait for the current one to finish."); return; }
+    busy = true;
+    const at = session;
+    document.querySelectorAll("button").forEach(b => b.disabled = true);
+    say(label);
+    try { const out = await fn(); if (at === session) say("Done." + (out && out.poll ? ` Poll: ${out.poll.new} new, ${out.poll.published} published.` : "")); }
+    catch (e) { if (at === session) say(e.message); }
+    finally { busy = false; document.querySelectorAll("button").forEach(b => b.disabled = false); refresh(true); }
+  }
+
+  // Redraw only what changed, and never under someone typing, so buttons and a half-written reason stay put.
+  const shown = { incidents: "", notices: "", labels: "" };
+  function typing() {
+    const active = document.activeElement;
+    return active && ["INPUT", "TEXTAREA", "SELECT"].includes(active.tagName) && document.getElementById("view-incidents").contains(active);
+  }
+  // A refresh error stays on screen until a refresh succeeds; an action's own message is never cleared here.
+  let refreshError = "";
+  function refreshFailed(e) { if (!busy) { refreshError = e.message; say(e.message); } }
+  function refreshWorked() {
+    if (refreshError && document.getElementById("status").textContent === refreshError) say("");
+    refreshError = "";
+  }
+  async function refresh(all) {
+    if (busy || locked) return;
+    const at = session;
+    refresh.at = Date.now();
+    try {
+      const incidents = await api("GET", "/incidents");
+      // An action that started while this read was in flight redraws when it ends; drawing now would add live
+      // buttons while the others are disabled.
+      if (busy || at !== session) return;
+      refreshWorked();
+      const key = JSON.stringify(incidents);
+      lastIncidents = incidents;
+      loaded = true;
+      if (key !== shown.incidents && !typing() && !editing) { shown.incidents = key; renderIncidents(incidents); renderHome(); }
+    } catch (e) { if (at === session) refreshFailed(e); }
+    if (at === session && (all || Date.now() - (refresh.notices || 0) > 10000)) {
+      refresh.notices = Date.now();
+      try {
+        const notices = await api("GET", "/notices");
+        if (busy || at !== session) return;
+        refreshWorked();
+        const key = JSON.stringify(notices);
+        if (key !== shown.notices) { shown.notices = key; renderNotices(notices); }
+        const labels = await api("GET", "/labels");
+        if (busy || at !== session) return;
+        const labelKey = JSON.stringify(labels);
+        if (labelKey !== shown.labels) { shown.labels = labelKey; renderLabels(labels); }
+      } catch (e) { if (at === session) refreshFailed(e); }
+    }
+  }
+
+  // Opens the desk. With the passcode, the first answer the API accepts is what opens it; a signed-in coordinator's
+  // desk is already open, and this loads the scenarios and stores.
+  async function start() {
+    const at = session;
+    try {
+      const scenarios = await api("GET", "/scenarios");
+      if (at !== session) return;
+      document.getElementById("scenario").replaceChildren(...scenarios.map(s => el("option", { value: s }, s.replaceAll("_", " "))));
+      document.getElementById("gate").hidden = true;
+      unlock();
+      say("");
+      refresh(true);
+      if (view === "learned") refreshLearned();
+      const stores = await api("GET", "/stores");
+      if (at !== session) return;
+      document.getElementById("store-pick").replaceChildren(...stores.map(s => el("option", { value: s.store_id }, `${s.store_id} · ${s.name}`)));
+    } catch (e) {
+      if (at !== session) return;
+      say(e.message);
+      // With the passcode, the gate stays up so the desk can be opened again.
+      if (locked) document.getElementById("gate").hidden = false;
+    }
+  }
+
+  document.getElementById("gate-form").onsubmit = (event) => {
+    event.preventDefault();
+    passcode = document.getElementById("passcode").value;
+    try { sessionStorage.setItem("desk-passcode", passcode); } catch (e) { /* the passcode lasts for this page only */ }
+    start();
+  };
+  document.getElementById("controls-toggle").onclick = () => {
+    const panel = document.getElementById("controls");
+    panel.hidden = !panel.hidden;
+    document.getElementById("controls-toggle").setAttribute("aria-expanded", String(!panel.hidden));
+  };
+  document.getElementById("publish").onclick = () => {
+    const scenario = document.getElementById("scenario").value;
+    act(`Publishing a FICTIONAL TEST notice (${scenario}) and polling…`, () => api("POST", "/test-notice", { scenario }));
+  };
+  document.getElementById("poll").onclick = () => act("Polling the feeds…", () => api("POST", "/poll"));
+  document.getElementById("scope").onclick = () => act("Running the scope job…", () => api("POST", "/scope"));
+  document.getElementById("open-store").onclick = async () => {
+    const id = document.getElementById("store-pick").value;
+    try {
+      const link = await api("GET", `/store-link/${encodeURIComponent(id)}`);
+      if (/^\/store\?/.test(link.url)) window.open(link.url, "_blank", "noopener");
+    } catch (e) { say(e.message); }
+  };
+  window.addEventListener("hashchange", route);
+  wide.addEventListener("change", () => { if (view === "incidents" && !editing && !typing()) renderIncidents(lastIncidents); });
+  // Ages in the list tick without a redraw, so an open trace is not fetched again for them.
+  setInterval(() => { for (const t of document.querySelectorAll("time.age")) t.textContent = age(t.getAttribute("datetime")); }, 60000);
+  // With Firestore listening, a poll only backs it up.
+  setInterval(() => { if (!listening || Date.now() - (refresh.at || 0) > 30000) refresh(false); }, 5000);
+  // The scoreboard is cached for a minute on the server, so a faster poll would only fetch the same numbers.
+  setInterval(refreshScoreboard, 60000);
+  setInterval(() => { if (view === "learned" && !busy) refreshLearned(true); }, 30000);
+  // Every sign-in and sign-out passes here, and the desk opens only for an account with the coordinator role. An
+  // account without it is signed out again, so signing in once the role is granted is a fresh sign-in.
+  async function admit(user) {
+    lock();
+    fbUser = null;
+    const signout = document.getElementById("signout");
+    signout.hidden = !user;
+    signout.title = user ? "Signed in as " + (user.email || user.uid) : "";
+    if (!user) { showSignin(); return; }
+    document.getElementById("gate").hidden = true;
+    const at = session;
+    let claims;
+    try {
+      claims = (await user.getIdTokenResult(true)).claims;
+    } catch (e) {
+      // The role could not be read (a network failure, not a refusal): the account stays signed in and it is read again.
+      if (at === session) {
+        say("Could not check this account's role: " + e.message + " Trying again…");
+        setTimeout(() => { if (at === session) admit(user); }, 5000);
+      }
+      return;
+    }
+    if (at !== session) return;
+    if (claims.coordinator !== true) {
+      showSignin(`${user.email || "This account"} does not have the coordinator role yet; ask the desk's owner to grant it, then sign in again.`);
+      fb.auth.signOut();
+      return;
+    }
+    fbUser = user;
+    unlock();
+    say("");
+    listen();
+    start();
+  }
+
+  async function boot() {
+    try { fb = await firebaseSetup(); } catch (e) { fb = null; say(e.message); }
+    if (!fb) { start(); return; }
+    document.getElementById("google-signin").onclick = () =>
+      fb.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).catch(e => say(e.message));
+    document.getElementById("email-form").onsubmit = (event) => {
+      event.preventDefault();
+      fb.auth.signInWithEmailAndPassword(document.getElementById("email").value, document.getElementById("password").value)
+        .catch(e => say(e.code === "auth/invalid-credential" ? "That email and password were not accepted." : e.message));
+    };
+    document.getElementById("signout").onclick = () => { say(""); fb.auth.signOut(); };
+    fb.auth.onAuthStateChanged(admit);
+  }
+
+  route();
+  refreshScoreboard();
+  boot();
+</script>
+</body>
+</html>

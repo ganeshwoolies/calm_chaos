@@ -1,0 +1,36 @@
+{
+  "candidate_id": "label:P11648:4a4c26",
+  "kind": "label",
+  "product": {
+    "product_id": "P11648",
+    "name": "Mini Space Building Bricks",
+    "brand": "Kite & Kin",
+    "size": "250 piece",
+    "category": "toys",
+    "supplier_id": "SUP-049",
+    "supplier_name": "Kite & Kin"
+  },
+  "hazard_type": "choking",
+  "title_hint": "Kite & Kin Mini Space Building Bricks 250 piece warning missing in listing: not suitable for children under 3 years",
+  "checks": [
+    {
+      "check_id": "lc-eval-warning-missing-in-listing",
+      "store_id": "S111",
+      "checked_at": "2026-10-16T18:00:00+00:00",
+      "photo_uri": "gs://psd-fixtures/labels/eval_warning_missing_in_listing.jpg",
+      "findings": [
+        {
+          "rule": "warning_missing_in_listing",
+          "field": "warnings",
+          "value": "not suitable for children under 3 years",
+          "severity": "medium",
+          "actions": [
+            "listing_fix"
+          ],
+          "hazard_type": "choking"
+        }
+      ]
+    }
+  ],
+  "prior_incidents": []
+}

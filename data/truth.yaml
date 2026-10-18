@@ -1,0 +1,160 @@
+# The synthetic CalmChaosRetail world. gen_catalogue.py and gen_supply.py build every table from this file and the seed;
+# evaluation reads the truth tables they write, never the pipeline's own output.
+#
+# Times are offsets from an anchor: the load time for BigQuery, fixture_anchor for the offline fixtures. Planted orders,
+# and deliveries that make a store exposed by date, stay within 14 days of the anchor, so a load keeps its truth for two
+# weeks inside the 30-day windows. A store exposed by stock on hand does not depend on dates.
+
+seed: 4217
+retailer: CalmChaosRetail
+fixture_anchor: 2026-10-17T00:00:00Z
+history_days: 60
+online_orders_per_day: 900
+
+dcs:
+  DC-North: [QLD, NT]
+  DC-South: [NSW, ACT, VIC, TAS]
+  DC-West: [WA, SA]
+
+catalogue:
+  food: 1200
+  household: 300
+  electrical: 150
+  toys: 150
+  cosmetics: 200
+
+# Planted products have fixed ids and fixed facts; the generator never makes these brand, name and size combinations.
+products:
+  - product_id: P48812
+    brand: Morrowdale
+    type: yoghurt
+    variant: Vanilla
+    size: 1kg
+    supplier_id: SUP-004
+    ingredients_text: Milk, milk solids, cream, sugar, vanilla bean extract, live cultures (A, B, L. casei)
+  - product_id: P31007
+    brand: Nutty Fields
+    type: muesli
+    variant: Toasted
+    size: 750g
+    supplier_id: SUP-011
+    ingredients_text: Rolled oats, wheat flakes, almonds (12%), honey, sunflower oil, coconut
+    allergens: [wheat, almond]
+    spec_versions: 3
+    listing_allergens: [wheat]
+  - product_id: P31008
+    brand: Nutty Fields
+    type: muesli
+    variant: Toasted
+    size: 1.5kg
+    supplier_id: SUP-011
+    ingredients_text: Rolled oats, wheat flakes, almonds (12%), honey, sunflower oil, coconut
+    allergens: [wheat, almond]
+  - product_id: P50211
+    brand: Toddlewick
+    type: light_up_toy
+    variant: Dinosaur
+    size: 1 unit
+    supplier_id: SUP-019
+    # Spec v2 added the button battery warning; an older version lacks a list's last entry.
+    warnings: [not suitable for children under 3 years, button battery]
+    spec_versions: 2
+  - product_id: P62240
+    brand: Hearthwell
+    type: kettle
+    variant: Rapid
+    size: 1.7L
+    supplier_id: SUP-031
+    marks: [RCM]
+
+# Brands and suppliers the planted products belong to. The other suppliers are named by the generator.
+suppliers:
+  SUP-004: Morrowdale Dairy Co
+  SUP-011: Nutty Fields Foods
+  SUP-019: Toddlewick Toys
+  SUP-031: Hearthwell Appliances
+
+# Regular batch codes, oldest first, for planted products whose fixtures name one of them.
+regular_codes:
+  P31007: [B2026-114, B2026-115, B2026-116, B2026-117, B2026-118]
+
+recall_scenarios:
+  - id: yoghurt_listeria
+    feed: test
+    format: fsanz
+    product_id: P48812
+    expected_match_status: matched
+    batch: { code: B2026-091, produced_days_ago: 34, best_before_days_ahead: 13 }
+    delivered_qty: 24
+    delivered_days_ago: [2, 3, 4, 5, 6]
+    stores_on_hand:
+      { S004: 18, S007: 12, S012: 20, S015: 15, S021: 9, S023: 16, S030: 14, S033: 22, S041: 11, S047: 13, S052: 17,
+        S058: 19, S063: 10, S070: 16 }
+    stale_stores: { S080: { delivered_qty: 12, delivered_days_ago: 32 } }
+    online_orders: 37
+    ordered_days_ago: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  - id: dinosaur_choking
+    feed: test
+    format: accc
+    product_id: P50211
+    expected_match_status: matched
+    batch: { code: L2026-0310, produced_days_ago: 40 }
+    delivered_qty: 12
+    delivered_days_ago: [34, 35]
+    stores_on_hand: { S004: 5, S009: 3, S012: 4, S018: 6, S027: 2, S033: 7, S039: 3, S044: 4, S061: 5 }
+    online_orders: 12
+    ordered_days_ago: [2, 4, 6, 8, 10, 12]
+  - id: yoghurt_500g_decoy
+    feed: test
+    format: fsanz
+    product_id: null
+    codes: [B2026-077]
+    expected_match_status: not_in_range
+  - id: kettle_no_exposure
+    feed: test
+    format: accc
+    product_id: P62240
+    expected_match_status: matched_no_exposure
+    batch: { code: L2026-0999, produced_days_ago: 5 }
+  - id: muesli_no_size
+    feed: test
+    format: fsanz
+    product_id: null
+    options: [P31007, P31008]
+    codes: []
+    expected_match_status: ambiguous
+
+label_fixtures:
+  - id: dinosaur_battery_warning
+    product_id: P50211
+    batch: { code: L2026-0311, produced_days_ago: 20 }
+    delivered_qty: 12
+    delivered_days_ago: [14]
+    stores_on_hand: { S004: 6, S009: 4, S012: 9, S018: 3, S021: 5, S027: 7, S033: 2, S039: 6, S044: 4, S052: 5, S061: 8 }
+    reporting_store: S012
+    # The pack as printed: data/gen_labels.py leaves these off the label the spec requires.
+    pack: { omit_warnings: [button battery] }
+    expected_rules: [warning_missing_on_pack]
+    expected_severity: critical
+  - id: muesli_almond
+    product_id: P31007
+    lot: B2026-118
+    reporting_store: S004
+    expected_rules: [allergen_missing_in_listing]
+    expected_severity: high
+  - id: kettle_rcm
+    product_id: P62240
+    batch: { code: L2026-0442, produced_days_ago: 18 }
+    delivered_qty: 4
+    delivered_days_ago: [12, 13]
+    stores_on_hand: { S007: 3, S015: 2, S023: 4, S041: 1, S058: 2, S070: 3 }
+    reporting_store: S015
+    pack: { omit_marks: [RCM] }
+    expected_rules: [mark_missing_on_pack]
+    expected_severity: high
+  - id: yoghurt_clean
+    product_id: P48812
+    lot: B2026-104
+    reporting_store: S021
+    expected_rules: []
+    expected_severity: null

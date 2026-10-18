@@ -1,0 +1,33 @@
+{
+  "candidate_id": "label:P10054:798a8d",
+  "kind": "label",
+  "product_id": "P10054",
+  "hazard_type": "allergen",
+  "title_hint": "Harbour Bakehouse Organic Original Crumpets 12 pack allergen undeclared on pack: wheat",
+  "prior_incidents": [],
+  "checks": [
+    {
+      "check_id": "lc-eval-allergen-undeclared-on-pack",
+      "store_id": "S100",
+      "checked_at": "2026-10-16T18:00:00+00:00",
+      "photo_uri": "gs://psd-fixtures/labels/eval_allergen_undeclared_on_pack.jpg",
+      "lot": "B2026-222",
+      "findings": [
+        {
+          "rule": "allergen_undeclared_on_pack",
+          "field": "allergens",
+          "value": "wheat",
+          "severity": "critical",
+          "actions": [
+            "hold",
+            "supplier_notice",
+            "qa_alert",
+            "listing_check"
+          ],
+          "hazard_type": "allergen"
+        }
+      ]
+    }
+  ],
+  "fixture_receipt_id": "rcpt-fixture-eval-allergen-undeclared-on-pack"
+}

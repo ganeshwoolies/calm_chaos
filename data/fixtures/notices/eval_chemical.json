@@ -1,0 +1,36 @@
+{
+  "candidate_id": "recall:eval_chemical",
+  "kind": "recall",
+  "product_id": "P11219",
+  "hazard_type": "chemical",
+  "title_hint": "Clearwell Eco Eucalyptus Laundry Liquid 1L batch L2026-2708 Corrosive ingredient above the labelled level recall",
+  "prior_incidents": [],
+  "notice": {
+    "guid": "FICTIONAL-TEST:eval:eval_chemical",
+    "feed": "test",
+    "title": "FICTIONAL TEST: Clearwell Eco Eucalyptus Laundry Liquid 1L",
+    "url": "https://example.test/notices/eval-chemical",
+    "published_at": "2026-10-16T00:00:00+00:00",
+    "extract": {
+      "product_name": "Eco Eucalyptus Laundry Liquid",
+      "brand": "Clearwell",
+      "sizes": [
+        "1L"
+      ],
+      "batch_codes": [
+        "L2026-2708"
+      ],
+      "date_codes": [],
+      "hazard_type": "chemical",
+      "hazard_detail": "Corrosive ingredient above the labelled level",
+      "consumer_action": "Stop using the product and return it to the place of purchase for a full refund.",
+      "summary": "Possible more of a corrosive ingredient than the label states in one batch of Clearwell Eco Eucalyptus Laundry Liquid 1L."
+    }
+  },
+  "match": {
+    "method": "embedding",
+    "distance": 0.1,
+    "confirmed": true
+  },
+  "fixture_receipt_id": "rcpt-fixture-eval-chemical"
+}
